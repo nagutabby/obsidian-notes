@@ -1,3 +1,3 @@
-# 論文
+# 論文一覧
 
 {{ pagetree(siblings) }}
