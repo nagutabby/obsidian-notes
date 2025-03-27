@@ -1,0 +1,832 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../A%20systematic%20process%20for%20Mining%20Software%20Repositories%20-%20Results%20from%20a%20systematic%20literature%20review/">
+      
+      
+        <link rel="next" href="../Understanding%20Code%20Smell%20Detection%20via%20Code%20Review%20-%20A%20Study%20of%20the%20OpenStack%20Community/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Do Static Analysis Tools Affect Software Quality when Using Test-driven Development? - 研究メモ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_pagetree_plugin.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#do-static-analysis-tools-affect-software-quality-when-using-test-driven-development" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="研究メモ" class="md-header__button md-logo" aria-label="研究メモ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            研究メモ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Do Static Analysis Tools Affect Software Quality when Using Test-driven Development?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="研究メモ" class="md-nav__button md-logo" aria-label="研究メモ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    研究メモ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    カテゴリー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    論文
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            論文
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    論文
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A%20critical%20comparison%20on%20six%20static%20analysis%20tools%20-%20Detection%2C%20agreement%2C%20and%20precision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A critical comparison on six static analysis tools - Detection, agreement, and precision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A%20systematic%20process%20for%20Mining%20Software%20Repositories%20-%20Results%20from%20a%20systematic%20literature%20review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A systematic process for Mining Software Repositories - Results from a systematic literature review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Do Static Analysis Tools Affect Software Quality when Using Test-driven Development?
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Understanding%20Code%20Smell%20Detection%20via%20Code%20Review%20-%20A%20Study%20of%20the%20OpenStack%20Community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%83%97%E3%83%AD%E3%83%9D%E3%83%BC%E3%82%B6%E3%83%AB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リサーチプロポーザル
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%83%97%E3%83%AD%E3%83%9D%E3%83%BC%E3%82%B6%E3%83%AB%E4%BD%9C%E6%88%90%E3%81%AE%E3%83%A1%E3%83%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リサーチプロポーザル作成のメモ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    週報
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            週報
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weekly-reports/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    週報
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weekly-reports/2025-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025-01-01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="do-static-analysis-tools-affect-software-quality-when-using-test-driven-development">Do Static Analysis Tools Affect Software Quality when Using Test-driven Development?</h1>
+<p>DOI: https://doi.org/10.1145/3544902.3546233
+- テスト駆動開発 (TDD) はアジャイルソフトウェア開発の実践であり、開発者がテストに合格するために「迅速で汚い」プロダクションコードを作成し、「クリーンな」コードにリファクタリングを適用することを奨励する
+- しかし、これまでの研究では、リファクタリングはTDDプロセスが必要とするほど頻繁に適用されず、ソフトウェアの品質に影響を与える可能性があることが分かっている
+- 統合開発環境 (IDE) にインストールされた静的解析ツール (SAT) をソフトウェアの品質に活用することの利点を、TDDを適用するときに調査した
+- 参加者は、SATを使う場合と使わない場合に分かれ、TDDを適用して実装タスクを実施した
+- 全体として、SATの使用は参加者がソフトウェアの品質を大幅に改善するのに役立ったが、参加者はTDDを実行するのがより難しい認識していたことが分かった</p>
+<h1 id="_1">はじめに</h1>
+<ul>
+<li>テスト駆動開発 (TDD) はアジャイルソフトウェア開発の実践であり、プロダクションコードの前にユニットテストが記述される<ul>
+<li>より詳細には、TDDはソフトウェア機能を段階的に実装するために、それぞれ3つのフェーズで構成される短いサイクルを促進<ul>
+<li>レッドフェーズ<ul>
+<li>まだ実装されていない機能の小さなかたまりに対してユニットテストを作成し、そのユニットテストが失敗するのを監視</li>
+</ul>
+</li>
+<li>グリーンフェーズ<ul>
+<li>ユニットテストにできるだけ早く合格させるために必要な技術的負債を考慮し、全てのユニットテストが合格するのを監視</li>
+</ul>
+</li>
+<li>リファクタリングフェーズ<ul>
+<li>コードをリファクタリングし、ユニットテストに合格するために作られた技術的負債を返済し、全てのユニットテストに合格するのを監視</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TDDでは、ソフトウェアの外部動作を維持しながら、ソフトウェアの品質を継続的に向上させることができるため、リファクタリングが重要な役割を果たしている<ul>
+<li>それにもかかわらず、リファクタリングフェーズがしばしばスキップされることがある</li>
+<li>例えば、RomanoらはリファクタリングはTDDが必要とするほど頻繁に実行されず、リファクタリングフェーズが他の2つよりも重要ではないと誤って認識されていることを観察した</li>
+<li>リファクタリングフェーズをスキップすることは、リファクタリングの機会がない場合にのみ問題ない</li>
+<li>その他の場合には、このフェーズをスキップすることは、ソフトウェアの品質に悪影響を及ぼす</li>
+</ul>
+</li>
+<li>本論文では、TDDを使用してソフトウェアを開発する際に、SATを使用することがソフトウェアの品質に及ぼす影響を研究<ul>
+<li>参加者は、TDDを適用してJavaで実装タスクを実行する必要がある2つの実験を実施</li>
+<li>参加者は、Eclipse IDEのプラグインの1つとして、SATであるSonarLintを使用し、コーディング中にコードの臭いを強調するように構成されたグループと、SonarLintを使用しないグループの2つのグループに分けられた</li>
+<li>最初の実験 (Exp1) にはコンピューターサイエンス (CS) の学士課程の3年生68人が参加し、タスクを実行するために3時間半を費やした</li>
+<li>2番目の実験 (Exp2) では、CSの修士課程の1年生24人を対象に、参加者に固定された時間制限を与えずに実施</li>
+</ul>
+</li>
+<li>SonarLintの使用が、ソフトウェアの品質に関連する指標に関して、重要な違いを生み出すかどうかを測定</li>
+<li>全体として、SonarLintの使用は、開発者がコードの臭いの削減、技術的負債の削減、コードの理解しやすさの向上という観点からコードの品質を大幅に改善するのに役立つことが分かった</li>
+<li>しかし、参加者は、SonarLintを使用するとTDDがより困難になることを発見した</li>
+</ul>
+<h1 id="_2">計画と設計</h1>
+<ul>
+<li>Jedlitschkaらの研究に基づくテンプレートを使用して実験の計画を報告</li>
+<li>実験を計画し、実行する際には、JuristoとMoreno、およびWohlinらのガイドラインに従った</li>
+</ul>
+<h2 id="_3">目標</h2>
+<ul>
+<li>Javaでソフトウェアを開発するCSの学士課程および修士課程の学生の観点から、ソフトウェアの品質に関してTDDプロセスにおけるSATの効果を評価する目的でSATの使用を分析</li>
+<li>目標に従って、次のリサーチクエスチョン (RQ) を策定<ul>
+<li>RQ: TDDを適用する場合に、SATを使用する場合と使用しない場合でソフトウェアの品質に違いはあるか？</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">実験概要</h2>
+<ul>
+<li>実験への参加は任意かつ無料であり、実験が組み込まれたコースの最終成績に2つのボーナスポイントを与えた</li>
+<li>学生に対して、以下の情報を伝えた<ul>
+<li>実験の成績に関係なくボーナスを受け取る</li>
+<li>否定的に評価されることなく、いつでも実験から離脱できる</li>
+<li>実験に参加しなくてもコースの最高点に達することができる</li>
+<li>収集されたデータは機密として扱われ、研究目的のみに匿名で共有される</li>
+</ul>
+</li>
+<li>Exp1<ul>
+<li>参加者はBari大学のCSの学士3年生</li>
+<li>参加者は1年から9年の開発経験と、0年から8年のJava開発経験を持っていた</li>
+</ul>
+</li>
+<li>Exp2<ul>
+<li>参加者はSannio大学のCSの修士1年生</li>
+<li>参加者は2年から13年の開発経験と、2年から6年のJava開発経験を持っていた</li>
+</ul>
+</li>
+</ul>
+<h2 id="_5">実験材料</h2>
+<ul>
+<li>Exp1とExp2の両方において、参加者は惑星上でローバーを移動させるためにMRA (Mars Rover API) という名前のAPIを実装する必要があった</li>
+<li>MRAはプログラミング演習で使用される人気のテーマである</li>
+</ul>
+<h2 id="_6">実験タスク</h2>
+<ul>
+<li>MRAの機能を11個のユーザーストーリーに分解した</li>
+</ul>
+<h2 id="_7">変数、測定、仮説</h2>
+<ul>
+<li>Exp1とExp2の両方において、参加者はSATを使って、あるいは使わずに実験タスクを実行するように求められた</li>
+<li>SATを使う参加者はリファクタリングフェーズ中にSATを用いてTDDに従う必要があった</li>
+<li>SATを使わない参加者はSATのサポートなしでMRAを開発し、リファクタリングフェーズではコードをリファクタリングするためにTDDに従う必要があった</li>
+<li>SonarLintはコーディング中にコードの臭いを強調表示するが、開発者がその警告を無視するか対処するかを自由に選択できるため、SonarLintはTDDプロセスでの使用に適している<ul>
+<li>開発者はRedフェーズやGreenフェーズでの警告を無視し、リファクタリングフェーズで警告に対処できる</li>
+</ul>
+</li>
+<li>ソフトウェアの品質を定量化するために考慮した指標<ul>
+<li>Smell<ul>
+<li>それぞれの参加者が開発したMRAコードベースでSonarQubeによって検出されたコードの臭いの数</li>
+<li>コードの臭いは、ソフトウェアの品質を向上されるためのリファクタリングの機会を示す指標</li>
+</ul>
+</li>
+<li>SqaleIndex<ul>
+<li>SQALE (Software Quality Assessment Based on Lifecycle Expectations) メソッドに基づいて、コードベースから全てのコードの臭いを除去するための推定時間として測定される技術的負債の推定値</li>
+<li>この指標はSonarQube, SQuORE, NDependなどを含む多くのSATで使用されている</li>
+</ul>
+</li>
+<li>WMC (Weighed Methods per Class)<ul>
+<li>クラス内のメソッドの複雑化を測定する指標</li>
+<li>WMCはクラス内のメソッドの循環的複雑度の合計</li>
+</ul>
+</li>
+<li>CognCompl (Cognitive Complexity)<ul>
+<li>認知的複雑度とも呼ばれ、コードの分かりやすさを表す</li>
+<li>ネストされた制御構造、条件分岐、ループなどの複雑さに基づいている</li>
+</ul>
+</li>
+<li>BW (Buse-Weimer)<ul>
+<li>コードの読みやすさを測定するために開発された指標</li>
+</ul>
+</li>
+<li>CBO (Coupling Between Objects)<ul>
+<li>クラス間の結合度を測定する指標</li>
+<li>あるクラスが他のクラスに依存している数を表す</li>
+<li>値が大きいほど、そのクラスは多くの他クラスに依存していることを示し、モジュール性が低くなる</li>
+</ul>
+</li>
+<li>RFC (Response For a Class)<ul>
+<li>クラスの応答性を測定する指標</li>
+<li>クラスが直接または間接的に呼び出せる他クラスのメソッド数の合計を表す</li>
+<li>値が大きいほど、テストの複雑さと潜在的なバグの可能性が増加</li>
+</ul>
+</li>
+<li>LCOM (Lack of COhesion in Method)<ul>
+<li>クラス内のメソッド間の凝集度の欠如を測定する指標</li>
+<li>メソッド間で共有される属性 (インスタンス変数) の少なさを表す</li>
+<li>値が大きいほど、クラスの凝集度が低く、特定のクラスが複数の責務を持っている可能性が高い</li>
+</ul>
+</li>
+<li>LOC (Lines of Code)<ul>
+<li>コード量を測定する指標</li>
+<li>物理的なコード行数やロジック行数 (コメントや空行を除く行数) などがある</li>
+<li>値が大きいほど、コードの規模が大きいことを示す</li>
+<li>値が大きいからといって必ずしも悪い訳ではないが、大きすぎる場合は複雑さや保守性の問題を引き起こす</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_8">研究デザイン</h2>
+<ul>
+<li>有効性への脅威に対処するために、Exp1とExp2の両方で、参加者を介入群 (SATを使うグループ) と対照群 (SATを使わないグループ) に分けた</li>
+</ul>
+<h2 id="_9">手順</h2>
+<h3 id="_10">操作</h3>
+<ul>
+<li>参加者はTDDを適用してMRAの機能を共同作業なしで実装するように求められた</li>
+<li>実験の開始時には、それぞれの参加者に11個のユーザーストーリーで構成されたMRAの機能、GitリモートリポジトリでホストされたEclipseのプロジェクトテンプレートが提供された</li>
+<li>参加者は、テストスイートが合格するたびにコミットするように指示された</li>
+<li>タスクの最後に、参加者はローカルのコミットをリモートリポジトリに送信し、次にリモートリポジトリへのリンクを提供し、5段階のリッカート尺度でユーザーストーリーの理解、タスクのしやすさ、TDDのしやすさ、リファクタリングのしやすさ、リファクタリングの有用性についての認識に関する質問に答えた</li>
+<li>参加者がコードをリファクタリングする必要があるときに、時間制限が影響を与えるかどうかを観察するために、Exp1では実験タスクを完了するために3時間半の時間制限を設定し、Exp2では参加者に時間制限を与えなかった</li>
+</ul>
+<h2 id="_11">分析手順</h2>
+<ul>
+<li>収集したデータを以下の手順に基づいて分析した<ul>
+<li>個別分析<ul>
+<li>それぞれの実験と処理について、記述統計を計算し、それぞれの中従属変数の値の分布を表す箱ひげ図を作成した</li>
+<li>次に、それぞれの実験において帰無仮説を検定した</li>
+</ul>
+</li>
+<li>集計分析<ul>
+<li>2つの統計的手法を使用し、2つの実験間の共同結論を提示した<ul>
+<li>集計データ</li>
+<li>標準化平均差 (Standardized Mean Difference)<ul>
+<li>2つの群間の平均値の差を標準偏差で割って標準化した指標</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="_12">結果</h1>
+<h2 id="_13">個別分析結果</h2>
+<ul>
+<li>Smell, SqaleIndex, WMC, CognComplに関しては、SonarLintの箱がNoSonarLintの箱よりも低い</li>
+<li>Exp1では、SonarLintを使用している参加者のコードベースは、SonarLintを使用していない参加者のものと比較して、コードの臭いが少なく、技術的負債の推定値が低く、複雑でなく、理解しやすい</li>
+<li>Exp2でも同様の傾向が確認されているが、SonarLintとNoSonerLintの違いは、WMCを除いてあまり顕著ではない</li>
+<li>BWに関しては、SonarLintとNoSonarLintの箱は両方の実験でほとんど重複しており、2つの実験グループ間でコードの読みやすさに大きな違いはないことを示唆している</li>
+</ul>
+<h2 id="_14">集計分析結果</h2>
+<ul>
+<li>Q検定とI2統計量を用いて、SonarLintの使用の有無による違いの有意性を測定した</li>
+<li>最もよく使用される有意水準は0.1であるため、Q検定のp値が0.1未満の場合は有意であると仮定した</li>
+<li>I2統計量は、Q検定のp値が固定有意水準未満の場合に、実験間の違いの程度を測定するために使用される</li>
+<li>Smell, SqaleIndex, CognComplに関しては、NoSonarLintとSonarLintの間に統計的に有意な差がある</li>
+<li>WMCとBWに関しては、統計的に有意な差はない</li>
+</ul>
+<h2 id="_15">その他の結果</h2>
+<ul>
+<li>Exp1では、SonarLintを使用するとリファクタリングの数がわずかに多くなる</li>
+<li>Exp2では、リファクタリングの数は両方の実験グループで同じ</li>
+<li>Exp2でSonarLintを使用した参加者は、Greenフェーズでコードの臭いをリアルタイムで修正したと推測している</li>
+</ul>
+<h2 id="_16">実験後のアンケート</h2>
+<ul>
+<li>どちらの実験では、参加者の大多数が実装されるユーザーストーリーの分かりやすさについて合意していた</li>
+<li>参加者の認識に基づけば、ユーザーストーリーの分かりやすさは実験に脅威をもたらさなかったと言える</li>
+<li>タスクのしやすさに関しては、合意の割合が比較的低く、特にExp1では参加者の半数がタスクのしやすさを中立的であると認識していた</li>
+<li>参加者は、SonarLintが使用されていない場合にTDDがしやすいと考えており、その差はデータセット全体で統計的に有意である</li>
+</ul>
+<h2 id="_17">有効性に対する脅威</h2>
+<ul>
+<li>ボランティアは全ての集団よりも動機付けられているため、選択の脅威が結果に影響を与えた可能性がある</li>
+<li>実験タスクの実行中にExp2の参加者を監視できなかったため、拡散/治療模倣の脅威がある可能性がある</li>
+<li>SonanrLintを使用することでソフトウェア品質にプラスの効果があることが分かったが、考慮されていない構成要素にはSonarLintによる副作用がある可能性がある (一般化可能性が制限される脅威)</li>
+<li>ガイドラインの提供と参加者の監視をしても、参加者が増分コミットを行わずにリファクタリングを実行し、検出ツールに見えないようにした可能性を排除できない</li>
+</ul>
+<h2 id="_18">議論</h2>
+<ul>
+<li>TDDプロセスでSATを使用することは、コードの臭いの削減、技術的負債の削減、コードの分かりやすさの向上という観点においてソフトウェアの品質にプラスの影響を与えることが分かった</li>
+</ul>
+<h1 id="_19">関連作業</h1>
+<h2 id="tdd">TDDに関する研究</h2>
+<ul>
+<li>TDDは、開発者の生産性を向上させながら、外部品質と内部品質の両方の観点から、より高品質なソフトウェアを提供するのに役立つと主張されている</li>
+</ul>
+<h1 id="_20">結論と今後の作業</h1>
+<ul>
+<li>実験の結果から、SATの使用はコードの臭いの数を削減するのに役立つだけでなく、推定される技術的負債を削減し、技術的負債を削減し、コードの分かりやすさを向上させることが示唆される</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../assets/mkdocs_pagetree_plugin.js"></script>
+      
+    
+  </body>
+</html>

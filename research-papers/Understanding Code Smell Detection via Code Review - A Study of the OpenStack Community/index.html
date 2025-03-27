@@ -1,0 +1,873 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Do%20Static%20Analysis%20Tools%20Affect%20Software%20Quality%20when%20Using%20Test-driven%20Development%3F/">
+      
+      
+        <link rel="next" href="../%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%83%97%E3%83%AD%E3%83%9D%E3%83%BC%E3%82%B6%E3%83%AB/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community - 研究メモ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/mkdocs_pagetree_plugin.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#understanding-code-smell-detection-via-code-review-a-study-of-the-openstack-community" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="研究メモ" class="md-header__button md-logo" aria-label="研究メモ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            研究メモ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="研究メモ" class="md-nav__button md-logo" aria-label="研究メモ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    研究メモ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    カテゴリー
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    論文
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            論文
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    論文
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A%20critical%20comparison%20on%20six%20static%20analysis%20tools%20-%20Detection%2C%20agreement%2C%20and%20precision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A critical comparison on six static analysis tools - Detection, agreement, and precision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A%20systematic%20process%20for%20Mining%20Software%20Repositories%20-%20Results%20from%20a%20systematic%20literature%20review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A systematic process for Mining Software Repositories - Results from a systematic literature review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Do%20Static%20Analysis%20Tools%20Affect%20Software%20Quality%20when%20Using%20Test-driven%20Development%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Do Static Analysis Tools Affect Software Quality when Using Test-driven Development?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%83%97%E3%83%AD%E3%83%9D%E3%83%BC%E3%82%B6%E3%83%AB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リサーチプロポーザル
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E3%83%97%E3%83%AD%E3%83%9D%E3%83%BC%E3%82%B6%E3%83%AB%E4%BD%9C%E6%88%90%E3%81%AE%E3%83%A1%E3%83%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リサーチプロポーザル作成のメモ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    週報
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            週報
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weekly-reports/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    週報
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weekly-reports/2025-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025-01-01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="understanding-code-smell-detection-via-code-review-a-study-of-the-openstack-community">Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community</h1>
+<p>DOI:  https://doi.org/10.1109/ICPC52881.2021.00038
+- ソフトウェアの品質に影響を与える可能性のある問題の1つに、コードの臭いがある
+    - これは、欠陥やメンテンナンスの問題につながる可能性のある不適切なプログラミング手法である
+- しかし、コードレビュー中にコードの臭いがどの程度特定されるかについてはほとんど分かっていない
+- コードレビューで特定されるコードの臭いの概念と、特定された臭いに対してレビュアーが提案する行動と開発者が実行する行動を調査するために、最もアクティブな2つのOpenStackプロジェクト (Nova, Neutron) を使用して、コードレビューにおけるコードの臭いの実証的研究を実施
+- キーワード検索とランダム選択によって取得された19,146件のレビューコメントを手動で確認し、コードの臭いの原因と特定された臭いに対して実行された行動を調べるために、1,190件の臭い関連のレビューを取得
+- 分析によって分かったこと
+    - コードレビューでコードの臭いが特定されることは一般的ではない
+    - 臭いは通常、コーディング規約違反によって引き起こされる
+    - レビュアーは通常、開発者が臭いを除去できるようにリファクタリングの推奨を含む建設的なフィードバックを提供する
+    - 開発者は一般的にそれらの推奨に従い、変更を実行する
+- これらの結果が示唆すること
+    - 開発者はコードの臭いを持ち込まないようにプロジェクトでコーディング規約に厳密に従うべきである
+    - レビューに基づくコードの臭いの検出は、主にレビューが文脈に依存する、つまりレビュアーはプロジェクトの開発チームの一員であり、コードのコンテキストをより意識しているため、開発者が信頼できるアプローチであると認識している</p>
+<h1 id="_1">導入</h1>
+<ul>
+<li>コードの臭いは、コードや設計上の問題の症状として識別されており、保守性、コードの可読性、テスト可能性、欠陥の発生しやすさなどのソフトウェア品質に悪影響を及ぼす可能性がある</li>
+<li>臭いの検出と除去に焦点を当てた研究は数多くあり、臭いの検出には多くの静的解析ツールが使用されている</li>
+<li>しかし、これまでの研究では、プログラムの文脈とドメインが臭いの識別に重要であることが示されている</li>
+<li>文脈情報が考慮されることはほとんどないため、プログラム解析ツールが臭いを正しく識別することは困難である</li>
+<li>既存の臭い検出ツールは偽陽性を生成することも知られている<ul>
+<li>そのため、手動での臭いの検出は、自動アプローチよりも価値があると考えられる</li>
+</ul>
+</li>
+<li>コードレビューは、コード内の欠陥やその他の問題を検出することでソフトウェアの品質を検証<ul>
+<li>コードが読みやすく、理解しやすく、保守可能であることを確認するためのプロセス</li>
+</ul>
+</li>
+<li>臭いを検出する静的解析ツールと比較して、コードレビューは通常、同じプロジェクトに属する開発者によって行われるため、レビュアーは文脈情報を十分に考慮し、コード内のコードの臭いをより適切に特定できる可能性がある</li>
+<li>しかし、コードレビュー中にコードの臭いがどの程度特定されるのかや、コードがレビュー担当者によって臭いであると判断されたときに開発者が何らかの措置を講じるかどうかについては、ほとんど分かっていない</li>
+<li>そこで、コードレビューで特定されるコードの臭いの概念を調査し、レビュー実施後に講じられた措置を追跡することにした</li>
+<li>最も活発な2つのOpenStackプロジェクトからコードレビューに関する議論をマイニングした</li>
+<li>次に、コードレビュー中にレビュー担当者がコードの臭いを特定する頻度、コードの臭いが生じた理由、それらの臭いに対してレビュー担当者が推奨する措置、開発者が推奨する措置をどのように進めたかを調べるために、定量的および定性的な分析を実施</li>
+</ul>
+<h1 id="_2">関連研究</h1>
+<h2 id="_3">コードの臭いに関する研究</h2>
+<ul>
+<li>コードの臭いが欠陥、メンテナンス、プログラム理解などのソフトウェア品質に与える影響を調査する研究が増えている</li>
+<li>Tufanoらは、200件のOSSプロジェクトのバージョン履歴をマイニングし、コードの臭いがいつ導入されたか、そしてそれらの相互作用の背後にある主な理由を研究した<ul>
+<li>その結果、一般的には、メンテナンスと進化の活動の結果として臭いが現れることが判明した</li>
+</ul>
+</li>
+<li>Palombaらが実施した開発者のコードの臭いに対する認識についての調査では、開発者の経験とシステム知識がコードの臭いの特定に重要な要素であることが分かった</li>
+<li>Taibiらによる研究では、大多数の開発者が常に臭いを有害であると考えていることが明らかになった</li>
+<li>Tahirらは、Stack Exchangeの投稿をマイニングし、コードの臭いとアンチパターンの話題が開発者の間でどのように議論されているかを調査した<ul>
+<li>その結果、開発者は特定のリファクタリングソリューションを求めるのではなく、コードの臭いやアンチパターンの一般的な評価を求めるためにオンラインフォーラムを広く使用していることが分かった</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">ソフトウェア開発におけるコードレビュー</h2>
+<ul>
+<li>コードレビューに関する実証的研究により、ソフトウェアの品質に影響を与える潜在的なコードレビュー要因が調査されてきた<ul>
+<li>例えば、McIntoshらは、Qt, VTK, ITKプロジェクトにおけるコードレビューの範囲と参加がソフトウェアの品質に与える影響を調査した</li>
+<li>彼らは、リリース後の欠陥の発生率を指標として使用し、レビューが不十分なコード (レビューの範囲と参加率が低いなど) はソフトウェアの品質に悪影響を与えることを発見した</li>
+</ul>
+</li>
+<li>Kemererらによる研究では、レビュー率がソフトウェアの品質に与える影響を調査した<ul>
+<li>彼らは、開発者の能力やその他の重要なプロセス変数を考慮した後でも、個人ソフトウェアプロセスのレビュー率が欠陥除去の有効性に影響を与える重要な要因であることを発見した</li>
+</ul>
+</li>
+<li>Pascarellaらによる研究では、コードレビューはソースコード内のコードの臭いの重大度を軽減するのに役立ったが、これは主に臭い自体とは関係のない他の変更による副作用であることが分かった</li>
+</ul>
+<h1 id="_5">方法</h1>
+<h2 id="_6">リサーチクエスチョン</h2>
+<ul>
+<li>RQ1: コードレビュアーが最も頻繁に特定するコードの臭いは何か？</li>
+<li>RQ2: コードレビュー中に特定されるコードの臭いの一般的な原因は何か？</li>
+<li>RQ3: レビュアーと開発者は、特定されたコードの臭いをどのように処理しているか？<ul>
+<li>RQ3.1: 特定された臭いに対処するために、レビュアーはどのような対策を提案しているか？</li>
+<li>RQ3.2: 特定された問題に対処するために開発者はどのような措置を講じるか？</li>
+<li>RQ3.3: レビュアーが提案した行動と開発者が実行した行動の間にはどのような関係があるか？</li>
+</ul>
+</li>
+</ul>
+<h2 id="openstackgerrit">OpenStackプロジェクトとGerritレビューの流れ</h2>
+<ul>
+<li>OpenStackは最大のオープンソースコミュニティの1つ</li>
+<li>最も活発なOpenStackプロジェクトのうち、NovaとNeutronの2つを対象プロジェクトとして選択</li>
+<li>どちらのプロジェクトもGit上に構築されたWebベースのコードレビュープラットフォームであるGerritを使用している</li>
+<li>Gerritは詳細なコードレビューワークフローを提供<ul>
+<li>開発者がコードを変更し、レビューできるようにコードをGerritサーバーに送信</li>
+<li>次に、検証ボットが静的アナライザーを使用してコードをチェックし、自動テストを実行</li>
+<li>次に、レビュアーがコードの正式なレビューを実施し、コメントを提供</li>
+<li>元の作成者は、レビュアーのコメントに返信し、パッチの新しいリビジョンを作成することで必要な変更を実行できる</li>
+<li>このプロセスは、変更がコードベースにマージされるか、作成者によって放棄されるまで繰り返される</li>
+</ul>
+</li>
+</ul>
+<h2 id="_7">キーワードセットの構築</h2>
+<ol>
+<li>初期キーワードセットの作成<ul>
+<li>一般的な用語を含める (コードの臭い、悪い臭い、悪いパターン、アンチパターン、技術的負債など)</li>
+<li>具体的なコードの臭いの名前を含める (デッドコードなど)</li>
+<li>Tahirらの研究から抽出した用語リストを含める</li>
+</ul>
+</li>
+<li>検索とコーパス (テキスト分析のための文書集合) 構築<ul>
+<li>初期キーワードセットの単語を含むレビューコメントを検索</li>
+<li>見つかったコメントを処理 (識別子分割ルールを適用、例: isDone =&gt; is Done)</li>
+</ul>
+</li>
+<li>データクリーニングと処理<ul>
+<li>ストップワード (一般的な単語)、句読点、数字を削除</li>
+<li>全ての単語を小文字に変換</li>
+<li>Porterステミングアルゴリズムを適用して各単語の語幹 (ステム) を抽出 (例: running, runs, ran =&gt; 全てrunに変換)</li>
+</ul>
+</li>
+<li>分析<ul>
+<li>文書 - 用語マトリックス (どの文書にどの単語が何回出現するかを示す表) を作成</li>
+<li>初期キーワードと高頻度で共起する追加の単語を特定 (同じ文書内での共起確率0.05を基準)</li>
+</ul>
+</li>
+</ol>
+<h2 id="_8">キーワード検索されたレビューコメントから臭い関連のレビューを特定</h2>
+<ol>
+<li>自動キーワード検索<ul>
+<li>構築したキーワードセットを使用したPythonスクリプトを開発</li>
+<li>キーワードを含むレビューコメントを検索 (18,082件のコメントが該当)</li>
+</ul>
+</li>
+<li>初期手動フィルタリング<ul>
+<li>2人の研究者が独立して、明らかに無関係なコメントを除外</li>
+<li>両者が無関係を判断したコメントのみを除外</li>
+<li>この段階で3,666件のコメントに削減</li>
+</ul>
+</li>
+<li>詳細な文脈分析<ul>
+<li>残りのコメントに対して、さらに詳細な手動分析を実施</li>
+<li>コードレビューの議論やソースコードなどのテキスト情報を慎重に分析</li>
+<li>2人の研究者が合意した場合のみ、コードの臭いと関連付け</li>
+<li>不確かな場合や意見が分かれた場合は第三者を交えて議論</li>
+<li>Cohen's Kappaによる一致率は0.85であり、高い信頼性があった</li>
+<li>この段階で1,235件のコメントに削減</li>
+</ul>
+</li>
+<li>コンテキスト情報の記録<ul>
+<li>それぞれのレビューコメントのコンテキスト情報を外部テキストファイルに記録</li>
+<li>記録内容<ul>
+<li>コード変更のURL (特定のプルリクエストなどのURL、レビューが行われた具体的な変更へのリンク)</li>
+<li>特定されたコードの臭いの種類</li>
+<li>レビュアーと開発者間の議論</li>
+<li>ソースコードのURL (特定のコミットにおけるファイルのURL、コードの臭いが指摘されたファイルへのリンク)</li>
+</ul>
+</li>
+<li>最終的に1,174件のコードの臭い関連のレビューに絞り込んだ (同一議論内の複数コメントは統合)</li>
+</ul>
+</li>
+</ol>
+<h2 id="_9">ランダムに選択されたレビューコメントから臭いに関するレビューを特定</h2>
+<ul>
+<li>レビュアーや開発者は、研究で使用したキーワード以外の表現でもコードの臭いを議論している可能性がある<ul>
+<li>そのため、キーワードベースのマイニングアプローチを補完する必要がある</li>
+</ul>
+</li>
+<li>キーワードを含まない残りのレビューコメント (291,229件) から無作為にサンプルを抽出</li>
+<li>95%の信頼水準と3%の誤差マージンに基づき、1,064件のレビューコメントを選択</li>
+<li>前述のセクションと同じ手動分析プロセスを適用</li>
+<li>無作為抽出した1,064件のコメントから、16件のコードの臭い関連のレビューを特定</li>
+<li>キーワード検索で得られた1,174件と合わせて、合計1,190件のコードの臭い関連のレビューを収集</li>
+</ul>
+<h2 id="_10">手動分析と分類</h2>
+<ul>
+<li>RQ1 (最も頻繁に特定されるコードの臭い) の分析<ul>
+<li>レビューコメントからコードの臭いの種類を記録</li>
+</ul>
+</li>
+<li>RQ2 (コードの臭いの原因) の分析<ul>
+<li>テーマ分析手法を採用</li>
+<li>MAXQDA (質的研究用ソフトウェア) を使用してコード化</li>
+<li>分析プロセス<ol>
+<li>コードの臭いの原因に関連するテキスト部分をハイライト</li>
+<li>原因が記載されていない場合は「cause not provided/unknown」と記録</li>
+<li>共通パターンを特定してテーマを生成</li>
+<li>データセットに戻り、テーマの妥当性を検証</li>
+<li>各テーマに名前を付けて定義</li>
+</ol>
+</li>
+<li>二人の研究者が実施し、意見の相違がある場合は三人目が介入</li>
+</ul>
+</li>
+<li>RQ3 (対応方法) の分析<ul>
+<li>RQ3.1 (レビュアーの提案する対策)<ul>
+<li>レビュアーの推奨行動を3つのカテゴリに分類<ul>
+<li>修正 (Fix): コードの臭いをリファクタリングする具体的な推奨</li>
+<li>捕捉 (Capture): コードの臭いを検出するが具体的なリファクタリング推奨なし</li>
+<li>無視 (Ignore): 特定された臭いを無視する推奨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RQ3.2 (開発者の対応)<ul>
+<li>開発者の対応を3段階で調査<ol>
+<li>議論におけるレビュアーへの開発者の返答を確認</li>
+<li>レビュー前のソースコードファイルとレビュー後の変更を調査</li>
+<li>開発者が返答もコード修正もしない場合、対応するコード変更のステータスを確認</li>
+</ol>
+</li>
+<li>コードの臭いが解決されたと判断する3つのケース<ol>
+<li>開発者が議論の中でリファクタリングを行うことを明示的に認めた</li>
+<li>ソースコードファイルに変更が加えられた</li>
+<li>対応するコード変更が破棄された</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>RQ3.3 (レビュアーの推奨と開発者の対応の関係)<ul>
+<li>関係性を3つのカテゴリに分類<ol>
+<li>開発者がレビュアーの推奨に同意</li>
+<li>開発者がレビュアーの推奨に不同意</li>
+<li>開発者がレビュアーのコメントに無応答</li>
+</ol>
+</li>
+<li>これらは最終的に2つのアクションに集約<ol>
+<li>臭いを修正 (リファクタリングを実施)</li>
+<li>変更を無視 (臭いに関してソースコードに変更なし)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="_11">結果</h1>
+<ul>
+<li>RQ1: コードレビュアーが最も頻繁に特定するコードの臭いはどれか？<ul>
+<li>コードレビューではコードの臭いが一般的に特定されていないことが分かった</li>
+<li>特定されたコードの臭いのうち、重複コードが圧倒的に多かった</li>
+<li>不適切な命名やデッドコードも頻繁に特定された</li>
+</ul>
+</li>
+<li>RQ2: コードレビュー中に特定されるコードの臭いの一般的な原因は何か？<ul>
+<li>コーディング規約違反<ul>
+<li>コーディング規約 (命名規則など) の特定の違反が問題の原因となった</li>
+</ul>
+</li>
+<li>既存のコードに対する不慣れさ<ul>
+<li>開発者が既存のコードの機能や構造に不慣れなために、コードの臭いを生じさせた</li>
+</ul>
+</li>
+<li>開発者の意図しないミス<ul>
+<li>開発者が問題解決忘れたり、誤って問題を引き起こしたりする</li>
+</ul>
+</li>
+<li>不適切な設計<ul>
+<li>コードの臭いはコードの不適切な設計に関連していることが判明した</li>
+</ul>
+</li>
+<li>コード分析ツールによる検出<ul>
+<li>レビュアーは、コード分析ツールによってコードの臭いが検出されたことを指摘する</li>
+</ul>
+</li>
+<li>レビューの大部分 (70%) では、特定されたコードの臭いについて何の説明も提供されていなかった</li>
+<li>ほとんどの場合は、レビュアーは単に問題を指摘しただけで、決定の理由をそれ以上説明していなかった</li>
+<li>23%のレビューでは、コーディング規約違反がコードの臭いの主な原因であると指摘されている</li>
+</ul>
+</li>
+<li>RQ3: レビュアーと開発者は、特定されたコードの臭いをどのように処理するか？<ul>
+<li>RQ3.1: 特定されたコードの臭いに対処するために、レビュアーはどのような対策を提案するか？<ul>
+<li>レビューの大部分 (73%) で、レビュアーは特定されたコードの臭いを解決するための修正を推奨した</li>
+<li>これらの修正のうち35%では、開発者がコードの臭いを適切にリファクタリングできるようにサンプルコードスニペットが提供された</li>
+<li>レビューの23%では、レビュアーはコードの臭いの存在を指摘しただけで、リファクタリングの提案は行っていない</li>
+</ul>
+</li>
+<li>RQ3.2: 特定された問題に対処するために開発者はどのような措置を講じるか？<ul>
+<li>レビューで特定されたコードの臭いのうち、大部分 (86%) はレビュー後に開発者によってリファクタリングされた</li>
+</ul>
+</li>
+<li>RQ3.3: レビュアーが提案した行動と開発者が実行した行動の間にはどのような関係があるか？<ul>
+<li>得られたレビューのうち65%で、開発者はレビュアーの提案に同意し、レビュアーが提案したのと全く同じ行動を実行した</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../assets/mkdocs_pagetree_plugin.js"></script>
+      
+    
+  </body>
+</html>
