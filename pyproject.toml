@@ -1,0 +1,26 @@
+[project]
+name = "obsidian-notes"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "nagutabby",email = "nagutabby@nagutabby.uk"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+mkdocs-material = "^9.6.9"
+mkdocs = "^1.6.1"
+mkdocs-awesome-nav = "^3.0.0"
+mkdocs-pagetree-plugin = "^0.0.17"
+
