@@ -1,0 +1,18 @@
+[data-md-color-scheme="slate"] .md-content h1,
+[data-md-color-scheme="slate"] .md-content h2,
+[data-md-color-scheme="slate"] .md-content h3,
+[data-md-color-scheme="slate"] .md-content h4 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* 本文テキストのコントラスト改善 */
+[data-md-color-scheme="slate"] .md-content p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* サイドバーナビゲーションのコントラスト改善 */
+[data-md-color-scheme="slate"] .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav__title {
+  color: rgba(255, 255, 255, 0.85);
+}
+
