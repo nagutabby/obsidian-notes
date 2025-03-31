@@ -1,3 +1,4 @@
-# 週報一覧
-
+---
+title: 週報一覧
+---
 {{ pagetree(siblings) }}
