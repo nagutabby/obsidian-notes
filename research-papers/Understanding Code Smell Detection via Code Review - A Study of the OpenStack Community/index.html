@@ -12,7 +12,7 @@
         <link rel="prev" href="../Do%20Static%20Analysis%20Tools%20Affect%20Software%20Quality%20when%20Using%20Test-driven%20Development%3F/">
       
       
-        <link rel="next" href="../%E8%AB%96%E6%96%87%E4%B8%80%E8%A6%A7/">
+        <link rel="next" href="../../weekly-reports/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#understanding-code-smell-detection-via-code-review-a-study-of-the-openstack-community" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -176,7 +176,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -356,8 +358,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -370,28 +382,152 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E8%AB%96%E6%96%87%E4%B8%80%E8%A6%A7/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    論文一覧
-    
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      アブストラクト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      導入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      関連研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="関連研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      コードの臭いに関する研究
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ソフトウェア開発におけるコードレビュー
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      リサーチクエスチョン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openstackgerrit" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenStackプロジェクトとGerritレビューの流れ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      キーワードセットの構築
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      キーワード検索されたレビューコメントから臭い関連のレビューを特定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      ランダムに選択されたレビューコメントから臭いに関するレビューを特定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      手動分析と分類
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      結果
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -484,28 +620,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../weekly-reports/%E9%80%B1%E5%A0%B1%E4%B8%80%E8%A6%A7/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    週報一覧
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -521,6 +635,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -530,8 +646,143 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      アブストラクト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      導入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      関連研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="関連研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      コードの臭いに関する研究
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ソフトウェア開発におけるコードレビュー
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      リサーチクエスチョン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openstackgerrit" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenStackプロジェクトとGerritレビューの流れ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      キーワードセットの構築
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      キーワード検索されたレビューコメントから臭い関連のレビューを特定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      ランダムに選択されたレビューコメントから臭いに関するレビューを特定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      手動分析と分類
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      結果
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -544,10 +795,14 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="understanding-code-smell-detection-via-code-review-a-study-of-the-openstack-community">Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community</h1>
+
+  <h1>Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community</h1>
+
+<h2 id="_1">アブストラクト<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>DOI:  https://doi.org/10.1109/ICPC52881.2021.00038
 - ソフトウェアの品質に影響を与える可能性のある問題の1つに、コードの臭いがある
     - これは、欠陥やメンテンナンスの問題につながる可能性のある不適切なプログラミング手法である
@@ -562,7 +817,7 @@
 - これらの結果が示唆すること
     - 開発者はコードの臭いを持ち込まないようにプロジェクトでコーディング規約に厳密に従うべきである
     - レビューに基づくコードの臭いの検出は、主にレビューが文脈に依存する、つまりレビュアーはプロジェクトの開発チームの一員であり、コードのコンテキストをより意識しているため、開発者が信頼できるアプローチであると認識している</p>
-<h1 id="_1">導入</h1>
+<h2 id="_2">導入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>コードの臭いは、コードや設計上の問題の症状として識別されており、保守性、コードの可読性、テスト可能性、欠陥の発生しやすさなどのソフトウェア品質に悪影響を及ぼす可能性がある</li>
 <li>臭いの検出と除去に焦点を当てた研究は数多くあり、臭いの検出には多くの静的解析ツールが使用されている</li>
@@ -582,8 +837,8 @@
 <li>最も活発な2つのOpenStackプロジェクトからコードレビューに関する議論をマイニングした</li>
 <li>次に、コードレビュー中にレビュー担当者がコードの臭いを特定する頻度、コードの臭いが生じた理由、それらの臭いに対してレビュー担当者が推奨する措置、開発者が推奨する措置をどのように進めたかを調べるために、定量的および定性的な分析を実施</li>
 </ul>
-<h1 id="_2">関連研究</h1>
-<h2 id="_3">コードの臭いに関する研究</h2>
+<h2 id="_3">関連研究<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">コードの臭いに関する研究<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>コードの臭いが欠陥、メンテナンス、プログラム理解などのソフトウェア品質に与える影響を調査する研究が増えている</li>
 <li>Tufanoらは、200件のOSSプロジェクトのバージョン履歴をマイニングし、コードの臭いがいつ導入されたか、そしてそれらの相互作用の背後にある主な理由を研究した<ul>
@@ -597,7 +852,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_4">ソフトウェア開発におけるコードレビュー</h2>
+<h3 id="_5">ソフトウェア開発におけるコードレビュー<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>コードレビューに関する実証的研究により、ソフトウェアの品質に影響を与える潜在的なコードレビュー要因が調査されてきた<ul>
 <li>例えば、McIntoshらは、Qt, VTK, ITKプロジェクトにおけるコードレビューの範囲と参加がソフトウェアの品質に与える影響を調査した</li>
@@ -610,8 +865,8 @@
 </li>
 <li>Pascarellaらによる研究では、コードレビューはソースコード内のコードの臭いの重大度を軽減するのに役立ったが、これは主に臭い自体とは関係のない他の変更による副作用であることが分かった</li>
 </ul>
-<h1 id="_5">方法</h1>
-<h2 id="_6">リサーチクエスチョン</h2>
+<h2 id="_6">方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">リサーチクエスチョン<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>RQ1: コードレビュアーが最も頻繁に特定するコードの臭いは何か？</li>
 <li>RQ2: コードレビュー中に特定されるコードの臭いの一般的な原因は何か？</li>
@@ -622,7 +877,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="openstackgerrit">OpenStackプロジェクトとGerritレビューの流れ</h2>
+<h3 id="openstackgerrit">OpenStackプロジェクトとGerritレビューの流れ<a class="headerlink" href="#openstackgerrit" title="Permanent link">&para;</a></h3>
 <ul>
 <li>OpenStackは最大のオープンソースコミュニティの1つ</li>
 <li>最も活発なOpenStackプロジェクトのうち、NovaとNeutronの2つを対象プロジェクトとして選択</li>
@@ -636,7 +891,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_7">キーワードセットの構築</h2>
+<h3 id="_8">キーワードセットの構築<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ol>
 <li>初期キーワードセットの作成<ul>
 <li>一般的な用語を含める (コードの臭い、悪い臭い、悪いパターン、アンチパターン、技術的負債など)</li>
@@ -661,7 +916,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="_8">キーワード検索されたレビューコメントから臭い関連のレビューを特定</h2>
+<h3 id="_9">キーワード検索されたレビューコメントから臭い関連のレビューを特定<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ol>
 <li>自動キーワード検索<ul>
 <li>構築したキーワードセットを使用したPythonスクリプトを開発</li>
@@ -696,7 +951,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="_9">ランダムに選択されたレビューコメントから臭いに関するレビューを特定</h2>
+<h3 id="_10">ランダムに選択されたレビューコメントから臭いに関するレビューを特定<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>レビュアーや開発者は、研究で使用したキーワード以外の表現でもコードの臭いを議論している可能性がある<ul>
 <li>そのため、キーワードベースのマイニングアプローチを補完する必要がある</li>
@@ -708,7 +963,7 @@
 <li>無作為抽出した1,064件のコメントから、16件のコードの臭い関連のレビューを特定</li>
 <li>キーワード検索で得られた1,174件と合わせて、合計1,190件のコードの臭い関連のレビューを収集</li>
 </ul>
-<h2 id="_10">手動分析と分類</h2>
+<h3 id="_11">手動分析と分類<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>RQ1 (最も頻繁に特定されるコードの臭い) の分析<ul>
 <li>レビューコメントからコードの臭いの種類を記録</li>
@@ -770,7 +1025,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_11">結果</h1>
+<h2 id="_12">結果<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li>RQ1: コードレビュアーが最も頻繁に特定するコードの臭いはどれか？<ul>
 <li>コードレビューではコードの臭いが一般的に特定されていないことが分かった</li>
@@ -829,8 +1084,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 

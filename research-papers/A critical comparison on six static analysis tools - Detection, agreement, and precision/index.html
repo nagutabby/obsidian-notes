@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#a-critical-comparison-on-six-static-analysis-tools-detection-agreement-and-precision" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -176,7 +176,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -290,8 +292,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    A critical comparison on six static analysis tools - Detection, agreement, and precision
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -303,6 +315,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      アブストラクト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -365,28 +412,6 @@
   
   <span class="md-ellipsis">
     Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E8%AB%96%E6%96%87%E4%B8%80%E8%A6%A7/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    論文一覧
     
   </span>
   
@@ -484,28 +509,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../weekly-reports/%E9%80%B1%E5%A0%B1%E4%B8%80%E8%A6%A7/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    週報一覧
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -521,6 +524,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -530,8 +535,32 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      アブストラクト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -544,10 +573,14 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="a-critical-comparison-on-six-static-analysis-tools-detection-agreement-and-precision">A critical comparison on six static analysis tools - Detection, agreement, and precision</h1>
+
+  <h1>A critical comparison on six static analysis tools - Detection, agreement, and precision</h1>
+
+<h2 id="_1">アブストラクト<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>開発者は、静的解析ツール (SAT) を使用して、欠陥や技術的負債などのソースコードの潜在的な品質問題を制御する</li>
 <li>ツールベンダーは非常に多くのツールを考案しており、実践者が自分のニーズに最も適したツールを選択することを困難にしている</li>
@@ -557,7 +590,7 @@
 <li>それらの合意を評価するために、それらが同じ問題を識別するかどうかを行レベルとクラスレベルで手動で分析することによって比較した</li>
 <li>主要な結果は、ツール間の一致がほとんど、または全くなく、精度が低いことを示している</li>
 </ul>
-<h1 id="_1">はじめに</h1>
+<h2 id="_2">はじめに<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>静的解析ツール (SAT) は、潜在的なソースコードの品質問題を発見するために、ソースコードを実行せずに分析する手段である</li>
 <li>これらのツールは、特に継続的インテグレーションパイプラインで使いやすくなるにつれて人気が高まっており、幅広い選択肢がある</li>
@@ -583,8 +616,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
