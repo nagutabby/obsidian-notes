@@ -1,8 +1,9 @@
 # カテゴリー
-
-<div class="grid cards" markdown>
-
-- :fontawesome-regular-file:{ .file } [論文](research-papers): これまでに読んだ論文
-- :fontawesome-regular-calendar:{ .calender } [週報](weekly-reports): 研究活動の記録
-
+<div class="grid">
+  <a href="research-papers" class="card">
+    論文: これまでに読んだ論文
+  </a>
+  <a href="weekly-reports" class="card">
+    週報: 研究活動の記録
+  </a>
 </div>
