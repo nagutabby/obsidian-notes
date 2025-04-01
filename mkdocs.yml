@@ -1,4 +1,6 @@
 site_name: 研究メモ
+site_url: https://research-notes.nagutabby.uk/
+site_description: これまでに読んだ論文や活動報告のための週報を掲載しています。
 
 theme:
   name: material
@@ -15,6 +17,7 @@ plugins:
   - awesome-nav
   - pagetree
   - meta
+  - git-revision-date-localized
 
 extra:
   generator: false
