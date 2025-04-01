@@ -1,4 +1,4 @@
-# カテゴリー
+# ホーム
 <div class="grid">
   <a href="research-papers" class="card">
     論文: これまでに読んだ論文

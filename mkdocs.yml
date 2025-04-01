@@ -1,5 +1,5 @@
 site_name: 研究メモ
-site_url: https://research-notes.nagutabby.uk/
+site_url: https://research-notes.nagutabby.uk
 site_description: これまでに読んだ論文や活動報告のための週報を掲載しています。
 
 theme:
@@ -10,6 +10,8 @@ theme:
   palette:
     scheme: slate
     primary: indigo
+  font:
+    text: Noto Sans JP
 
 plugins:
   - search:
@@ -18,6 +20,9 @@ plugins:
   - pagetree
   - meta
   - git-revision-date-localized
+  - social:
+      cards_layout_options:
+        font_family: Noto Sans JP
 
 extra:
   generator: false
