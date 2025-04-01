@@ -5,14 +5,13 @@
   color: rgba(255, 255, 255, 1);
 }
 
-/* 本文テキストのコントラスト改善 */
 [data-md-color-scheme="slate"] .md-content p {
   color: rgba(255, 255, 255, 0.95);
 }
 
-/* サイドバーナビゲーションのコントラスト改善 */
 [data-md-color-scheme="slate"] .md-nav__link,
-[data-md-color-scheme="slate"] .md-nav__title {
+[data-md-color-scheme="slate"] .md-nav__title,
+[data-md-color-scheme="slate"] .md-source-file__fact {
   color: rgba(255, 255, 255, 0.9);
 }
 
