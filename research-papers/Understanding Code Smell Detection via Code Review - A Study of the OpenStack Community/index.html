@@ -24,7 +24,7 @@
     
     
       
-        <title>Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community - 研究メモ</title>
+        <title>Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community - 研究メモ</title>
       
     
     
@@ -63,7 +63,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community - 研究メモ" >
+        <meta  property="og:title"  content="Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community - 研究メモ" >
       
         <meta  property="og:description"  content="これまでに読んだ論文や活動報告のための週報を掲載しています。" >
       
@@ -79,7 +79,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community - 研究メモ" >
+        <meta  name="twitter:title"  content="Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community - 研究メモ" >
       
         <meta  name="twitter:description"  content="これまでに読んだ論文や活動報告のための週報を掲載しています。" >
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+              Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
             
           </span>
         </div>
@@ -328,7 +328,7 @@
   
   
   <span class="md-ellipsis">
-    A critical comparison on six static analysis tools - Detection, agreement, and precision
+    A critical comparison on six static analysis tools: Detection, agreement, and precision
     
   </span>
   
@@ -351,7 +351,7 @@
   
   
   <span class="md-ellipsis">
-    A systematic process for Mining Software Repositories - Results from a systematic literature review
+    A systematic process for Mining Software Repositories: Results from a systematic literature review
     
   </span>
   
@@ -404,7 +404,7 @@
   
   
   <span class="md-ellipsis">
-    Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+    Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
     
   </span>
   
@@ -417,7 +417,7 @@
   
   
   <span class="md-ellipsis">
-    Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+    Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
     
   </span>
   
@@ -561,6 +561,15 @@
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       結果
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      引用情報
     </span>
   </a>
   
@@ -828,6 +837,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      引用情報
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -846,23 +864,30 @@
 
 
 
-  <h1>Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community</h1>
+  <h1>Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community</h1>
 
 <h2 id="_1">アブストラクト<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>DOI:  https://doi.org/10.1109/ICPC52881.2021.00038
-- ソフトウェアの品質に影響を与える可能性のある問題の1つに、コードの臭いがある
-    - これは、欠陥やメンテンナンスの問題につながる可能性のある不適切なプログラミング手法である
-- しかし、コードレビュー中にコードの臭いがどの程度特定されるかについてはほとんど分かっていない
-- コードレビューで特定されるコードの臭いの概念と、特定された臭いに対してレビュアーが提案する行動と開発者が実行する行動を調査するために、最もアクティブな2つのOpenStackプロジェクト (Nova, Neutron) を使用して、コードレビューにおけるコードの臭いの実証的研究を実施
-- キーワード検索とランダム選択によって取得された19,146件のレビューコメントを手動で確認し、コードの臭いの原因と特定された臭いに対して実行された行動を調べるために、1,190件の臭い関連のレビューを取得
-- 分析によって分かったこと
-    - コードレビューでコードの臭いが特定されることは一般的ではない
-    - 臭いは通常、コーディング規約違反によって引き起こされる
-    - レビュアーは通常、開発者が臭いを除去できるようにリファクタリングの推奨を含む建設的なフィードバックを提供する
-    - 開発者は一般的にそれらの推奨に従い、変更を実行する
-- これらの結果が示唆すること
-    - 開発者はコードの臭いを持ち込まないようにプロジェクトでコーディング規約に厳密に従うべきである
-    - レビューに基づくコードの臭いの検出は、主にレビューが文脈に依存する、つまりレビュアーはプロジェクトの開発チームの一員であり、コードのコンテキストをより意識しているため、開発者が信頼できるアプローチであると認識している</p>
+<ul>
+<li>ソフトウェアの品質に影響を与える可能性のある問題の1つに、コードの臭いがある<ul>
+<li>これは、欠陥やメンテンナンスの問題につながる可能性のある不適切なプログラミング手法である</li>
+</ul>
+</li>
+<li>しかし、コードレビュー中にコードの臭いがどの程度特定されるかについてはほとんど分かっていない</li>
+<li>コードレビューで特定されるコードの臭いの概念と、特定された臭いに対してレビュアーが提案する行動と開発者が実行する行動を調査するために、最もアクティブな2つのOpenStackプロジェクト (Nova, Neutron) を使用して、コードレビューにおけるコードの臭いの実証的研究を実施</li>
+<li>キーワード検索とランダム選択によって取得された19,146件のレビューコメントを手動で確認し、コードの臭いの原因と特定された臭いに対して実行された行動を調べるために、1,190件の臭い関連のレビューを取得</li>
+<li>分析によって分かったこと<ul>
+<li>コードレビューでコードの臭いが特定されることは一般的ではない</li>
+<li>臭いは通常、コーディング規約違反によって引き起こされる</li>
+<li>レビュアーは通常、開発者が臭いを除去できるようにリファクタリングの推奨を含む建設的なフィードバックを提供する</li>
+<li>開発者は一般的にそれらの推奨に従い、変更を実行する</li>
+</ul>
+</li>
+<li>これらの結果が示唆すること<ul>
+<li>開発者はコードの臭いを持ち込まないようにプロジェクトでコーディング規約に厳密に従うべきである</li>
+<li>レビューに基づくコードの臭いの検出は、主にレビューが文脈に依存する、つまりレビュアーはプロジェクトの開発チームの一員であり、コードのコンテキストをより意識しているため、開発者が信頼できるアプローチであると認識している</li>
+</ul>
+</li>
+</ul>
 <h2 id="_2">導入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>コードの臭いは、コードや設計上の問題の症状として識別されており、保守性、コードの可読性、テスト可能性、欠陥の発生しやすさなどのソフトウェア品質に悪影響を及ぼす可能性がある</li>
@@ -1123,6 +1148,15 @@
 </ul>
 </li>
 </ul>
+<h2 id="_13">引用情報<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li>著者: Xiaofeng Han, Amjed Tahir, Peng Liang, Steve Counsell, Yajing Luo</li>
+<li>タイトル: Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community</li>
+<li>雑誌 / 会議名: 2021 IEEE/ACM 29th International Conference on Program Comprehension (ICPC)</li>
+<li>ページ: pp. 323-334</li>
+<li>出版日: May 2021</li>
+<li>DOI: https://doi.org/10.1109/ICPC52881.2021.00038</li>
+</ul>
 
 
 
@@ -1143,7 +1177,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年3月31日 21:51:03">2025年3月31日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月4日 20:23:12">2025年4月4日</span>
   </span>
 
     
