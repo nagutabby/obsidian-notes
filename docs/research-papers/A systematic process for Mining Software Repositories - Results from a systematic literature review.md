@@ -1,9 +1,7 @@
 ---
-title: A systematic process for Mining Software Repositories - Results from a systematic literature review
+title: "A systematic process for Mining Software Repositories: Results from a systematic literature review"
 ---
-
 ## アブストラクト
-DOI: https://doi.org/10.1016/j.infsof.2021.106791
 - 体系的なMSR研究をどのように実施するかについてのガイドラインがない
 	- MSR研究を体系的に行うための枠組みを提供するために、MSR研究がどのように行われているかを評価する必要がある
 - リポジトリの選択とデータ抽出に関してMSR研究がどのように実施されているかを明らかにする
@@ -217,3 +215,11 @@ DOI: https://doi.org/10.1016/j.infsof.2021.106791
 - MSRはEBSE (Evidence-Based Software Engineering) の一種
 ## 結論
 - MSRとSLRは手順が似ているため、SLRの手順を基にMSRの手順を提案した
+## 引用情報
+- 著者: M. Vidoni
+- タイトル: A systematic process for Mining Software Repositories: Results from a systematic literature review
+- 雑誌 / 会議名: Information and Software Technology
+- 巻号: vol. 144
+- ページ: p. 106791
+- 出版日: April 2022
+- DOI: https://doi.org/10.1016/j.infsof.2021.106791

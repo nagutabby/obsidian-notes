@@ -1,8 +1,7 @@
 ---
-title: Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community
+title: "Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community"
 ---
 ## アブストラクト
-DOI:  https://doi.org/10.1109/ICPC52881.2021.00038
 - ソフトウェアの品質に影響を与える可能性のある問題の1つに、コードの臭いがある
 	- これは、欠陥やメンテンナンスの問題につながる可能性のある不適切なプログラミング手法である
 - しかし、コードレビュー中にコードの臭いがどの程度特定されるかについてはほとんど分かっていない
@@ -175,3 +174,10 @@ DOI:  https://doi.org/10.1109/ICPC52881.2021.00038
 		- レビューで特定されたコードの臭いのうち、大部分 (86%) はレビュー後に開発者によってリファクタリングされた
 	- RQ3.3: レビュアーが提案した行動と開発者が実行した行動の間にはどのような関係があるか？
 		- 得られたレビューのうち65%で、開発者はレビュアーの提案に同意し、レビュアーが提案したのと全く同じ行動を実行した
+## 引用情報
+- 著者: Xiaofeng Han, Amjed Tahir, Peng Liang, Steve Counsell, Yajing Luo
+- タイトル: Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
+- 雑誌 / 会議名: 2021 IEEE/ACM 29th International Conference on Program Comprehension (ICPC)
+- ページ: pp. 323-334
+- 出版日: May 2021
+- DOI: https://doi.org/10.1109/ICPC52881.2021.00038

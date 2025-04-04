@@ -2,7 +2,6 @@
 title: Do Static Analysis Tools Affect Software Quality when Using Test-driven Development?
 ---
 ## アブストラクト
-DOI: https://doi.org/10.1145/3544902.3546233
 - テスト駆動開発 (TDD) はアジャイルソフトウェア開発の実践であり、開発者がテストに合格するために「迅速で汚い」プロダクションコードを作成し、「クリーンな」コードにリファクタリングを適用することを奨励する
 - しかし、これまでの研究では、リファクタリングはTDDプロセスが必要とするほど頻繁に適用されず、ソフトウェアの品質に影響を与える可能性があることが分かっている
 - 統合開発環境 (IDE) にインストールされた静的解析ツールをソフトウェアの品質に活用することの利点を、TDDを適用するときに調査した
@@ -143,5 +142,12 @@ DOI: https://doi.org/10.1145/3544902.3546233
 ## 関連研究
 ### TDDに関する研究
 - TDDは、開発者の生産性を向上させながら、外部品質と内部品質の両方の観点から、より高品質なソフトウェアを提供するのに役立つと主張されている
-## 結論と今後の作業
+## 結論と今後の研究
 - 実験の結果から、静的解析ツールの使用はコードの臭いの数を削減するのに役立つだけでなく、推定される技術的負債を削減し、技術的負債を削減し、コードの分かりやすさを向上させることが示唆される
+## 引用情報
+- 著者: Simone Romano, Fiorella Zampetti, Maria Teresa Baldassarre, Massimiliano Di Penta, Giuseppe Scanniello
+- タイトル: Do Static Analysis Tools Affect Software Quality when Using Test-driven Development?
+- 雑誌 / 会議名: Proceedings of the 16th ACM / IEEE International Symposium on Empirical Software Engineering and Measurement
+- ページ: pp. 80–91
+- 出版日: September 2022
+- DOI: https://doi.org/10.1145/3544902.3546233

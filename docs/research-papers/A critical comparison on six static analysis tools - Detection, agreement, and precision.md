@@ -1,5 +1,5 @@
 ---
-title: A critical comparison on six static analysis tools - Detection, agreement, and precision
+title: "A critical comparison on six static analysis tools: Detection, agreement, and precision"
 ---
 ## アブストラクト
 - 開発者は、静的解析ツールを使用して、欠陥や技術的負債などのソースコードの潜在的な品質問題を制御する
@@ -174,3 +174,12 @@ title: A critical comparison on six static analysis tools - Detection, agreement
 - 静的解析ルールの検出に関して、6つの一般的な静的解析ツールの大規模な比較を行った
 - Qualitas Corpusデータセットから47個のJavaプロジェクトを分析し、ツールで検出できる同様のルールを導出した
 - 行レベルとクラスレベルでの検出の一致を比較し、それらの精度を手動で分析した
+
+## 引用情報
+- 著者: Valentina Lenarduzzi, Fabiano Pecorelli, Nyyti Saarimaki, Savanna Lujan, Fabio Palomba
+- タイトル: A critical comparison on six static analysis tools: Detection, agreement, and precision
+- 雑誌 / 会議名: Journal of Systems and Software
+- 巻号: vol. 198
+- ページ: p. 111575
+- 出版日: April 2023
+- DOI: https://doi.org/10.1016/j.jss.2022.111575
