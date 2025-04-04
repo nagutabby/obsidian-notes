@@ -1,0 +1,36 @@
+name: MkDocsをデプロイする
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウトする
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pythonをインストールする
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: Poetryをインストールする
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: 依存関係をインストールする
+        run: |
+          poetry install
+
+      - name: MkDocsをデプロイする
+        run: |
+          git config --global user.name nagutabby
+          git config --global user.email ${{ secrets.GIT_EMAIL }}
+          poetry run mkdocs gh-deploy
