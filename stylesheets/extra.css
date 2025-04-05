@@ -14,3 +14,8 @@
 [data-md-color-scheme="slate"] .md-source-file__fact {
   color: rgba(255, 255, 255, 0.9);
 }
+
+[data-md-color-scheme="slate"] .md-content a,
+[data-md-color-scheme="slate"] .md-content a:hover {
+  filter: brightness(1.3);
+}
