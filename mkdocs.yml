@@ -51,5 +51,4 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 draft_docs: |
-  research-papers/templates/
-  weekly-reports/templates/
+  templates/
