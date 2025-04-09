@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://research-notes.nagutabby.uk/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/research-papers/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/research-papers/A%20critical%20comparison%20on%20six%20static%20analysis%20tools%20-%20Detection%2C%20agreement%2C%20and%20precision/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/research-papers/A%20systematic%20process%20for%20Mining%20Software%20Repositories%20-%20Results%20from%20a%20systematic%20literature%20review/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/research-papers/Do%20Static%20Analysis%20Tools%20Affect%20Software%20Quality%20when%20Using%20Test-driven%20Development%3F/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/research-papers/Understanding%20Code%20Smell%20Detection%20via%20Code%20Review%20-%20A%20Study%20of%20the%20OpenStack%20Community/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/research-proposal/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/research-proposal/2025-03/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/weekly-reports/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://research-notes.nagutabby.uk/weekly-reports/2025-04-05/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://research-notes.nagutabby.uk/weekly-reports/2025-04-12/</loc>
+         <lastmod>2025-04-09</lastmod>
     </url>
 </urlset>
