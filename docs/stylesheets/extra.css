@@ -5,7 +5,7 @@
   color: rgba(255, 255, 255, 1);
 }
 
-[data-md-color-scheme="slate"] .md-content p {
+[data-md-color-scheme="slate"] .md-content {
   color: rgba(255, 255, 255, 0.95);
 }
 
