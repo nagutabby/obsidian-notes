@@ -99,7 +99,6 @@ title: "The Qualitas Corpus: A Curated Collection of Java Code for Empirical Stu
 - ソフトウェア開発の実践のためにコード測定を活用する能力を高めるためには、研究においてより多くのコード測定を行う必要がある
 	- そのためには、コード分析の実証研究を行うための、大規模で厳選されたコーパスが必要である
 - Qualitas Corpusは、必要なコードセットの検索、収集、整理にかかる時間、コーパスのダウンロード時間まで短縮することで、コードに関する実証研究のコストを大幅に削減
-- お
 ## 引用情報
 - 著者: Ewan Tempero, Craig Anslow, Jens Dietrich, Ted Han, Jing Li, Markus Lumpe, Hayden Melton, James Noble
 - タイトル: The Qualitas Corpus: A Curated Collection of Java Code for Empirical Studies 
