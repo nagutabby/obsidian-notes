@@ -16,6 +16,8 @@
         <link rel="prev" href="../2025-04-19/">
       
       
+        <link rel="next" href="../2025-05-03/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
@@ -754,6 +756,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-05-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025年5月3日
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -867,14 +892,15 @@
 <li><code>rmdir my-app</code></li>
 </ul>
 </li>
-<li>pom.xmlのpluginタグ内に以下のコードを追加
-```
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-checkstyle-plugin</artifactId>
-  <version>3.6.0</version>
-  <configuration>
+<li>pom.xmlのpluginタグ内に以下のコードを追加</li>
+</ul>
+<p>```
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-checkstyle-plugin</artifactId>
+      <version>3.6.0</version>
+      <configuration>
 <configLocation>checkstyle/checkstyle.xml</configLocation>
-  </configuration>
+      </configuration>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- Checkstykeのルールセットファイルを作成
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    - `mkdir checkstyle`
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    - `touch checkstyle/checkstyle.xml`
@@ -884,8 +910,7 @@
 &lt;?xml version="1.0"?&gt;
 &lt;!DOCTYPE module PUBLIC
           "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
-          "<a href="https://checkstyle.org/dtds/configuration_1_3.dtd">https://checkstyle.org/dtds/configuration_1_3.dtd</a>"&gt;</li>
-</ul>
+          "<a href="https://checkstyle.org/dtds/configuration_1_3.dtd">https://checkstyle.org/dtds/configuration_1_3.dtd</a>"&gt;</p>
 <p>&lt;!--</p>
 <p>Checkstyle configuration that checks the sun coding conventions from:</p>
 <div class="highlight"><pre><span></span><code>- the Java Language Specification at
@@ -1059,50 +1084,78 @@
 </code></pre></div>
 <p></module></p>
 <p></module>
-<code>``
-- 自動生成されたApp.javaファイルを削除
-- 必要に応じて、Qualitas CorpusにあるSystems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/srcディレクトリをsrc/main/java/com/exampleディレクトリにコピー
-    - 例:</code>cp -r Systems/ant/ant-1.8.4/src/apache-ant-1.8.4/src/main/ src/main/java/com/example/<code>-</code>mvn checkstyle:check<code>コマンドを実行
-    - このコマンドは、デフォルトではsrc/main/javaディレクトリ以下のJavaファイルを解析
-    - このコマンドを実行すると、解析結果がtargetディレクトリに出力される
-- 注意点
-    - 解析対象のシステムで使用されているJavaのバージョンが非常に古い場合は、解析時にエラーが起きる
-- SonarQubeをインストールした
-    - SonarQubeサーバーのインストール
-- MacOS
-    - ダウンロードページからCommunity Buildをダウンロード
-        - https://www.sonarsource.com/products/sonarqube/downloads/
-    - ダウンロードしたzipファイルを解凍
-    - /opt配下にSonarQube用のディレクトリを作成
-        -</code>sudo mkdir /opt/sonarqube<code>- /opt/sonarqubeにSonarQubeプロジェクトを移動
-        -</code>sudo mv  ~/Downloads/sonarqube-25.4.0.105899 /opt/sonarqube/<code>-</code>bin/macosx-universal-64/sonar.sh <code>を実行
-        -</code> /opt/sonarqube/sonarqube-25.4.0.105899/bin/macosx-universal-64/sonar.sh start <code>- [http://localhost:9000](http://localhost:9000)にアクセス
-    - デフォルトのユーザー名とパスワードはadmin/admin
-    - SonarScannerのインストール
-- Maven
-    - https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner-for-maven/
-    - https://central.sonatype.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin/overview
-    - pom.xmlのpluginタグ内に以下のコードを追加
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;groupId&gt;org.sonarsource.scanner.maven&lt;/groupId&gt;
+```</p>
+<ul>
+<li>自動生成されたApp.javaファイルを削除</li>
+<li>必要に応じて、Qualitas CorpusにあるSystems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/srcディレクトリをsrc/main/java/com/exampleディレクトリにコピー<ul>
+<li>例: <code>cp -r Systems/ant/ant-1.8.4/src/apache-ant-1.8.4/src/main/ src/main/java/com/example/</code></li>
+</ul>
+</li>
+<li><code>mvn checkstyle:check</code>コマンドを実行<ul>
+<li>このコマンドは、デフォルトではsrc/main/javaディレクトリ以下のJavaファイルを解析</li>
+<li>このコマンドを実行すると、解析結果がtargetディレクトリに出力される</li>
+</ul>
+</li>
+<li>注意点<ul>
+<li>解析対象のシステムで使用されているJavaのバージョンが非常に古い場合は、解析時にエラーが起きる</li>
+</ul>
+</li>
+<li>SonarQubeをインストールした<ul>
+<li>SonarQubeサーバーのインストール</li>
+</ul>
+</li>
+<li>MacOS<ul>
+<li>ダウンロードページからCommunity Buildをダウンロード<ul>
+<li><a href="https://www.sonarsource.com/products/sonarqube/downloads/">https://www.sonarsource.com/products/sonarqube/downloads/</a></li>
+</ul>
+</li>
+<li>ダウンロードしたzipファイルを解凍</li>
+<li>/opt配下にSonarQube用のディレクトリを作成<ul>
+<li><code>sudo mkdir /opt/sonarqube</code></li>
+</ul>
+</li>
+<li>/opt/sonarqubeにSonarQubeプロジェクトを移動<ul>
+<li><code>sudo mv  ~/Downloads/sonarqube-25.4.0.105899 /opt/sonarqube/</code></li>
+</ul>
+</li>
+<li><code>bin/macosx-universal-64/sonar.sh</code>を実行<ul>
+<li><code>/opt/sonarqube/sonarqube-25.4.0.105899/bin/macosx-universal-64/sonar.sh start</code></li>
+</ul>
+</li>
+<li><a href="http://localhost:9000">http://localhost:9000</a>にアクセス</li>
+<li>デフォルトのユーザー名とパスワードはadmin/admin</li>
+<li>SonarScannerのインストール</li>
+</ul>
+</li>
+<li>Maven<ul>
+<li><a href="https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner-for-maven/">https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner-for-maven/</a></li>
+<li><a href="https://central.sonatype.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin/overview">https://central.sonatype.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin/overview</a></li>
+<li>pom.xmlのpluginタグ内に以下のコードを追加
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;groupId&gt;org.sonarsource.scanner.maven&lt;/groupId&gt;
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;version&gt;5.1.0.4751&lt;/version&gt;
-</code></pre></div>
-    - [http://localhost:9000/projects/create](http://localhost:9000/projects/create)にアクセス
-    - Create a local projectをクリック
-    - Project display name、Project key、Main branch nameを入力
-    - [http://localhost:9000/account/security](http://localhost:9000/account/security)にアクセス
-    - Generate TokenセクションのName、Type、Expires inを入力　
-    - pom.xmlのpropertiesタグ内に以下のコードを追加
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;sonar.projectKey&gt;&lt;プロジェクト名&gt;&lt;/sonar.projectKey&gt;
+</code></pre></div></li>
+<li><a href="http://localhost:9000/projects/create">http://localhost:9000/projects/create</a>にアクセス</li>
+<li>Create a local projectをクリック</li>
+<li>Project display name、Project key、Main branch nameを入力</li>
+<li><a href="http://localhost:9000/account/security">http://localhost:9000/account/security</a>にアクセス</li>
+<li>Generate TokenセクションのName、Type、Expires inを入力　</li>
+<li>pom.xmlのpropertiesタグ内に以下のコードを追加
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;sonar.projectKey&gt;&lt;プロジェクト名&gt;&lt;/sonar.projectKey&gt;
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&lt;sonar.host.url&gt;http://localhost:9000&lt;/sonar.host.url&gt;
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&lt;sonar.token&gt;${SONAR_TOKEN}&lt;/sonar.token&gt;
-</code></pre></div>
-    - コンパイラ言語を解析する場合
-        - Qualitas CorpusにあるSystems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/srcディレクトリをソースディレクトリとして、Systems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/binディレクトリとバイナリディレクトリとして指定
-        - 例:</code>mvn sonar:sonar -DSONAR_TOKEN=<SonarQubeのトークン> -Dsonar.sources=Systems/ant/ant-1.8.4/src -Dsonar.java.binaries=Systems/ant/ant-1.8.4/bin -Dsonar.scm.disabled=true<code>を実行
-        -</code>-Dsonar.verbose=true -X`オプションを追記することで、デバッグに役立つ詳細なログを確認できる
-    - <a href="http://localhost:9000/projects">http://localhost:9000/projects</a>にアクセスすると解析結果を確認できる
-    - SonarQubeの場合はant1.1などの古いシステムも解析できる</p>
+</code></pre></div></li>
+<li>コンパイラ言語を解析する場合<ul>
+<li>Qualitas CorpusにあるSystems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/srcディレクトリをソースディレクトリとして、Systems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/binディレクトリとバイナリディレクトリとして指定</li>
+<li>例: <code>mvn sonar:sonar -DSONAR_TOKEN=&lt;SonarQubeのトークン&gt; -Dsonar.sources=Systems/ant/ant-1.8.4/src -Dsonar.java.binaries=Systems/ant/ant-1.8.4/bin -Dsonar.scm.disabled=true</code>を実行</li>
+<li><code>-Dsonar.verbose=true -X</code>オプションを追記することで、デバッグに役立つ詳細なログを確認できる</li>
+</ul>
+</li>
+<li><a href="http://localhost:9000/projects">http://localhost:9000/projects</a>にアクセスすると解析結果を確認できる</li>
+<li>SonarQubeの場合はant1.1などの古いシステムも解析できる</li>
+</ul>
+</li>
+</ul>
 <h2 id="_2">得られた成果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>リファクタリングの具体的な手順を理解できた</li>
@@ -1151,7 +1204,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月28日 13:56:10">2025年4月28日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月28日 14:01:52">2025年4月28日</span>
   </span>
 
     
