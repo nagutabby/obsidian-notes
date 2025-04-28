@@ -716,10 +716,43 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="今週の活動">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      リファクタリングについての理解を深める
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkstyle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkstyleのインストール
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonarqube" class="md-nav__link">
+    <span class="md-ellipsis">
+      SonarQubeのインストール
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       得られた成果
     </span>
@@ -728,7 +761,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       直面した課題
     </span>
@@ -737,7 +770,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       来週の計画
     </span>
@@ -794,10 +827,43 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="今週の活動">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      リファクタリングについての理解を深める
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checkstyle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkstyleのインストール
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonarqube" class="md-nav__link">
+    <span class="md-ellipsis">
+      SonarQubeのインストール
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       得られた成果
     </span>
@@ -806,7 +872,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       直面した課題
     </span>
@@ -815,7 +881,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       来週の計画
     </span>
@@ -844,8 +910,9 @@
   <h1>2025年4月26日</h1>
 
 <h2 id="_1">今週の活動<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">リファクタリングについての理解を深める<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://www.ohmsha.co.jp/book/9784274224546/">リファクタリング 既存のコードを安全に改善する</a>の第2章まで読んだ<ul>
+<li><a href="https://www.ohmsha.co.jp/book/9784274224546/">リファクタリング 既存のコードを安全に改善する</a>の第2章まで読んだ</li>
 <li>第1章「リファクタリング - 最初の例<ul>
 <li>サンプルコードを通してリファクタリングの具体的な手順を知る</li>
 </ul>
@@ -855,231 +922,247 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>Checkstyleをインストールした<ul>
-<li>
-<p>Mavenを用いる場合</p>
+<h3 id="checkstyle">Checkstyleのインストール<a class="headerlink" href="#checkstyle" title="Permanent link">&para;</a></h3>
+<h4 id="maven">Mavenを使用する場合<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Qualitas Corpusのディレクトリに移動</li>
-<li><code>mvn archetype:generate -DgroupId=com.example -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false</code></li>
+<li><code>mvn archetype:generate -DgroupId=com.example -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false</code>を実行</li>
 <li>my-appディレクトリ配下のディレクトリとファイルをカレントディレクトリに移動し、my-appディレクトリを削除<ul>
 <li><code>mv my-app/* .</code></li>
 <li><code>rmdir my-app</code></li>
 </ul>
 </li>
-<li>pom.xmlのpluginタグ内に以下のコードを追加</li>
+<li>pom.xmlのpluginタグ内に以下のコードを追加
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      &lt;artifactId&gt;maven-checkstyle-plugin&lt;/artifactId&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      &lt;version&gt;3.6.0&lt;/version&gt;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      &lt;configuration&gt;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        &lt;configLocation&gt;checkstyle/checkstyle.xml&lt;/configLocation&gt;
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      &lt;/configuration&gt;
+</code></pre></div></li>
+<li>Checkstykeのルールセットファイルを作成<ul>
+<li><code>mkdir checkstyle</code></li>
+<li><code>touch checkstyle/checkstyle.xml</code></li>
 </ul>
-<p>```
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-checkstyle-plugin</artifactId>
-      <version>3.6.0</version>
-      <configuration>
-<configLocation>checkstyle/checkstyle.xml</configLocation>
-      </configuration>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- Checkstykeのルールセットファイルを作成
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    - `mkdir checkstyle`
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    - `touch checkstyle/checkstyle.xml`
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- Checkstyleはデフォルトでは[Sun Microsystemsの定義を使用する](https://maven.apache.org/plugins-archives/maven-checkstyle-plugin-LATEST/examples/custom-checker-config.html)ため、その設定をcheckstyle.xmlに明示的に書き込む
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    - https://github.com/checkstyle/checkstyle/blob/main/src/main/resources/sun_checks.xml
-</code></pre></div>
-&lt;?xml version="1.0"?&gt;
-&lt;!DOCTYPE module PUBLIC
-          "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
-          "<a href="https://checkstyle.org/dtds/configuration_1_3.dtd">https://checkstyle.org/dtds/configuration_1_3.dtd</a>"&gt;</p>
-<p>&lt;!--</p>
-<p>Checkstyle configuration that checks the sun coding conventions from:</p>
-<div class="highlight"><pre><span></span><code>- the Java Language Specification at
-  https://docs.oracle.com/javase/specs/jls/se11/html/index.html
-
-- the Sun Code Conventions at https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
-
-- the Javadoc guidelines at
-  https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html
-
-- the JDK Api documentation https://docs.oracle.com/en/java/javase/11/
-
-- some best practices
-</code></pre></div>
-<p>Checkstyle is very configurable. Be sure to read the documentation at
-  <a href="https://checkstyle.org">https://checkstyle.org</a> (or in your downloaded distribution).</p>
-<p>Most Checks are configurable, be sure to consult the documentation.</p>
-<p>To completely disable a check, just comment it out or delete it from the file.
-  To suppress certain violations please review suppression filters.</p>
-<p>Finally, it is worth reading the documentation.</p>
-<p>--&gt;</p>
-<p><module name="Checker">
-  &lt;!--
-      If you set the basedir property below, then all reported file
-      names will be relative to the specified directory. See
-      <a href="https://checkstyle.org/config.html#Checker">https://checkstyle.org/config.html#Checker</a></p>
-<div class="highlight"><pre><span></span><code>  &lt;property name=&quot;basedir&quot; value=&quot;${basedir}&quot;/&gt;
-</code></pre></div>
-<p>--&gt;
-  <property name="severity" value="error"/></p>
-<p><property name="fileExtensions" value="java, properties, xml"/></p>
-<p><!-- Excludes all 'module-info.java' files              -->
-  <!-- See https://checkstyle.org/filefilters/index.html -->
-  <module name="BeforeExecutionExclusionFileFilter">
-    <property name="fileNamePattern" value="module\-info\.java$"/>
-  </module></p>
-<p><!-- https://checkstyle.org/filters/suppressionfilter.html -->
-  <module name="SuppressionFilter">
-    <property name="file" value="${org.checkstyle.sun.suppressionfilter.config}"
-              default="checkstyle-suppressions.xml" />
-    <property name="optional" value="true"/>
-  </module></p>
-<p><!-- Checks that a package-info.java file exists for each package.     -->
-  <!-- See https://checkstyle.org/checks/javadoc/javadocpackage.html#JavadocPackage -->
-  <module name="JavadocPackage"/></p>
-<p><!-- Checks whether files end with a new line.                        -->
-  <!-- See https://checkstyle.org/checks/misc/newlineatendoffile.html -->
-  <module name="NewlineAtEndOfFile"/></p>
-<p><!-- Checks that property files contain the same keys.         -->
-  <!-- See https://checkstyle.org/checks/misc/translation.html -->
-  <module name="Translation"/></p>
-<p><!-- Checks for Size Violations.                    -->
-  <!-- See https://checkstyle.org/checks/sizes/index.html -->
-  <module name="FileLength"/>
-  <module name="LineLength">
-    <property name="fileExtensions" value="java"/>
-  </module></p>
-<p><!-- Checks for whitespace                               -->
-  <!-- See https://checkstyle.org/checks/whitespace/index.html -->
-  <module name="FileTabCharacter"/></p>
-<p><!-- Miscellaneous other checks.                   -->
-  <!-- See https://checkstyle.org/checks/misc/index.html -->
-  <module name="RegexpSingleline">
-    <property name="format" value="\s+$"/>
-    <property name="minimum" value="0"/>
-    <property name="maximum" value="0"/>
-    <property name="message" value="Line has trailing spaces."/>
-  </module></p>
-<p><!-- Checks for Headers                                -->
-  <!-- See https://checkstyle.org/checks/header/index.html   -->
-  <!-- <module name="Header"> -->
-  <!--   <property name="headerFile" value="${checkstyle.header.file}"/> -->
-  <!--   <property name="fileExtensions" value="java"/> -->
-  <!-- </module> --></p>
-<p><module name="TreeWalker"></p>
-<div class="highlight"><pre><span></span><code>&lt;!-- Checks for Javadoc comments.                     --&gt;
-&lt;!-- See https://checkstyle.org/checks/javadoc/index.html --&gt;
-&lt;module name=&quot;InvalidJavadocPosition&quot;/&gt;
-&lt;module name=&quot;JavadocMethod&quot;/&gt;
-&lt;module name=&quot;JavadocType&quot;/&gt;
-&lt;module name=&quot;JavadocVariable&quot;/&gt;
-&lt;module name=&quot;JavadocStyle&quot;/&gt;
-&lt;module name=&quot;MissingJavadocMethod&quot;/&gt;
-
-&lt;!-- Checks for Naming Conventions.                  --&gt;
-&lt;!-- See https://checkstyle.org/checks/naming/index.html --&gt;
-&lt;module name=&quot;ConstantName&quot;/&gt;
-&lt;module name=&quot;LocalFinalVariableName&quot;/&gt;
-&lt;module name=&quot;LocalVariableName&quot;/&gt;
-&lt;module name=&quot;MemberName&quot;/&gt;
-&lt;module name=&quot;MethodName&quot;/&gt;
-&lt;module name=&quot;PackageName&quot;/&gt;
-&lt;module name=&quot;ParameterName&quot;/&gt;
-&lt;module name=&quot;StaticVariableName&quot;/&gt;
-&lt;module name=&quot;TypeName&quot;/&gt;
-
-&lt;!-- Checks for imports                              --&gt;
-&lt;!-- See https://checkstyle.org/checks/imports/index.html --&gt;
-&lt;module name=&quot;AvoidStarImport&quot;/&gt;
-&lt;module name=&quot;IllegalImport&quot;/&gt; &lt;!-- defaults to sun.* packages --&gt;
-&lt;module name=&quot;RedundantImport&quot;/&gt;
-&lt;module name=&quot;UnusedImports&quot;&gt;
-  &lt;property name=&quot;processJavadoc&quot; value=&quot;false&quot;/&gt;
-&lt;/module&gt;
-
-&lt;!-- Checks for Size Violations.                    --&gt;
-&lt;!-- See https://checkstyle.org/checks/sizes/index.html --&gt;
-&lt;module name=&quot;MethodLength&quot;/&gt;
-&lt;module name=&quot;ParameterNumber&quot;/&gt;
-
-&lt;!-- Checks for whitespace                               --&gt;
-&lt;!-- See https://checkstyle.org/checks/whitespace/index.html --&gt;
-&lt;module name=&quot;EmptyForIteratorPad&quot;/&gt;
-&lt;module name=&quot;GenericWhitespace&quot;/&gt;
-&lt;module name=&quot;MethodParamPad&quot;/&gt;
-&lt;module name=&quot;NoWhitespaceAfter&quot;/&gt;
-&lt;module name=&quot;NoWhitespaceBefore&quot;/&gt;
-&lt;module name=&quot;OperatorWrap&quot;/&gt;
-&lt;module name=&quot;ParenPad&quot;/&gt;
-&lt;module name=&quot;TypecastParenPad&quot;/&gt;
-&lt;module name=&quot;WhitespaceAfter&quot;/&gt;
-&lt;module name=&quot;WhitespaceAround&quot;/&gt;
-
-&lt;!-- Modifier Checks                                    --&gt;
-&lt;!-- See https://checkstyle.org/checks/modifier/index.html --&gt;
-&lt;module name=&quot;ModifierOrder&quot;/&gt;
-&lt;module name=&quot;RedundantModifier&quot;/&gt;
-
-&lt;!-- Checks for blocks. You know, those {}&#39;s         --&gt;
-&lt;!-- See https://checkstyle.org/checks/blocks/index.html --&gt;
-&lt;module name=&quot;AvoidNestedBlocks&quot;/&gt;
-&lt;module name=&quot;EmptyBlock&quot;/&gt;
-&lt;module name=&quot;LeftCurly&quot;/&gt;
-&lt;module name=&quot;NeedBraces&quot;/&gt;
-&lt;module name=&quot;RightCurly&quot;/&gt;
-
-&lt;!-- Checks for common coding problems               --&gt;
-&lt;!-- See https://checkstyle.org/checks/coding/index.html --&gt;
-&lt;module name=&quot;EmptyStatement&quot;/&gt;
-&lt;module name=&quot;EqualsHashCode&quot;/&gt;
-&lt;module name=&quot;HiddenField&quot;/&gt;
-&lt;module name=&quot;IllegalInstantiation&quot;/&gt;
-&lt;module name=&quot;InnerAssignment&quot;/&gt;
-&lt;module name=&quot;MagicNumber&quot;/&gt;
-&lt;module name=&quot;MissingSwitchDefault&quot;/&gt;
-&lt;module name=&quot;MultipleVariableDeclarations&quot;/&gt;
-&lt;module name=&quot;SimplifyBooleanExpression&quot;/&gt;
-&lt;module name=&quot;SimplifyBooleanReturn&quot;/&gt;
-
-&lt;!-- Checks for class design                         --&gt;
-&lt;!-- See https://checkstyle.org/checks/design/index.html --&gt;
-&lt;module name=&quot;DesignForExtension&quot;/&gt;
-&lt;module name=&quot;FinalClass&quot;/&gt;
-&lt;module name=&quot;HideUtilityClassConstructor&quot;/&gt;
-&lt;module name=&quot;InterfaceIsType&quot;/&gt;
-&lt;module name=&quot;VisibilityModifier&quot;/&gt;
-
-&lt;!-- Miscellaneous other checks.                   --&gt;
-&lt;!-- See https://checkstyle.org/checks/misc/index.html --&gt;
-&lt;module name=&quot;ArrayTypeStyle&quot;/&gt;
-&lt;module name=&quot;FinalParameters&quot;/&gt;
-&lt;module name=&quot;TodoComment&quot;/&gt;
-&lt;module name=&quot;UpperEll&quot;/&gt;
-
-&lt;!-- https://checkstyle.org/filters/suppressionxpathfilter.html --&gt;
-&lt;module name=&quot;SuppressionXpathFilter&quot;&gt;
-  &lt;property name=&quot;file&quot; value=&quot;${org.checkstyle.sun.suppressionxpathfilter.config}&quot;
-            default=&quot;checkstyle-xpath-suppressions.xml&quot; /&gt;
-  &lt;property name=&quot;optional&quot; value=&quot;true&quot;/&gt;
-&lt;/module&gt;
-</code></pre></div>
-<p></module></p>
-<p></module>
-```</p>
-<ul>
+</li>
+<li>Checkstyleはデフォルトでは<a href="https://maven.apache.org/plugins-archives/maven-checkstyle-plugin-LATEST/examples/custom-checker-config.html">Sun Microsystemsの定義を使用する</a>ため、その設定をcheckstyle.xmlに明示的に書き込む<ul>
+<li><a href="https://github.com/checkstyle/checkstyle/blob/main/src/main/resources/sun_checks.xml">https://github.com/checkstyle/checkstyle/blob/main/src/main/resources/sun_checks.xml</a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;?xml version=&quot;1.0&quot;?&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;!DOCTYPE module PUBLIC
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>          &quot;-//Checkstyle//DTD Checkstyle Configuration 1.3//EN&quot;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>          &quot;https://checkstyle.org/dtds/configuration_1_3.dtd&quot;&gt;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&lt;!--
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  Checkstyle configuration that checks the sun coding conventions from:
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    - the Java Language Specification at
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      https://docs.oracle.com/javase/specs/jls/se11/html/index.html
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    - the Sun Code Conventions at https://www.oracle.com/java/technologies/javase/codeconventions-contents.html
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    - the Javadoc guidelines at
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    - the JDK Api documentation https://docs.oracle.com/en/java/javase/11/
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    - some best practices
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  Checkstyle is very configurable. Be sure to read the documentation at
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  https://checkstyle.org (or in your downloaded distribution).
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  Most Checks are configurable, be sure to consult the documentation.
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>  To completely disable a check, just comment it out or delete it from the file.
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  To suppress certain violations please review suppression filters.
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>  Finally, it is worth reading the documentation.
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>--&gt;
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>&lt;module name=&quot;Checker&quot;&gt;
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>  &lt;!--
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>      If you set the basedir property below, then all reported file
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>      names will be relative to the specified directory. See
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>      https://checkstyle.org/config.html#Checker
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>      &lt;property name=&quot;basedir&quot; value=&quot;${basedir}&quot;/&gt;
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>  --&gt;
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>  &lt;property name=&quot;severity&quot; value=&quot;error&quot;/&gt;
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>  &lt;property name=&quot;fileExtensions&quot; value=&quot;java, properties, xml&quot;/&gt;
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>  &lt;!-- Excludes all &#39;module-info.java&#39; files              --&gt;
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>  &lt;!-- See https://checkstyle.org/filefilters/index.html --&gt;
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>  &lt;module name=&quot;BeforeExecutionExclusionFileFilter&quot;&gt;
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    &lt;property name=&quot;fileNamePattern&quot; value=&quot;module\-info\.java$&quot;/&gt;
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>  &lt;/module&gt;
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>  &lt;!-- https://checkstyle.org/filters/suppressionfilter.html --&gt;
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>  &lt;module name=&quot;SuppressionFilter&quot;&gt;
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    &lt;property name=&quot;file&quot; value=&quot;${org.checkstyle.sun.suppressionfilter.config}&quot;
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>              default=&quot;checkstyle-suppressions.xml&quot; /&gt;
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    &lt;property name=&quot;optional&quot; value=&quot;true&quot;/&gt;
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>  &lt;/module&gt;
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>  &lt;!-- Checks that a package-info.java file exists for each package.     --&gt;
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>  &lt;!-- See https://checkstyle.org/checks/javadoc/javadocpackage.html#JavadocPackage --&gt;
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>  &lt;module name=&quot;JavadocPackage&quot;/&gt;
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>  &lt;!-- Checks whether files end with a new line.                        --&gt;
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>  &lt;!-- See https://checkstyle.org/checks/misc/newlineatendoffile.html --&gt;
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>  &lt;module name=&quot;NewlineAtEndOfFile&quot;/&gt;
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>  &lt;!-- Checks that property files contain the same keys.         --&gt;
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>  &lt;!-- See https://checkstyle.org/checks/misc/translation.html --&gt;
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>  &lt;module name=&quot;Translation&quot;/&gt;
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>  &lt;!-- Checks for Size Violations.                    --&gt;
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>  &lt;!-- See https://checkstyle.org/checks/sizes/index.html --&gt;
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>  &lt;module name=&quot;FileLength&quot;/&gt;
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>  &lt;module name=&quot;LineLength&quot;&gt;
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>    &lt;property name=&quot;fileExtensions&quot; value=&quot;java&quot;/&gt;
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>  &lt;/module&gt;
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>  &lt;!-- Checks for whitespace                               --&gt;
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>  &lt;!-- See https://checkstyle.org/checks/whitespace/index.html --&gt;
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>  &lt;module name=&quot;FileTabCharacter&quot;/&gt;
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>  &lt;!-- Miscellaneous other checks.                   --&gt;
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>  &lt;!-- See https://checkstyle.org/checks/misc/index.html --&gt;
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>  &lt;module name=&quot;RegexpSingleline&quot;&gt;
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>    &lt;property name=&quot;format&quot; value=&quot;\s+$&quot;/&gt;
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>    &lt;property name=&quot;minimum&quot; value=&quot;0&quot;/&gt;
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>    &lt;property name=&quot;maximum&quot; value=&quot;0&quot;/&gt;
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>    &lt;property name=&quot;message&quot; value=&quot;Line has trailing spaces.&quot;/&gt;
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>  &lt;/module&gt;
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>  &lt;!-- Checks for Headers                                --&gt;
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>  &lt;!-- See https://checkstyle.org/checks/header/index.html   --&gt;
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>  &lt;!-- &lt;module name=&quot;Header&quot;&gt; --&gt;
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>  &lt;!--   &lt;property name=&quot;headerFile&quot; value=&quot;${checkstyle.header.file}&quot;/&gt; --&gt;
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>  &lt;!--   &lt;property name=&quot;fileExtensions&quot; value=&quot;java&quot;/&gt; --&gt;
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a>  &lt;!-- &lt;/module&gt; --&gt;
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>  &lt;module name=&quot;TreeWalker&quot;&gt;
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a>    &lt;!-- Checks for Javadoc comments.                     --&gt;
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>    &lt;!-- See https://checkstyle.org/checks/javadoc/index.html --&gt;
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a>    &lt;module name=&quot;InvalidJavadocPosition&quot;/&gt;
+<a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a>    &lt;module name=&quot;JavadocMethod&quot;/&gt;
+<a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a>    &lt;module name=&quot;JavadocType&quot;/&gt;
+<a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a>    &lt;module name=&quot;JavadocVariable&quot;/&gt;
+<a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a>    &lt;module name=&quot;JavadocStyle&quot;/&gt;
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a>    &lt;module name=&quot;MissingJavadocMethod&quot;/&gt;
+<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a>
+<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>    &lt;!-- Checks for Naming Conventions.                  --&gt;
+<a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a>    &lt;!-- See https://checkstyle.org/checks/naming/index.html --&gt;
+<a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a>    &lt;module name=&quot;ConstantName&quot;/&gt;
+<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a>    &lt;module name=&quot;LocalFinalVariableName&quot;/&gt;
+<a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a>    &lt;module name=&quot;LocalVariableName&quot;/&gt;
+<a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a>    &lt;module name=&quot;MemberName&quot;/&gt;
+<a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a>    &lt;module name=&quot;MethodName&quot;/&gt;
+<a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a>    &lt;module name=&quot;PackageName&quot;/&gt;
+<a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>    &lt;module name=&quot;ParameterName&quot;/&gt;
+<a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a>    &lt;module name=&quot;StaticVariableName&quot;/&gt;
+<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a>    &lt;module name=&quot;TypeName&quot;/&gt;
+<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a>
+<a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a>    &lt;!-- Checks for imports                              --&gt;
+<a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a>    &lt;!-- See https://checkstyle.org/checks/imports/index.html --&gt;
+<a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a>    &lt;module name=&quot;AvoidStarImport&quot;/&gt;
+<a id="__codelineno-1-124" name="__codelineno-1-124" href="#__codelineno-1-124"></a>    &lt;module name=&quot;IllegalImport&quot;/&gt; &lt;!-- defaults to sun.* packages --&gt;
+<a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a>    &lt;module name=&quot;RedundantImport&quot;/&gt;
+<a id="__codelineno-1-126" name="__codelineno-1-126" href="#__codelineno-1-126"></a>    &lt;module name=&quot;UnusedImports&quot;&gt;
+<a id="__codelineno-1-127" name="__codelineno-1-127" href="#__codelineno-1-127"></a>      &lt;property name=&quot;processJavadoc&quot; value=&quot;false&quot;/&gt;
+<a id="__codelineno-1-128" name="__codelineno-1-128" href="#__codelineno-1-128"></a>    &lt;/module&gt;
+<a id="__codelineno-1-129" name="__codelineno-1-129" href="#__codelineno-1-129"></a>
+<a id="__codelineno-1-130" name="__codelineno-1-130" href="#__codelineno-1-130"></a>    &lt;!-- Checks for Size Violations.                    --&gt;
+<a id="__codelineno-1-131" name="__codelineno-1-131" href="#__codelineno-1-131"></a>    &lt;!-- See https://checkstyle.org/checks/sizes/index.html --&gt;
+<a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a>    &lt;module name=&quot;MethodLength&quot;/&gt;
+<a id="__codelineno-1-133" name="__codelineno-1-133" href="#__codelineno-1-133"></a>    &lt;module name=&quot;ParameterNumber&quot;/&gt;
+<a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a>
+<a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a>    &lt;!-- Checks for whitespace                               --&gt;
+<a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a>    &lt;!-- See https://checkstyle.org/checks/whitespace/index.html --&gt;
+<a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a>    &lt;module name=&quot;EmptyForIteratorPad&quot;/&gt;
+<a id="__codelineno-1-138" name="__codelineno-1-138" href="#__codelineno-1-138"></a>    &lt;module name=&quot;GenericWhitespace&quot;/&gt;
+<a id="__codelineno-1-139" name="__codelineno-1-139" href="#__codelineno-1-139"></a>    &lt;module name=&quot;MethodParamPad&quot;/&gt;
+<a id="__codelineno-1-140" name="__codelineno-1-140" href="#__codelineno-1-140"></a>    &lt;module name=&quot;NoWhitespaceAfter&quot;/&gt;
+<a id="__codelineno-1-141" name="__codelineno-1-141" href="#__codelineno-1-141"></a>    &lt;module name=&quot;NoWhitespaceBefore&quot;/&gt;
+<a id="__codelineno-1-142" name="__codelineno-1-142" href="#__codelineno-1-142"></a>    &lt;module name=&quot;OperatorWrap&quot;/&gt;
+<a id="__codelineno-1-143" name="__codelineno-1-143" href="#__codelineno-1-143"></a>    &lt;module name=&quot;ParenPad&quot;/&gt;
+<a id="__codelineno-1-144" name="__codelineno-1-144" href="#__codelineno-1-144"></a>    &lt;module name=&quot;TypecastParenPad&quot;/&gt;
+<a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a>    &lt;module name=&quot;WhitespaceAfter&quot;/&gt;
+<a id="__codelineno-1-146" name="__codelineno-1-146" href="#__codelineno-1-146"></a>    &lt;module name=&quot;WhitespaceAround&quot;/&gt;
+<a id="__codelineno-1-147" name="__codelineno-1-147" href="#__codelineno-1-147"></a>
+<a id="__codelineno-1-148" name="__codelineno-1-148" href="#__codelineno-1-148"></a>    &lt;!-- Modifier Checks                                    --&gt;
+<a id="__codelineno-1-149" name="__codelineno-1-149" href="#__codelineno-1-149"></a>    &lt;!-- See https://checkstyle.org/checks/modifier/index.html --&gt;
+<a id="__codelineno-1-150" name="__codelineno-1-150" href="#__codelineno-1-150"></a>    &lt;module name=&quot;ModifierOrder&quot;/&gt;
+<a id="__codelineno-1-151" name="__codelineno-1-151" href="#__codelineno-1-151"></a>    &lt;module name=&quot;RedundantModifier&quot;/&gt;
+<a id="__codelineno-1-152" name="__codelineno-1-152" href="#__codelineno-1-152"></a>
+<a id="__codelineno-1-153" name="__codelineno-1-153" href="#__codelineno-1-153"></a>    &lt;!-- Checks for blocks. You know, those {}&#39;s         --&gt;
+<a id="__codelineno-1-154" name="__codelineno-1-154" href="#__codelineno-1-154"></a>    &lt;!-- See https://checkstyle.org/checks/blocks/index.html --&gt;
+<a id="__codelineno-1-155" name="__codelineno-1-155" href="#__codelineno-1-155"></a>    &lt;module name=&quot;AvoidNestedBlocks&quot;/&gt;
+<a id="__codelineno-1-156" name="__codelineno-1-156" href="#__codelineno-1-156"></a>    &lt;module name=&quot;EmptyBlock&quot;/&gt;
+<a id="__codelineno-1-157" name="__codelineno-1-157" href="#__codelineno-1-157"></a>    &lt;module name=&quot;LeftCurly&quot;/&gt;
+<a id="__codelineno-1-158" name="__codelineno-1-158" href="#__codelineno-1-158"></a>    &lt;module name=&quot;NeedBraces&quot;/&gt;
+<a id="__codelineno-1-159" name="__codelineno-1-159" href="#__codelineno-1-159"></a>    &lt;module name=&quot;RightCurly&quot;/&gt;
+<a id="__codelineno-1-160" name="__codelineno-1-160" href="#__codelineno-1-160"></a>
+<a id="__codelineno-1-161" name="__codelineno-1-161" href="#__codelineno-1-161"></a>    &lt;!-- Checks for common coding problems               --&gt;
+<a id="__codelineno-1-162" name="__codelineno-1-162" href="#__codelineno-1-162"></a>    &lt;!-- See https://checkstyle.org/checks/coding/index.html --&gt;
+<a id="__codelineno-1-163" name="__codelineno-1-163" href="#__codelineno-1-163"></a>    &lt;module name=&quot;EmptyStatement&quot;/&gt;
+<a id="__codelineno-1-164" name="__codelineno-1-164" href="#__codelineno-1-164"></a>    &lt;module name=&quot;EqualsHashCode&quot;/&gt;
+<a id="__codelineno-1-165" name="__codelineno-1-165" href="#__codelineno-1-165"></a>    &lt;module name=&quot;HiddenField&quot;/&gt;
+<a id="__codelineno-1-166" name="__codelineno-1-166" href="#__codelineno-1-166"></a>    &lt;module name=&quot;IllegalInstantiation&quot;/&gt;
+<a id="__codelineno-1-167" name="__codelineno-1-167" href="#__codelineno-1-167"></a>    &lt;module name=&quot;InnerAssignment&quot;/&gt;
+<a id="__codelineno-1-168" name="__codelineno-1-168" href="#__codelineno-1-168"></a>    &lt;module name=&quot;MagicNumber&quot;/&gt;
+<a id="__codelineno-1-169" name="__codelineno-1-169" href="#__codelineno-1-169"></a>    &lt;module name=&quot;MissingSwitchDefault&quot;/&gt;
+<a id="__codelineno-1-170" name="__codelineno-1-170" href="#__codelineno-1-170"></a>    &lt;module name=&quot;MultipleVariableDeclarations&quot;/&gt;
+<a id="__codelineno-1-171" name="__codelineno-1-171" href="#__codelineno-1-171"></a>    &lt;module name=&quot;SimplifyBooleanExpression&quot;/&gt;
+<a id="__codelineno-1-172" name="__codelineno-1-172" href="#__codelineno-1-172"></a>    &lt;module name=&quot;SimplifyBooleanReturn&quot;/&gt;
+<a id="__codelineno-1-173" name="__codelineno-1-173" href="#__codelineno-1-173"></a>
+<a id="__codelineno-1-174" name="__codelineno-1-174" href="#__codelineno-1-174"></a>    &lt;!-- Checks for class design                         --&gt;
+<a id="__codelineno-1-175" name="__codelineno-1-175" href="#__codelineno-1-175"></a>    &lt;!-- See https://checkstyle.org/checks/design/index.html --&gt;
+<a id="__codelineno-1-176" name="__codelineno-1-176" href="#__codelineno-1-176"></a>    &lt;module name=&quot;DesignForExtension&quot;/&gt;
+<a id="__codelineno-1-177" name="__codelineno-1-177" href="#__codelineno-1-177"></a>    &lt;module name=&quot;FinalClass&quot;/&gt;
+<a id="__codelineno-1-178" name="__codelineno-1-178" href="#__codelineno-1-178"></a>    &lt;module name=&quot;HideUtilityClassConstructor&quot;/&gt;
+<a id="__codelineno-1-179" name="__codelineno-1-179" href="#__codelineno-1-179"></a>    &lt;module name=&quot;InterfaceIsType&quot;/&gt;
+<a id="__codelineno-1-180" name="__codelineno-1-180" href="#__codelineno-1-180"></a>    &lt;module name=&quot;VisibilityModifier&quot;/&gt;
+<a id="__codelineno-1-181" name="__codelineno-1-181" href="#__codelineno-1-181"></a>
+<a id="__codelineno-1-182" name="__codelineno-1-182" href="#__codelineno-1-182"></a>    &lt;!-- Miscellaneous other checks.                   --&gt;
+<a id="__codelineno-1-183" name="__codelineno-1-183" href="#__codelineno-1-183"></a>    &lt;!-- See https://checkstyle.org/checks/misc/index.html --&gt;
+<a id="__codelineno-1-184" name="__codelineno-1-184" href="#__codelineno-1-184"></a>    &lt;module name=&quot;ArrayTypeStyle&quot;/&gt;
+<a id="__codelineno-1-185" name="__codelineno-1-185" href="#__codelineno-1-185"></a>    &lt;module name=&quot;FinalParameters&quot;/&gt;
+<a id="__codelineno-1-186" name="__codelineno-1-186" href="#__codelineno-1-186"></a>    &lt;module name=&quot;TodoComment&quot;/&gt;
+<a id="__codelineno-1-187" name="__codelineno-1-187" href="#__codelineno-1-187"></a>    &lt;module name=&quot;UpperEll&quot;/&gt;
+<a id="__codelineno-1-188" name="__codelineno-1-188" href="#__codelineno-1-188"></a>
+<a id="__codelineno-1-189" name="__codelineno-1-189" href="#__codelineno-1-189"></a>    &lt;!-- https://checkstyle.org/filters/suppressionxpathfilter.html --&gt;
+<a id="__codelineno-1-190" name="__codelineno-1-190" href="#__codelineno-1-190"></a>    &lt;module name=&quot;SuppressionXpathFilter&quot;&gt;
+<a id="__codelineno-1-191" name="__codelineno-1-191" href="#__codelineno-1-191"></a>      &lt;property name=&quot;file&quot; value=&quot;${org.checkstyle.sun.suppressionxpathfilter.config}&quot;
+<a id="__codelineno-1-192" name="__codelineno-1-192" href="#__codelineno-1-192"></a>                default=&quot;checkstyle-xpath-suppressions.xml&quot; /&gt;
+<a id="__codelineno-1-193" name="__codelineno-1-193" href="#__codelineno-1-193"></a>      &lt;property name=&quot;optional&quot; value=&quot;true&quot;/&gt;
+<a id="__codelineno-1-194" name="__codelineno-1-194" href="#__codelineno-1-194"></a>    &lt;/module&gt;
+<a id="__codelineno-1-195" name="__codelineno-1-195" href="#__codelineno-1-195"></a>
+<a id="__codelineno-1-196" name="__codelineno-1-196" href="#__codelineno-1-196"></a>  &lt;/module&gt;
+<a id="__codelineno-1-197" name="__codelineno-1-197" href="#__codelineno-1-197"></a>
+<a id="__codelineno-1-198" name="__codelineno-1-198" href="#__codelineno-1-198"></a>&lt;/module&gt;
+</code></pre></div></li>
+</ul>
+</li>
 <li>自動生成されたApp.javaファイルを削除</li>
 <li>必要に応じて、Qualitas CorpusにあるSystems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/srcディレクトリをsrc/main/java/com/exampleディレクトリにコピー<ul>
 <li>例: <code>cp -r Systems/ant/ant-1.8.4/src/apache-ant-1.8.4/src/main/ src/main/java/com/example/</code></li>
 </ul>
 </li>
-<li><code>mvn checkstyle:check</code>コマンドを実行<ul>
-<li>このコマンドは、デフォルトではsrc/main/javaディレクトリ以下のJavaファイルを解析</li>
-<li>このコマンドを実行すると、解析結果がtargetディレクトリに出力される</li>
+<li><code>mvn checkstyle:check</code>コマンドを実行
+        - このコマンドは、デフォルトではsrc/main/javaディレクトリ以下のJavaファイルを解析
+        - このコマンドを実行すると、解析結果がtargetディレクトリに出力される
+        - 注意点
+            - 解析対象のシステムで使用されているJavaのバージョンが非常に古い場合は、解析時にエラーが起きる</li>
 </ul>
-</li>
-<li>注意点<ul>
-<li>解析対象のシステムで使用されているJavaのバージョンが非常に古い場合は、解析時にエラーが起きる</li>
-</ul>
-</li>
-<li>SonarQubeをインストールした<ul>
-<li>SonarQubeサーバーのインストール</li>
-</ul>
-</li>
-<li>MacOS<ul>
+<h3 id="sonarqube">SonarQubeのインストール<a class="headerlink" href="#sonarqube" title="Permanent link">&para;</a></h3>
+<h4 id="sonarqube_1">SonarQubeサーバーのインストール<a class="headerlink" href="#sonarqube_1" title="Permanent link">&para;</a></h4>
+<h5 id="macos">MacOSを使用する場合<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h5>
+<ul>
 <li>ダウンロードページからCommunity Buildをダウンロード<ul>
 <li><a href="https://www.sonarsource.com/products/sonarqube/downloads/">https://www.sonarsource.com/products/sonarqube/downloads/</a></li>
 </ul>
@@ -1097,18 +1180,20 @@
 <li><code>/opt/sonarqube/sonarqube-25.4.0.105899/bin/macosx-universal-64/sonar.sh start</code></li>
 </ul>
 </li>
-<li><a href="http://localhost:9000">http://localhost:9000</a>にアクセス</li>
+<li><a href="http://localhost:9000">http://localhost:9000</a>にアクセス<ul>
 <li>デフォルトのユーザー名とパスワードはadmin/admin</li>
-<li>SonarScannerのインストール</li>
 </ul>
 </li>
-<li>Maven<ul>
+</ul>
+<h4 id="sonarscanner">SonarScannerのインストール<a class="headerlink" href="#sonarscanner" title="Permanent link">&para;</a></h4>
+<h5 id="maven_1">Mavenを使用する場合<a class="headerlink" href="#maven_1" title="Permanent link">&para;</a></h5>
+<ul>
 <li><a href="https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner-for-maven/">https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner-for-maven/</a></li>
 <li><a href="https://central.sonatype.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin/overview">https://central.sonatype.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin/overview</a></li>
 <li>pom.xmlのpluginタグ内に以下のコードを追加
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;groupId&gt;org.sonarsource.scanner.maven&lt;/groupId&gt;
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;version&gt;5.1.0.4751&lt;/version&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;groupId&gt;org.sonarsource.scanner.maven&lt;/groupId&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&lt;version&gt;5.1.0.4751&lt;/version&gt;
 </code></pre></div></li>
 <li><a href="http://localhost:9000/projects/create">http://localhost:9000/projects/create</a>にアクセス</li>
 <li>Create a local projectをクリック</li>
@@ -1116,28 +1201,28 @@
 <li><a href="http://localhost:9000/account/security">http://localhost:9000/account/security</a>にアクセス</li>
 <li>Generate TokenセクションのName、Type、Expires inを入力　</li>
 <li>pom.xmlのpropertiesタグ内に以下のコードを追加
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;sonar.projectKey&gt;&lt;プロジェクト名&gt;&lt;/sonar.projectKey&gt;
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&lt;sonar.host.url&gt;http://localhost:9000&lt;/sonar.host.url&gt;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&lt;sonar.token&gt;${SONAR_TOKEN}&lt;/sonar.token&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;sonar.projectKey&gt;&lt;プロジェクト名&gt;&lt;/sonar.projectKey&gt;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&lt;sonar.host.url&gt;http://localhost:9000&lt;/sonar.host.url&gt;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&lt;sonar.token&gt;${SONAR_TOKEN}&lt;/sonar.token&gt;
 </code></pre></div></li>
 <li>コンパイラ言語を解析する場合<ul>
-<li>Qualitas CorpusにあるSystems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/srcディレクトリをソースディレクトリとして、Systems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/binディレクトリとバイナリディレクトリとして指定</li>
+<li>Qualitas CorpusにあるSystems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/srcディレクトリをソースディレクトリとして、Systems/&lt;システム名&gt;/&lt;システムのバージョン&gt;/binディレクトリとバイナリディレクトリとして指定<ul>
 <li>例: <code>mvn sonar:sonar -DSONAR_TOKEN=&lt;SonarQubeのトークン&gt; -Dsonar.sources=Systems/ant/ant-1.8.4/src -Dsonar.java.binaries=Systems/ant/ant-1.8.4/bin -Dsonar.scm.disabled=true</code>を実行</li>
-<li><code>-Dsonar.verbose=true -X</code>オプションを追記することで、デバッグに役立つ詳細なログを確認できる</li>
 </ul>
 </li>
+</ul>
+</li>
+<li><code>-Dsonar.verbose=true -X</code>オプションを追記することで、デバッグに役立つ詳細なログを確認できる</li>
 <li><a href="http://localhost:9000/projects">http://localhost:9000/projects</a>にアクセスすると解析結果を確認できる</li>
 <li>SonarQubeの場合はant1.1などの古いシステムも解析できる</li>
 </ul>
-</li>
-</ul>
-<h2 id="_2">得られた成果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">得られた成果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>リファクタリングの具体的な手順を理解できた</li>
 <li>リファクタリングを開発プロセスに導入する方法を理解できた</li>
 <li>CheckstyleとSonarQubeの実行環境を作成できた</li>
 </ul>
-<h2 id="_3">直面した課題<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">直面した課題<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Checkstyleは古いシステムで使用されているJavaの構文を解析できず、途中で処理が中断してしまう<ul>
 <li>Checkstyleの動作の一貫性を保ったまま、この問題に対処する方法は今のところない</li>
@@ -1149,15 +1234,11 @@
 </li>
 <li>SonarQubeはルールセットが多く、かつソースファイルとバイナリファイルの両方を解析するため、1つのシステムの解析が完了するまでに2分ほどかかる</li>
 </ul>
-<h2 id="_4">来週の計画<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">来週の計画<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>SonarQubeのJavaルールセットのうち、保守性に関するルールを整理</li>
 <li>CheckstyleとSonarQubeが行う処理の概要を、ソースコードを読んで理解</li>
 <li>SonarQubeのルールセットのうち、異常検出アルゴリズムと組み合わせて使用できる、実装が容易なルールセットを整理</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
 
@@ -1179,7 +1260,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月28日 14:03:42">2025年4月28日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月28日 14:19:06">2025年4月28日</span>
   </span>
 
     
