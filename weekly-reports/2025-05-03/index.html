@@ -1004,8 +1004,133 @@
 <li>例: Bluetooth should be configured to use low power</li>
 </ul>
 </li>
+<li>CheckstyleとSonarQubeの解析プロセスの概要<ul>
+<li>Checkstyle<ul>
+<li>AST（Abstract Syntax Tree）を利用</li>
+<li>パーサーがそれぞれのJavaソースファイル全体をASTに変換</li>
+<li>Treewalkerクラスが、このASTをルールチェックを行う各サブモジュールに渡すことで、ソースファイルの様々な側面を検査<ul>
+<li>例: LeftCurlyCheck, MethodLengthCheck, LineLengthCheck</li>
+</ul>
+</li>
+<li>ルールチェックを行う各サブモジュールはAbstractCheckクラスやAbstractFileSetCheckクラスから派生<ul>
+<li>AbstractCheck: メソッド、クラス、変数などのファイル内部の構造を分析</li>
+<li>AbstractFileSetCheck: ファイルレベルでの検査を行う</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SonarQube<ul>
+<li>多言語に対応するために、言語ごとにアナライザーを提供</li>
+<li>多くのアナライザーはASTを使用して静的解析を行う</li>
+<li>Javaのアナライザーの場合<ul>
+<li>Checkstyleと同様に、パーサーがASTを作成するが、それに加えて様々なグラフを作成して解析</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解析プロセスの相違点<ul>
+<li>Checkstyle<ul>
+<li>Javaソースファイルを読み込む</li>
+<li>パーサーがASTを生成</li>
+<li>TreeWalkerがASTをトラバースし、各ノードを訪問</li>
+<li>ルールチェックを行う各モジュールが特定のノードタイプに対するチェックを実行</li>
+<li>違反を検出したら報告</li>
+</ul>
+</li>
+<li>SonarQube<ul>
+<li>Javaソースファイルを読み込む</li>
+<li>パーサーがASTを生成</li>
+<li>変数、メソッド、クラスなどのシンボル情報を抽出し、シンボルテーブルを構築<ul>
+<li>シンボルテーブルとは、プログラミング言語の処理系（コンパイラ、インタープリタ、静的解析ツールなど）において、プログラム内で使用される識別子に関する情報を格納するデータ構造</li>
+<li>シンボルテーブルを構築することで、識別子の使用パターン（呼び出しの有無や引数の誤り）を分析できる</li>
+</ul>
+</li>
+<li>依存関係グラフを作成し、import文によるファイル間の依存関係を分析</li>
+<li>制御フローグラフを作成し、条件分岐やループなどのコードの実行パスを分析</li>
+<li>各種ルールを適用</li>
+<li>問題を検出し、結果をデータベースに保存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="_2">得られた成果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>SonarQubeやCheckstyleが提供するルールにおける類似点<ul>
+<li>コードの命名規則や記述スタイルに関するルールを提供<ul>
+<li>SonarQubeの「convention」とCheckstyleの「Naming Conventions」</li>
+</ul>
+</li>
+<li>バグの原因となるコードパターンを検出<ul>
+<li>SonarQubeの「pitfall」、「bad-practice」とCheckstyleの「Coding」</li>
+</ul>
+</li>
+<li>コードの認知的複雑さを測定<ul>
+<li>SonarQubeの「brain-overload」とCheckstyleの「Metrics」</li>
+</ul>
+</li>
+<li>コードの冗長性を検出<ul>
+<li>SonarQubeの「redundant」とCheckstyleの「Coding」</li>
+</ul>
+</li>
+<li>正規表現に関するルールを持つ<ul>
+<li>SonarQubeの「regex」とCheckstyleの「Regexp」</li>
+</ul>
+</li>
+<li>コードの肥大化を防ぐためのルールを提供<ul>
+<li>SonarQubeの「design」とCheckstyleの「Size Violations」</li>
+</ul>
+</li>
+<li>コードの読みやすさを改善するためのルールを提供<ul>
+<li>SonarQubeの「confusing」とCheckstyleの「Block」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>異常検出アルゴリズムと組み合わせて利用すると効果的なルール<ul>
+<li>サイズ<ul>
+<li></li>
+</ul>
+</li>
+<li>複雑度<ul>
+<li></li>
+</ul>
+</li>
+<li>結合度<ul>
+<li></li>
+</ul>
+</li>
+<li>重複度<ul>
+<li></li>
+</ul>
+</li>
+<li>依存性<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>異常検出アルゴリズムと組み合わせて利用しても効果が低いルール<ul>
+<li>コーディングスタイル、ドキュメンテーション<ul>
+<li>二値的な違反（違反しているかしていないか）であるため、異常検出の統計的・確率的アプローチと相性が悪い</li>
+<li>例: 命名規則、インデントスタイル、メソッドに対するコメントの有無</li>
+</ul>
+</li>
+<li>クラス、メソッド、変数、テストなどの記述ミス<ul>
+<li>コンパイラやインタープリタが検出できる</li>
+<li>異常検出アルゴリズムを使用しなくとも、単純な静的解析で100%検出できる</li>
+<li>例：未使用の変数、到達不能なコード、構文エラー、テストコードの論理的な誤り</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>具体的な実装方法<ul>
+<li></li>
+</ul>
+</li>
+</ul>
 <h2 id="_3">直面した課題<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h2 id="_4">来週の計画<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 
@@ -1028,7 +1153,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月29日 01:09:35">2025年4月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月29日 16:17:20">2025年4月29日</span>
   </span>
 
     
