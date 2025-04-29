@@ -1048,7 +1048,8 @@
 <li>依存関係グラフを作成し、import文によるファイル間の依存関係を分析</li>
 <li>制御フローグラフを作成し、条件分岐やループなどのコードの実行パスを分析</li>
 <li>各種ルールを適用</li>
-<li>問題を検出し、結果をデータベースに保存</li>
+<li>問題を検出し、結果をデータベースに保存
+![[images/static-analysis-comparison.svg]]</li>
 </ul>
 </li>
 </ul>
@@ -1091,23 +1092,23 @@
 </li>
 <li>異常検出アルゴリズムと組み合わせて利用すると効果的なルール<ul>
 <li>サイズ<ul>
-<li></li>
+<li>Halsteadの複雑さの尺度では、プログラムの長さがプログラムの記述の難しさや読みにくさに影響</li>
 </ul>
 </li>
 <li>複雑度<ul>
-<li></li>
+<li>McCabeのサイクロマティック複雑度では、コードの分岐数が増えるほどテストの複雑さが増加</li>
 </ul>
 </li>
 <li>結合度<ul>
-<li></li>
+<li>Parnasによれば、モジュール間の結合度が低いほどモジュール性が高くなる</li>
 </ul>
 </li>
 <li>重複度<ul>
-<li></li>
+<li>重複コードがあると特定の変更が他の重複箇所にも影響する可能性があるため、変更漏れのリスクが高まる</li>
 </ul>
 </li>
 <li>依存性<ul>
-<li></li>
+<li>Conwayの法則によれば、システムの構造は組織のコミュニケーション構造を反映するため、複雑な依存関係は変更コストを増大させる</li>
 </ul>
 </li>
 </ul>
@@ -1127,12 +1128,27 @@
 </ul>
 </li>
 <li>具体的な実装方法<ul>
-<li></li>
+<li>パーサーで構文木を作成</li>
+<li>グラフライブラリでコードの構造を表現</li>
+<li>ソフトウェアメトリクスを計算</li>
+<li>異常検出アルゴリズムを適用</li>
 </ul>
 </li>
 </ul>
 <h2 id="_3">直面した課題<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>今後扱おうとしているメトリクスの重要性についての新しい裏付けを取る必要がある<ul>
+<li>関連研究の追加調査を行う</li>
+</ul>
+</li>
+<li>静的解析においてASTとグラフ構造がどのように作られるかを説明する資料を作り、今後の検討に役立てる</li>
+</ul>
 <h2 id="_4">来週の計画<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>関連研究の調査</li>
+<li>本を読み、リファクタリングについての理解を深める</li>
+<li>既存手法との比較を容易にするために、SonarQubeを用いた静的解析の時間を短縮できるか試す</li>
+</ul>
 
 
 
@@ -1153,7 +1169,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月29日 16:17:20">2025年4月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年4月30日 07:49:02">2025年4月30日</span>
   </span>
 
     
