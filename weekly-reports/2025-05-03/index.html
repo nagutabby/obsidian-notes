@@ -751,6 +751,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sonarqubeant-184" class="md-nav__link">
+    <span class="md-ellipsis">
+      SonarQubeによるant 1.8.4の静的解析
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -839,6 +848,15 @@
   <a href="#java" class="md-nav__link">
     <span class="md-ellipsis">
       Javaの保守性に関するルールの調査
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonarqubeant-184" class="md-nav__link">
+    <span class="md-ellipsis">
+      SonarQubeによるant 1.8.4の静的解析
     </span>
   </a>
   
@@ -1057,9 +1075,8 @@
 </li>
 </ul>
 <p><img alt="CheckstyleとSonarQube間の解析プロセスの違い" src="../images/static-analysis-comparison.svg" /></p>
+<h3 id="sonarqubeant-184">SonarQubeによるant 1.8.4の静的解析<a class="headerlink" href="#sonarqubeant-184" title="Permanent link">&para;</a></h3>
 <ul>
-<li>SonarQubeによる静的解析の処理時間<ul>
-<li>ant 1.8.4の場合<ul>
 <li>javaソースファイルの行数の内訳<ul>
 <li>空行: 27,067</li>
 <li>コメント行: 99,731</li>
@@ -1067,11 +1084,23 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
 <p><img alt="ant 1.8.4のjavaソースファイルの行数" src="../images/ant_lines_of_code.png" /></p>
+<ul>
+<li>プロジェクト全体の解析時間<ul>
+<li>timeコマンドで実行時間を計測した<ul>
+<li>実行環境: M2 Pro</li>
+<li>コードがユーザーモードでCPUを使用した時間: およそ87秒</li>
+<li>コードがカーネルモードでCPUを使用した時間: およそ64秒</li>
+<li>I/O待ち時間などを含めた実行時間の合計: およそ157秒
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Executed in  157.05 secs    fish           external
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   usr time   87.02 secs    0.26 millis   87.02 secs
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   sys time   64.49 secs    2.00 millis   64.49 secs
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="_2">得られた成果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>SonarQubeやCheckstyleが提供するルールにおける類似点<ul>
@@ -1184,7 +1213,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月1日 16:55:50">2025年5月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月2日 00:19:52">2025年5月2日</span>
   </span>
 
     
