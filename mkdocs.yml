@@ -6,6 +6,8 @@ theme:
   name: material
   features:
     - navigation.instant
+    - navigation.tabs
+
   language: ja
   palette:
     scheme: slate

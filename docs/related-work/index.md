@@ -1,4 +1,4 @@
 ---
-title: 論文一覧
+title: 関連研究
 ---
 {{ pagetree(siblings) }}
