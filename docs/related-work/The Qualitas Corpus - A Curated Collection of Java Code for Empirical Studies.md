@@ -104,5 +104,5 @@ title: "The Qualitas Corpus: A Curated Collection of Java Code for Empirical Stu
 - タイトル: The Qualitas Corpus: A Curated Collection of Java Code for Empirical Studies 
 - 雑誌 / 会議名: 2010 Asia Pacific Software Engineering Conference
 - ページ: pp. 336-345
-- 出版日: November 2010 - December 2010
+- 出版日: November 2010-December 2010
 - DOI: https://doi.org/10.1109/APSEC.2010.46
