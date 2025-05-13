@@ -52,6 +52,7 @@ title: A survey on metric of software complexity
 | ソフトウェアパッケージメトリクス | ✓        |            |                 |
 | 凝集度              | ✓        |            |                 |
 | 結合度              | ✓        |            |                 |
+
 ## ソフトウェアの複雑さの典型的な指標とその種類
 - 
 
