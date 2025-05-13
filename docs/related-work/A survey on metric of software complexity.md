@@ -38,6 +38,7 @@ title: A survey on metric of software complexity
 | ソフトウェアパッケージメトリクス | ✓           |        | ✓      |        |
 | 凝集度              | ✓           |        |        |        |
 | 結合度              | ✓           |        |        |        |
+
 - また、計算基準によってメトリクスを分類する以下の表のようになる
 
 | **メトリクス**        | **対象**   |            |                 |
@@ -51,7 +52,8 @@ title: A survey on metric of software complexity
 | ソフトウェアパッケージメトリクス | ✓        |            |                 |
 | 凝集度              | ✓        |            |                 |
 | 結合度              | ✓        |            |                 |
-
+## ソフトウェアの複雑さの典型的な指標とその種類
+- 
 
 ## 引用情報
 - 著者: Sheng Yu, Shijie Zhou
