@@ -563,7 +563,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      結論
+      サンプルコード
     </span>
   </a>
   
@@ -571,6 +571,15 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -999,7 +1008,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      結論
+      サンプルコード
     </span>
   </a>
   
@@ -1007,6 +1016,15 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -1116,6 +1134,11 @@
 <li>労力の指標に基づいて推定されるバグの数</li>
 <li>労力が増えるほどバグの可能性も高まるという考えに基づく</li>
 <li><span class="arithmatex">\(\begin{equation*} B = {E^{\frac{2}{3}}}/{3000} \end{equation*}\)</span></li>
+<li>別のバージョン<ul>
+<li>プログラムの情報量とバグの関係に焦点を当てたもの</li>
+<li><span class="arithmatex">\(\begin{equation*} B = \text{V}/3000 \end{equation*}\)</span></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>プログラムを記述するのにかかると予想される時間<ul>
@@ -1127,12 +1150,19 @@
 </ul>
 </li>
 </ul>
-<h2 id="_3">結論<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_3">サンプルコード<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ナルシシスト数かどうかを判定するプログラムをC++とPythonを使用して作成</li>
+<li>Halsteadの複雑さの尺度を使用してそれぞれのプログラムの複雑さを評価</li>
+<li>C++の方が、プログラムに含まれると予想されるバグの数、プログラムの実装や理解に必要な労力、プログラムを記述するのにかかると予想される時間が大きかった</li>
+<li>このことから、Halsteadの複雑さの尺度を用いることで、構文の抽象度や複雑さを評価できることが分かる</li>
+</ul>
+<h2 id="_4">結論<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Halsteadの複雑さの尺度は、実装が簡単で、プログラム構造を徹底的に調査する必要がない</li>
 <li>Halsteadの複雑さの尺度はコードと密接に関連しており、設計では使用できない</li>
 </ul>
-<h2 id="_4">引用情報<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">引用情報<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>著者: T Hariprasad, G Vidhyagaran, K Seenu, Chandrasegar Thirumalai</li>
 <li>タイトル: Software complexity analysis using halstead metrics</li>
@@ -1161,7 +1191,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月13日 15:25:08">2025年5月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月13日 15:46:14">2025年5月13日</span>
   </span>
 
     
