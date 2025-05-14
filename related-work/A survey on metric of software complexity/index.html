@@ -550,14 +550,56 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      ソフトウェアの複雑さの典型的な指標とその種類
+      ソフトウェアの複雑さの典型的な指標
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ソフトウェアの複雑さの典型的な指標">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-loc" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. コードの行数（LOC）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-halsteadhcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Halsteadの複雑さの尺度（HCM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ccm" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. 循環的複雑度（CCM）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      指標の相関関係
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -1088,14 +1130,56 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      ソフトウェアの複雑さの典型的な指標とその種類
+      ソフトウェアの複雑さの典型的な指標
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ソフトウェアの複雑さの典型的な指標">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-loc" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. コードの行数（LOC）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-halsteadhcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Halsteadの複雑さの尺度（HCM）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ccm" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. 循環的複雑度（CCM）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      指標の相関関係
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -1243,7 +1327,7 @@
 </tbody>
 </table>
 <ul>
-<li>また、計算基準によってメトリクスを分類する以下の表のようになる</li>
+<li>また、計算基準によってメトリクスを分類すると以下の表のようになる</li>
 </ul>
 <table>
 <thead>
@@ -1311,11 +1395,184 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_4">ソフトウェアの複雑さの典型的な指標とその種類<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">ソフトウェアの複雑さの典型的な指標<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li></li>
+<li>1960年代から1970年代にかけて、LOC、HCM、CCMという3つの古典的かつ重要な指標が考案された<ul>
+<li>これらはソフトウェアを長さ、体積、構造という3つの異なる側面から測定</li>
 </ul>
-<h2 id="_5">引用情報<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+<h3 id="a-loc">A. コードの行数（LOC）<a class="headerlink" href="#a-loc" title="Permanent link">&para;</a></h3>
+<h4 id="loc">LOCの定義と計算<a class="headerlink" href="#loc" title="Permanent link">&para;</a></h4>
+<ul>
+<li>LOCはソフトウェアのソースコードの行数</li>
+<li>通常、LOCは実行分のみを考慮</li>
+<li>LOCはプログラミング言語に依存せず、物理的な長さによってソフトウェアの複雑さを評価</li>
+</ul>
+<h4 id="_5">調査結果<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>LOCが200未満のFORTRAMモジュールを対象に行われた研究では、モジュールのLOCがいい歳ほど、モジュールのバグ密度が高くなることが分かった</li>
+<li>Pascal、PL/S、アセンブリ言語で書かれたソフトウェアに関する研究では、LOCが500以上の場合、モジュールが大きいほどバグ密度が大きくなることが分かった</li>
+<li>その後の研究では、LOCとバグ密度の間にU字曲線の関係があることが示された<ul>
+<li>UnisysのプロジェクトにおけるAdaモジュールを調査した研究では、LOCとバグ密度の間に凹状の関係があることが示された</li>
+<li>LOCが250に近い場合、モジュールのバグ密度が最も小さくなる</li>
+<li>1997年の研究でも、LOCだけを考慮すると200〜400のLOCが最適であると示されている</li>
+<li>LOCの最適な大きさはプログラミング言語の種類とは無関係</li>
+</ul>
+</li>
+</ul>
+<h4 id="loc_1">LOCの利点と欠点<a class="headerlink" href="#loc_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>LOCは理解しやすく、計算が速く、プログラミング言語に依存しない</li>
+<li>しかし、LOCは各コード行の複雑さの違いを無視<ul>
+<li>例えば、変数に数値に代入している行よりも、変数に関数の戻り値を代入している行の方が複雑</li>
+<li>そのため、後者のようなバグが発生する可能性が比較的高いコードが軽視されるリスクがある</li>
+</ul>
+</li>
+<li>また、LOCは分岐やジャンプといったソフトウェアの構造を無視<ul>
+<li>例えば、分岐やジャンプのない長いコードと、分岐の多いコードを比較すると、後者の方がLOCが小さくなる</li>
+<li>しかし、プログラミングの観点から見ると、後者の方がより複雑</li>
+</ul>
+</li>
+<li>そして、LOCはプログラマーの能力差を考慮していない</li>
+<li>LOCはコード行とバグ密度の関係に基づいているが、バグ密度はプログラマーの能力、習慣、スキルと密接に関係している</li>
+<li>そのため、LOCの最適な範囲はプログラマーによって異なる</li>
+</ul>
+<h3 id="b-halsteadhcm">B. Halsteadの複雑さの尺度（HCM）<a class="headerlink" href="#b-halsteadhcm" title="Permanent link">&para;</a></h3>
+<h4 id="hcm">HCMの定義と計算<a class="headerlink" href="#hcm" title="Permanent link">&para;</a></h4>
+<ul>
+<li>HCMは演算子と被演算子の数に基づいて計算される</li>
+</ul>
+<h4 id="hcm_1">HCMの利点と欠点<a class="headerlink" href="#hcm_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>HCMはソフトウェアの論理構造を深く分析する必要がなく、計算も容易で、プログラミング言語に依存しない</li>
+<li>また、バグ密度の予測にも使用できる</li>
+<li>しかし、HCMはデータフローの複雑さのみを考慮し、制御フローの複雑さは無視<ul>
+<li>HCMを使用すると、コードの演算子と被演算子が分岐やジャンプの有無に関わらず計算される</li>
+<li>しかし、分岐やジャンプを含むコードはより複雑</li>
+</ul>
+</li>
+<li>また、<span class="arithmatex">\(S^\ast\)</span>は基本的に固定されており、開発者の能力を十分に考慮していない</li>
+</ul>
+<h4 id="hcm_2">HCMの種類とその分析<a class="headerlink" href="#hcm_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>HCMの欠点を克服するために、改良された手法が導入されている</li>
+</ul>
+<h5 id="weighted-hcmwhcm">Weighted HCM（WHCM）<a class="headerlink" href="#weighted-hcmwhcm" title="Permanent link">&para;</a></h5>
+<ul>
+<li>異なる演算子や被演算子に異なる重みを与える</li>
+<li>さらに、ループ内のコードのHCMにループ回数を掛け合わせる</li>
+<li>しかし、コードの実行回数はソフトウェアの実行時にのみ判断できるため、静的解析でWHCMを用いてソフトウェアの複雑度を推定できない</li>
+<li>また、コードの実行回数はソフトウェアの複雑度ではなく、アルゴリズムの複雑度に属するため、不適切であるという考え方もある</li>
+<li>そして、　WHCMはソフトウェア能力成熟度モデル（SW-CMM）を用いてプロジェクトのドキュメントを分析し、HCMを修正するが、それによってコーディングよりもプロジェクトマネジメントの側面が大きくなるため、WHCMはソフトウェアの複雑さの指標として不適切</li>
+</ul>
+<h5 id="data-stream-and-control-stream-modedcm">Data Stream and Control Stream Mode（DCM）<a class="headerlink" href="#data-stream-and-control-stream-modedcm" title="Permanent link">&para;</a></h5>
+<ul>
+<li>データフローと制御フローを組み合わせて複雑さを測定</li>
+<li><span class="arithmatex">\(DC={1\over \beta\lambda}\sum_{i=1}^{n}[w_{1}\times{H(i)\over {Max}_{j\in n}(H(j))}+w_{2}\times{M(i)\over {Max}_{j\in n}(M(j))}]\)</span><ul>
+<li>各要素の意味<ul>
+<li><span class="arithmatex">\(n\)</span>: ソフトウェア内のモジュール（関数やクラスなど）の数</li>
+<li><span class="arithmatex">\(H(i)\)</span>: モジュール<span class="arithmatex">\(i\)</span>のHalstead複雑度（データの複雑さ）</li>
+<li><span class="arithmatex">\(M(i)\)</span>: モ ジュール<span class="arithmatex">\(i\)</span>の循環的複雑度（制御フローの複雑さ）</li>
+<li><span class="arithmatex">\(\text{W}_{1}\)</span>と<span class="arithmatex">\(\text{W}_{2}\)</span>: データフローと制御フローの重み（<span class="arithmatex">\(\text{W}_{1} + \text{W}_{2} = 1\)</span> ）</li>
+<li><span class="arithmatex">\(\beta\)</span>: CMM成熟度レベルに基づく開発者のスキルレベル（0.2, 0.4, 0.6, 0.8, 1.0のいずれか）</li>
+<li><span class="arithmatex">\(\lambda\)</span>: 開発ツールの効率性</li>
+</ul>
+</li>
+<li>式の意味<ul>
+<li>各モジュールのHalstead複雑度と循環的複雑度を計算</li>
+<li>各モジュールの各複雑度を、全モジュールの各複雑度の最大値で割って正規化</li>
+<li>データフローと制御フローの加重平均を計算</li>
+<li>全てのモジュールについて複雑度を合計</li>
+<li>開発者のスキルと開発ツールの効率性で割る</li>
+</ul>
+</li>
+<li>問題点<ul>
+<li>開発者のスキル<span class="arithmatex">\(\beta\)</span>と開発ツールの効率性<span class="arithmatex">\(\lambda\)</span>を客観的に評価する基準がない</li>
+<li>単一モジュールを分析する場合、式は<span class="arithmatex">\(DC=1 / (\beta\lambda)\)</span>になり、複雑度がソフトウェア自体の特性を反映しなくなる</li>
+<li>正規化により、例えば、10個のモジュールのうち1つだけが非常に複雑で他は単純であった場合、<span class="arithmatex">\(DC\)</span>は小さくなり、ソフトウェアの実際の複雑さをほとんど反映しない</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="c-ccm">C. 循環的複雑度（CCM）<a class="headerlink" href="#c-ccm" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CCMはモジュールの決定構造グラフ（制御フローグラフ）の複雑さを測る指標</li>
+<li>プログラムの各コード行はノードとして表される</li>
+<li>あるコード行から次に実行される可能性のあるコード行への流れはエッジとして表される</li>
+<li>制御フローグラフには必ず1つの入口ノードと1つの出口ノードがある</li>
+<li>計算方法<ul>
+<li><span class="arithmatex">\(V(G)= e - n + 2\)</span><ul>
+<li><span class="arithmatex">\(V\)</span>: 複雑度</li>
+<li><span class="arithmatex">\(G\)</span>: グラフ</li>
+<li><span class="arithmatex">\(e\)</span>: エッジの数</li>
+<li><span class="arithmatex">\(n\)</span>: ノードの数</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(V(G)\)</span>は線形独立なパス（他のパスの組み合わせでは得られない一意なパス）の数</li>
+</ul>
+</li>
+</ul>
+<h4 id="ccm">CCMの利点と欠点<a class="headerlink" href="#ccm" title="Permanent link">&para;</a></h4>
+<ul>
+<li>バグ密度とCCMの間には強い相関関係があることが分かっている</li>
+<li>しかし、CCMはソフトウェアのデータフローの複雑さを無視<ul>
+<li>例えば、プログラムのパスが1通りしかない10,000行のコードと、1行のコードのCCMは同じになる</li>
+<li>そのため、HCMとCCMは併用されることが多い</li>
+<li>HCMはデータフローの複雑さを測定するために使用され、CCMは制御フローの複雑さを測定するために使用される</li>
+</ul>
+</li>
+<li>また、CCMはネストされたコードの複雑さを無視<ul>
+<li>実際にはネストされたコードはより複雑</li>
+</ul>
+</li>
+<li>そして、CCMは制御フローの種類ごとの複雑さを区別しない<ul>
+<li>例えば、CCMではif文とswitch文の複雑さは同じになる</li>
+</ul>
+</li>
+</ul>
+<h4 id="ccm_1">CCMの種類とその分析<a class="headerlink" href="#ccm_1" title="Permanent link">&para;</a></h4>
+<h5 id="pseudo-path-metric-model-ppmm">疑似パス測定モデル（Pseudo-Path Metric Model, PPMM）<a class="headerlink" href="#pseudo-path-metric-model-ppmm" title="Permanent link">&para;</a></h5>
+<ul>
+<li><span class="arithmatex">\(V(G)=\sum_{i=1}^{n}{V(P_i)}\)</span><ul>
+<li><span class="arithmatex">\(V(G)\)</span>: コード全体の複雑性</li>
+<li><span class="arithmatex">\(V(P_i)\)</span>: 特定の制御構造の複雑性</li>
+</ul>
+</li>
+<li>分岐構造（if-else, switch-case）の場合<ul>
+<li><span class="arithmatex">\(V(P_i)=W_i\times max(V(s_1), V(S_2))\)</span><ul>
+<li><span class="arithmatex">\(W_i\)</span>: 分岐構造の重み</li>
+<li><span class="arithmatex">\(V(s_1)\)</span>: 分岐内のコードブロック<span class="arithmatex">\(s_1\)</span>の複雑さ</li>
+<li><span class="arithmatex">\(V(s_2)\)</span>: 分岐内のコードブロック<span class="arithmatex">\(s_2\)</span>の複雑さ</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ループ構造（for, while）の場合<ul>
+<li><span class="arithmatex">\(V(P_i)=W_i\times V(s_1)\)</span><ul>
+<li><span class="arithmatex">\(W_i\)</span>: ループ構造の重み</li>
+<li><span class="arithmatex">\(V(s_1)\)</span>: ループ内のコードブロック<span class="arithmatex">\(s_1\)</span>の複雑さ</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>ネスト構造が考慮されている</li>
+<li>再帰的に複雑さを計算するため、ネストが深くなるほど複雑さが指数関数的に増加</li>
+</ul>
+</li>
+<li>そして、異なる制御構造に異なる重みを与えることでCCMの一部の短所を解決している</li>
+<li>しかし、重みの妥当性には疑問がある</li>
+</ul>
+<h2 id="_6">指標の相関関係<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CやC++で記述されたプログラムの分析研究では、LOCとHCM、LOCとCCMの間に非常に強い相関関係があることが示された</li>
+<li>しかし、特定のメトリクスを別のメトリクスに置き換えることはできない</li>
+<li>NASAのメトリクスデータプロジェクトの3つのデータセットを使用した研究では、複数のメトリクスを統合したソフトウェア欠陥予測モデルの方が、1つのメトリクスのみを用いたモデルよりもはるかに優れていることが示された</li>
+</ul>
+<h2 id="_7">引用情報<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>著者: Sheng Yu, Shijie Zhou</li>
 <li>タイトル: A survey on metric of software complexity</li>
@@ -1344,7 +1601,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月14日 03:17:18">2025年5月14日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月15日 00:19:01">2025年5月15日</span>
   </span>
 
     
