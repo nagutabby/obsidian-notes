@@ -55,10 +55,10 @@ title: Software complexity analysis using halstead metrics
 	- プログラムに含まれると予想されるバグの数
 		- 労力の指標に基づいて推定されるバグの数
 		- 労力が増えるほどバグの可能性も高まるという考えに基づく
-		- $\begin{equation*} B = {E^{\frac{2}{3}}}/{3000} \end{equation*}$
+		- $\begin{equation*} B = {E^{\frac{2}{3}}}/{S^\ast} \end{equation*}$ $[S^\ast = 3000]$
 		- 別のバージョン
 			- プログラムの情報量とバグの関係に焦点を当てたもの
-			- $\begin{equation*} B = \text{V}/3000 \end{equation*}$
+			- $\begin{equation*} B = \text{V}/\text{S}^\ast \end{equation*}$
 	- プログラムを記述するのにかかると予想される時間
 		- プログラムを実装するのに必要な時間を秒単位で推定
 		- Sは1秒あたりに処理できる精神的な判断の数で、通常は18
