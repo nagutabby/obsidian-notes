@@ -94,6 +94,5 @@ title: "Using Cohesion and Coupling for Software Remodularization: Is It Enough?
 - タイトル: Using Cohesion and Coupling for Software Remodularization: Is It Enough?
 - 雑誌 / 会議名: ACM Transactions on Software Engineering and Methodology (TOSEM)
 - 巻号: vol. 25
-- ページ: 
 - 出版日: June 2016
 - DOI: https://doi.org/10.1145/2928268
