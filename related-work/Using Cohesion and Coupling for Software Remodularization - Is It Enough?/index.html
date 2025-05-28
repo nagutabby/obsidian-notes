@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://research-notes.nagutabby.uk/related-work/Understanding%20Code%20Smell%20Detection%20via%20Code%20Review%20-%20A%20Study%20of%20the%20OpenStack%20Community/">
+        <link rel="canonical" href="https://research-notes.nagutabby.uk/related-work/Using%20Cohesion%20and%20Coupling%20for%20Software%20Remodularization%20-%20Is%20It%20Enough%3F/">
       
       
-        <link rel="prev" href="../The%20Qualitas%20Corpus%20-%20A%20Curated%20Collection%20of%20Java%20Code%20for%20Empirical%20Studies/">
+        <link rel="prev" href="../Understanding%20Code%20Smell%20Detection%20via%20Code%20Review%20-%20A%20Study%20of%20the%20OpenStack%20Community/">
       
       
-        <link rel="next" href="../Using%20Cohesion%20and%20Coupling%20for%20Software%20Remodularization%20-%20Is%20It%20Enough%3F/">
+        <link rel="next" href="../../research-proposals/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community - 研究メモ</title>
+        <title>Using Cohesion and Coupling for Software Remodularization: Is It Enough? - 研究メモ</title>
       
     
     
@@ -63,11 +63,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community - 研究メモ" >
+        <meta  property="og:title"  content="Using Cohesion and Coupling for Software Remodularization: Is It Enough? - 研究メモ" >
       
         <meta  property="og:description"  content="これまでに読んだ論文や活動報告のための週報を掲載しています。" >
       
-        <meta  property="og:image"  content="https://research-notes.nagutabby.uk/assets/images/social/related-work/Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community.png" >
+        <meta  property="og:image"  content="https://research-notes.nagutabby.uk/assets/images/social/related-work/Using Cohesion and Coupling for Software Remodularization - Is It Enough?.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -75,15 +75,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://research-notes.nagutabby.uk/related-work/Understanding%20Code%20Smell%20Detection%20via%20Code%20Review%20-%20A%20Study%20of%20the%20OpenStack%20Community/" >
+        <meta  property="og:url"  content="https://research-notes.nagutabby.uk/related-work/Using%20Cohesion%20and%20Coupling%20for%20Software%20Remodularization%20-%20Is%20It%20Enough%3F/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community - 研究メモ" >
+        <meta  name="twitter:title"  content="Using Cohesion and Coupling for Software Remodularization: Is It Enough? - 研究メモ" >
       
         <meta  name="twitter:description"  content="これまでに読んだ論文や活動報告のための週報を掲載しています。" >
       
-        <meta  name="twitter:image"  content="https://research-notes.nagutabby.uk/assets/images/social/related-work/Understanding Code Smell Detection via Code Review - A Study of the OpenStack Community.png" >
+        <meta  name="twitter:image"  content="https://research-notes.nagutabby.uk/assets/images/social/related-work/Using Cohesion and Coupling for Software Remodularization - Is It Enough?.png" >
       
     
     
@@ -138,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
+              Using Cohesion and Coupling for Software Remodularization: Is It Enough?
             
           </span>
         </div>
@@ -554,6 +554,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Understanding%20Code%20Smell%20Detection%20via%20Code%20Review%20-%20A%20Study%20of%20the%20OpenStack%20Community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -569,7 +592,7 @@
   
   
   <span class="md-ellipsis">
-    Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
+    Using Cohesion and Coupling for Software Remodularization: Is It Enough?
     
   </span>
   
@@ -582,7 +605,7 @@
   
   
   <span class="md-ellipsis">
-    Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community
+    Using Cohesion and Coupling for Software Remodularization: Is It Enough?
     
   </span>
   
@@ -614,7 +637,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      導入
+      はじめに
     </span>
   </a>
   
@@ -623,17 +646,17 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      関連研究
+      背景
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="関連研究">
+    <nav class="md-nav" aria-label="背景">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      コードの臭いに関する研究
+      ソフトウェアのモジュール化
     </span>
   </a>
   
@@ -642,7 +665,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      ソフトウェア開発におけるコードレビュー
+      遺伝的アルゴリズム
     </span>
   </a>
   
@@ -654,37 +677,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      方法
+      研究1: ソフトウェアリポジトリマイニング
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="方法">
+    <nav class="md-nav" aria-label="研究1: ソフトウェアリポジトリマイニング">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      研究デザイン
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      リサーチクエスチョン
+      結果の分析
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#openstackgerrit" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenStackプロジェクトとGerritレビューの流れ
+      研究2: ソフトウェア開発者の調査
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="研究2: ソフトウェア開発者の調査">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      キーワードセットの構築
+      研究デザイン
     </span>
   </a>
   
@@ -693,25 +731,7 @@
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
-      キーワード検索されたレビューコメントから臭い関連のレビューを特定
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      ランダムに選択されたレビューコメントから臭いに関するレビューを特定
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      手動分析と分類
+      結果の分析
     </span>
   </a>
   
@@ -723,16 +743,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
-      結果
+      妥当性への脅威
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -744,29 +773,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Using%20Cohesion%20and%20Coupling%20for%20Software%20Remodularization%20-%20Is%20It%20Enough%3F/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Using Cohesion and Coupling for Software Remodularization: Is It Enough?
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1166,7 +1172,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      導入
+      はじめに
     </span>
   </a>
   
@@ -1175,17 +1181,17 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      関連研究
+      背景
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="関連研究">
+    <nav class="md-nav" aria-label="背景">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      コードの臭いに関する研究
+      ソフトウェアのモジュール化
     </span>
   </a>
   
@@ -1194,7 +1200,7 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      ソフトウェア開発におけるコードレビュー
+      遺伝的アルゴリズム
     </span>
   </a>
   
@@ -1206,37 +1212,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      方法
+      研究1: ソフトウェアリポジトリマイニング
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="方法">
+    <nav class="md-nav" aria-label="研究1: ソフトウェアリポジトリマイニング">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      研究デザイン
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      リサーチクエスチョン
+      結果の分析
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#openstackgerrit" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenStackプロジェクトとGerritレビューの流れ
+      研究2: ソフトウェア開発者の調査
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="研究2: ソフトウェア開発者の調査">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      キーワードセットの構築
+      研究デザイン
     </span>
   </a>
   
@@ -1245,25 +1266,7 @@
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
-      キーワード検索されたレビューコメントから臭い関連のレビューを特定
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      ランダムに選択されたレビューコメントから臭いに関するレビューを特定
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      手動分析と分類
+      結果の分析
     </span>
   </a>
   
@@ -1275,16 +1278,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
-      結果
+      妥当性への脅威
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -1310,298 +1322,172 @@
 
 
 
-  <h1>Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community</h1>
+  <h1>Using Cohesion and Coupling for Software Remodularization: Is It Enough?</h1>
 
 <h2 id="_1">アブストラクト<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>ソフトウェアの品質に影響を与える可能性のある問題の1つに、コードの臭いがある<ul>
-<li>これは、欠陥やメンテンナンスの問題につながる可能性のある不適切なプログラミング手法である</li>
-</ul>
-</li>
-<li>しかし、コードレビュー中にコードの臭いがどの程度特定されるかについてはほとんど分かっていない</li>
-<li>コードレビューで特定されるコードの臭いの概念と、特定された臭いに対してレビュアーが提案する行動と開発者が実行する行動を調査するために、最もアクティブな2つのOpenStackプロジェクト (Nova, Neutron) を使用して、コードレビューにおけるコードの臭いの実証的研究を実施</li>
-<li>キーワード検索とランダム選択によって取得された19,146件のレビューコメントを手動で確認し、コードの臭いの原因と特定された臭いに対して実行された行動を調べるために、1,190件の臭い関連のレビューを取得</li>
-<li>分析によって分かったこと<ul>
-<li>コードレビューでコードの臭いが特定されることは一般的ではない</li>
-<li>臭いは通常、コーディング規約違反によって引き起こされる</li>
-<li>レビュアーは通常、開発者が臭いを除去できるようにリファクタリングの推奨を含む建設的なフィードバックを提供する</li>
-<li>開発者は一般的にそれらの推奨に従い、変更を実行する</li>
-</ul>
-</li>
-<li>これらの結果が示唆すること<ul>
-<li>開発者はコードの臭いを持ち込まないようにプロジェクトでコーディング規約に厳密に従うべきである</li>
-<li>レビューに基づくコードの臭いの検出は、主にレビューが文脈に依存する、つまりレビュアーはプロジェクトの開発チームの一員であり、コードのコンテキストをより意識しているため、開発者が信頼できるアプローチであると認識している</li>
+<li>ソフトウェアの再モジュール化を行う際に開発者を支援する様々な方法が提案されている</li>
+<li>これらの方法のほとんどは、開発者がシステムのクラスをモジュール化する際に、凝集度と結合度の最適なバランスを追求するという前提に基づいている</li>
+<li>しかし、そのようなバランスが開発者にとって望ましいものであるという経験的証拠はまだない</li>
+<li>この論文では、この現象を客観的・主観的に分析することを目的とする<ul>
+<li>100のオープンソースシステムについて、パッケージの凝集度と結合度の観点からモジュール化の品質を分析</li>
+<li>29人の開発者を対象に、モジュール化の作業を実施する際の考慮事項を理解することを目的とした調査を実施</li>
 </ul>
 </li>
 </ul>
-<h2 id="_2">導入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">はじめに<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>コードの臭いは、コードや設計上の問題の症状として識別されており、保守性、コードの可読性、テスト可能性、欠陥の発生しやすさなどのソフトウェア品質に悪影響を及ぼす可能性がある</li>
-<li>臭いの検出と除去に焦点を当てた研究は数多くあり、臭いの検出には多くの静的解析ツールが使用されている</li>
-<li>しかし、これまでの研究では、プログラムの文脈とドメインが臭いの識別に重要であることが示されている</li>
-<li>文脈情報が考慮されることはほとんどないため、プログラム解析ツールが臭いを正しく識別することは困難である</li>
-<li>既存の臭い検出ツールは偽陽性を生成することも知られている<ul>
-<li>そのため、手動での臭いの検出は、自動アプローチよりも価値があると考えられる</li>
+<li>ソフトウェアシステムは、新たな要件を満たすため、不具合を修正するため、あるいは品質を最適化するために少しずつ変更される</li>
+<li>このような変更は、以前に実装された要件や決められた設計と衝突することがある</li>
+<li>そのため、ソフトウェアに継続的な変更を加えると、システムが無秩序になっていく傾向がある</li>
+<li>この傾向があるシステムは、凝集度が低く、結合度が高いという特徴がある<ul>
+<li>開発者はこの問題を解決するために、リファクタリングによる再モジュール化を行い、ソフトウェアシステムを修復する必要がある</li>
 </ul>
 </li>
-<li>コードレビューは、コード内の欠陥やその他の問題を検出することでソフトウェアの品質を検証<ul>
-<li>コードが読みやすく、理解しやすく、保守可能であることを確認するためのプロセス</li>
+<li>再モジュール化は、手動で実施するには非常にコストがかかることがある</li>
+<li>そのため、再モジュール化を支援するための様々な方法が提案されている<ul>
+<li>これらの方法の背後にある考え方<ul>
+<li>凝集度の高いソースコードをモジュールにグループ化すること</li>
+<li>モジュール間の結合を減らすこと</li>
 </ul>
 </li>
-<li>臭いを検出する静的解析ツールと比較して、コードレビューは通常、同じプロジェクトに属する開発者によって行われるため、レビュアーは文脈情報を十分に考慮し、コード内のコードの臭いをより適切に特定できる可能性がある</li>
-<li>しかし、コードレビュー中にコードの臭いがどの程度特定されるのかや、コードがレビュー担当者によって臭いであると判断されたときに開発者が何らかの措置を講じるかどうかについては、ほとんど分かっていない</li>
-<li>そこで、コードレビューで特定されるコードの臭いの概念を調査し、レビュー実施後に講じられた措置を追跡することにした</li>
-<li>最も活発な2つのOpenStackプロジェクトからコードレビューに関する議論をマイニングした</li>
-<li>次に、コードレビュー中にレビュー担当者がコードの臭いを特定する頻度、コードの臭いが生じた理由、それらの臭いに対してレビュー担当者が推奨する措置、開発者が推奨する措置をどのように進めたかを調べるために、定量的および定性的な分析を実施</li>
 </ul>
-<h2 id="_3">関連研究<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">コードの臭いに関する研究<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+</li>
+<li>しかし、凝集度と結合度は対照的な目標である</li>
+<li>そのため、モジュール化を行う既存の手法は、いずれも凝集度と結合度のバランスをとり、ソースコードを分割する</li>
+<li>この論文では、ソフトウェア・システムのモジュール化において凝集度と結合度が果たす役割を客観的・主観的に調査することを目的とした2つの研究を実施<ul>
+<li>研究1: 100のJavaオープンソースシステムで実施された大規模な実証研究</li>
+<li>研究2: 研究1で利用された100のシステムにコントリビュートしている29人の開発者を対象に実施された調査</li>
+</ul>
+</li>
+<li>調査から示唆されること<ul>
+<li>研究1: オープンソースシステムのモジュール化は、一般に、構造的および概念的凝集度・結合度の両方に関して、最適なモジュール化からは程遠い</li>
+<li>研究2: 調査した開発者の83%が、凝集度と結合度以外の他の特性がシステムのモジュール化を導くと主張している</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">ソフトウェアのモジュール化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
-<li>コードの臭いが欠陥、メンテナンス、プログラム理解などのソフトウェア品質に与える影響を調査する研究が増えている</li>
-<li>Tufanoらは、200件のOSSプロジェクトのバージョン履歴をマイニングし、コードの臭いがいつ導入されたか、そしてそれらの相互作用の背後にある主な理由を研究した<ul>
-<li>その結果、一般的には、メンテナンスと進化の活動の結果として臭いが現れることが判明した</li>
+<li>モジュール化を可視化するためにモジュール依存性グラフ（MDG）やモジュール品質メトリック（Modularization Quality, MQ）が存在<ul>
+<li><span class="arithmatex">\(MQ = 凝集度の平均 - 結合度の平均\)</span></li>
 </ul>
 </li>
-<li>Palombaらが実施した開発者のコードの臭いに対する認識についての調査では、開発者の経験とシステム知識がコードの臭いの特定に重要な要素であることが分かった</li>
-<li>Taibiらによる研究では、大多数の開発者が常に臭いを有害であると考えていることが明らかになった</li>
-<li>Tahirらは、Stack Exchangeの投稿をマイニングし、コードの臭いとアンチパターンの話題が開発者の間でどのように議論されているかを調査した<ul>
-<li>その結果、開発者は特定のリファクタリングソリューションを求めるのではなく、コードの臭いやアンチパターンの一般的な評価を求めるためにオンラインフォーラムを広く使用していることが分かった</li>
+<li>遺伝的アルゴリズムを使うことで、MQの値を最大化するために、2つのソフトウェアコンポーネントを同じパッケージに配置する必要があるかどうかを自動的に評価できる</li>
+<li>この論文では、構造情報とテキスト情報を利用して、対象システムの元の設計の最適性を、凝集度と結合度の観点から評価</li>
 </ul>
-</li>
-</ul>
-<h3 id="_5">ソフトウェア開発におけるコードレビュー<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">遺伝的アルゴリズム<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>コードレビューに関する実証的研究により、ソフトウェアの品質に影響を与える潜在的なコードレビュー要因が調査されてきた<ul>
-<li>例えば、McIntoshらは、Qt, VTK, ITKプロジェクトにおけるコードレビューの範囲と参加がソフトウェアの品質に与える影響を調査した</li>
-<li>彼らは、リリース後の欠陥の発生率を指標として使用し、レビューが不十分なコード (レビューの範囲と参加率が低いなど) はソフトウェアの品質に悪影響を与えることを発見した</li>
+<li>遺伝的アルゴリズムは、最適化問題を近似的に解くために種の進化をシミュレートする進化的アルゴリズムの一種</li>
+<li>進化的アルゴリズムは、与えられた問題に対する解を表す固体の集団を反復的に生成し、調査中の問題に対する最適値の最良近似を与える解を探索</li>
+<li>適応度関数を用いて個体によって表される解の良さを評価し、選択と繁殖に基づく遺伝的演算子を用いて新しい集団を生成</li>
 </ul>
-</li>
-<li>Kemererらによる研究では、レビュー率がソフトウェアの品質に与える影響を調査した<ul>
-<li>彼らは、開発者の能力やその他の重要なプロセス変数を考慮した後でも、個人ソフトウェアプロセスのレビュー率が欠陥除去の有効性に影響を与える重要な要因であることを発見した</li>
-</ul>
-</li>
-<li>Pascarellaらによる研究では、コードレビューはソースコード内のコードの臭いの重大度を軽減するのに役立ったが、これは主に臭い自体とは関係のない他の変更による副作用であることが分かった</li>
-</ul>
-<h2 id="_6">方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="_7">リサーチクエスチョン<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h2 id="1">研究1: ソフトウェアリポジトリマイニング<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>RQ1: コードレビュアーが最も頻繁に特定するコードの臭いは何か？</li>
-<li>RQ2: コードレビュー中に特定されるコードの臭いの一般的な原因は何か？</li>
-<li>RQ3: レビュアーと開発者は、特定されたコードの臭いをどのように処理しているか？<ul>
-<li>RQ3.1: 特定された臭いに対処するために、レビュアーはどのような対策を提案しているか？</li>
-<li>RQ3.2: 特定された問題に対処するために開発者はどのような措置を講じるか？</li>
-<li>RQ3.3: レビュアーが提案した行動と開発者が実行した行動の間にはどのような関係があるか？</li>
+<li>目的<ul>
+<li>オープンソースシステムのモジュール化の品質を客観的に分析すること</li>
 </ul>
 </li>
+<li>開発者が構造的および概念的な凝集度・結合度の観点から最適なモジュール化を定義する際に注意を払うかどうかを調査</li>
 </ul>
-<h3 id="openstackgerrit">OpenStackプロジェクトとGerritレビューの流れ<a class="headerlink" href="#openstackgerrit" title="Permanent link">&para;</a></h3>
+<h3 id="_6">研究デザイン<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>OpenStackは最大のオープンソースコミュニティの1つ</li>
-<li>最も活発なOpenStackプロジェクトのうち、NovaとNeutronの2つを対象プロジェクトとして選択</li>
-<li>どちらのプロジェクトもGit上に構築されたWebベースのコードレビュープラットフォームであるGerritを使用している</li>
-<li>Gerritは詳細なコードレビューワークフローを提供<ul>
-<li>開発者がコードを変更し、レビューできるようにコードをGerritサーバーに送信</li>
-<li>次に、検証ボットが静的アナライザーを使用してコードをチェックし、自動テストを実行</li>
-<li>次に、レビュアーがコードの正式なレビューを実施し、コメントを提供</li>
-<li>元の作成者は、レビュアーのコメントに返信し、パッチの新しいリビジョンを作成することで必要な変更を実行できる</li>
-<li>このプロセスは、変更がコードベースにマージされるか、作成者によって放棄されるまで繰り返される</li>
+<li>RQ1<ul>
+<li>オープンソースプロジェクトのモジュール化は、凝集度と結合度の観点からどの程度離れているのか？</li>
+</ul>
+</li>
+<li>RQ2<ul>
+<li>オープンソース開発者は、モジュール化を定義する際に、凝集度と結合度の間の適切な妥協点を探しているか？</li>
+</ul>
+</li>
+<li>MoJoFM（MoJo eFfectiveness Measure）を利用して、準最適な概念的凝集度・結合度や構造的凝集度・結合度に対する実際の値の差を求め、RQ1に答える<ul>
+<li>MoJoFMは類似度を表すため、MoJoFMが大きいほど、一方を他方に変換するために必要な労力が小さい</li>
+<li><span class="arithmatex">\(MoJoFM = 100 - (実際の変換コスト/最大変換コスト × 100)\)</span></li>
 </ul>
 </li>
 </ul>
-<h3 id="_8">キーワードセットの構築<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<ol>
-<li>初期キーワードセットの作成<ul>
-<li>一般的な用語を含める (コードの臭い、悪い臭い、悪いパターン、アンチパターン、技術的負債など)</li>
-<li>具体的なコードの臭いの名前を含める (デッドコードなど)</li>
-<li>Tahirらの研究から抽出した用語リストを含める</li>
-</ul>
-</li>
-<li>検索とコーパス (テキスト分析のための文書集合) 構築<ul>
-<li>初期キーワードセットの単語を含むレビューコメントを検索</li>
-<li>見つかったコメントを処理 (識別子分割ルールを適用、例: isDone =&gt; is Done)</li>
-</ul>
-</li>
-<li>データクリーニングと処理<ul>
-<li>ストップワード (一般的な単語)、句読点、数字を削除</li>
-<li>全ての単語を小文字に変換</li>
-<li>Porterステミングアルゴリズムを適用して各単語の語幹 (ステム) を抽出 (例: running, runs, ran =&gt; 全てrunに変換)</li>
-</ul>
-</li>
-<li>分析<ul>
-<li>文書 - 用語マトリックス (どの文書にどの単語が何回出現するかを示す表) を作成</li>
-<li>初期キーワードと高頻度で共起する追加の単語を特定 (同じ文書内での共起確率0.05を基準)</li>
-</ul>
-</li>
-</ol>
-<h3 id="_9">キーワード検索されたレビューコメントから臭い関連のレビューを特定<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<ol>
-<li>自動キーワード検索<ul>
-<li>構築したキーワードセットを使用したPythonスクリプトを開発</li>
-<li>キーワードを含むレビューコメントを検索 (18,082件のコメントが該当)</li>
-</ul>
-</li>
-<li>初期手動フィルタリング<ul>
-<li>2人の研究者が独立して、明らかに無関係なコメントを除外</li>
-<li>両者が無関係を判断したコメントのみを除外</li>
-<li>この段階で3,666件のコメントに削減</li>
-</ul>
-</li>
-<li>詳細な文脈分析<ul>
-<li>残りのコメントに対して、さらに詳細な手動分析を実施</li>
-<li>コードレビューの議論やソースコードなどのテキスト情報を慎重に分析</li>
-<li>2人の研究者が合意した場合のみ、コードの臭いと関連付け</li>
-<li>不確かな場合や意見が分かれた場合は第三者を交えて議論</li>
-<li>Cohen's Kappaによる一致率は0.85であり、高い信頼性があった</li>
-<li>この段階で1,235件のコメントに削減</li>
-</ul>
-</li>
-<li>コンテキスト情報の記録<ul>
-<li>それぞれのレビューコメントのコンテキスト情報を外部テキストファイルに記録</li>
-<li>記録内容<ul>
-<li>コード変更のURL (特定のプルリクエストなどのURL、レビューが行われた具体的な変更へのリンク)</li>
-<li>特定されたコードの臭いの種類</li>
-<li>レビュアーと開発者間の議論</li>
-<li>ソースコードのURL (特定のコミットにおけるファイルのURL、コードの臭いが指摘されたファイルへのリンク)</li>
-</ul>
-</li>
-<li>最終的に1,174件のコードの臭い関連のレビューに絞り込んだ (同一議論内の複数コメントは統合)</li>
-</ul>
-</li>
-</ol>
-<h3 id="_10">ランダムに選択されたレビューコメントから臭いに関するレビューを特定<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_7">結果の分析<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
-<li>レビュアーや開発者は、研究で使用したキーワード以外の表現でもコードの臭いを議論している可能性がある<ul>
-<li>そのため、キーワードベースのマイニングアプローチを補完する必要がある</li>
+<li>RQ1<ul>
+<li>オープンソースシステムのモジュール化は、構造的および概念的凝集度・結合度の観点から、最適とは程遠い</li>
+<li>構造的メトリクス（構造的凝集度・結合度）を最適化することを考えたとき、準最適なモジュール化と実際のモジュール化の間のMoJoFMの中央値は13.3であるため、理想的なモジュールの構造からおよそ87%異なっている</li>
+<li>概念的メトリクス（概念的凝集度・結合度）を最適化することを考えたとき、準最適なモジュール化と実際のモジュール化の間のMoJoFMの中央値は16.2であるため、理想的なモジュールの構造からおよそ84%異なっている</li>
 </ul>
 </li>
-<li>キーワードを含まない残りのレビューコメント (291,229件) から無作為にサンプルを抽出</li>
-<li>95%の信頼水準と3%の誤差マージンに基づき、1,064件のレビューコメントを選択</li>
-<li>前述のセクションと同じ手動分析プロセスを適用</li>
-<li>無作為抽出した1,064件のコメントから、16件のコードの臭い関連のレビューを特定</li>
-<li>キーワード検索で得られた1,174件と合わせて、合計1,190件のコードの臭い関連のレビューを収集</li>
+<li>RQ2<ul>
+<li>100の対象システムのうち、57%が凝集度、9%が結合度、34%が凝集度と結合度の両方の点で劣っている<ul>
+<li>したがって、一般に、オープンソース開発者は、システムのモジュール化を定義する際に、構造的結合度よりも構造的凝集度を優先する傾向がある</li>
+<li>これは、ソフトウェアのソースコードがレイヤーごとに整理されることが多く、上位レイヤーが下位レイヤーに依存する構造になりやすいためであると考えられる</li>
 </ul>
-<h3 id="_11">手動分析と分類<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2">研究2: ソフトウェア開発者の調査<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>RQ1 (最も頻繁に特定されるコードの臭い) の分析<ul>
-<li>レビューコメントからコードの臭いの種類を記録</li>
-</ul>
-</li>
-<li>RQ2 (コードの臭いの原因) の分析<ul>
-<li>テーマ分析手法を採用</li>
-<li>MAXQDA (質的研究用ソフトウェア) を使用してコード化</li>
-<li>分析プロセス<ol>
-<li>コードの臭いの原因に関連するテキスト部分をハイライト</li>
-<li>原因が記載されていない場合は「cause not provided/unknown」と記録</li>
-<li>共通パターンを特定してテーマを生成</li>
-<li>データセットに戻り、テーマの妥当性を検証</li>
-<li>各テーマに名前を付けて定義</li>
-</ol>
-</li>
-<li>二人の研究者が実施し、意見の相違がある場合は三人目が介入</li>
-</ul>
-</li>
-<li>RQ3 (対応方法) の分析<ul>
-<li>RQ3.1 (レビュアーの提案する対策)<ul>
-<li>レビュアーの推奨行動を3つのカテゴリに分類<ul>
-<li>修正 (Fix): コードの臭いをリファクタリングする具体的な推奨</li>
-<li>捕捉 (Capture): コードの臭いを検出するが具体的なリファクタリング推奨なし</li>
-<li>無視 (Ignore): 特定された臭いを無視する推奨</li>
+<li>目的<ul>
+<li>開発者がソフトウェアの再モジュール化にどれだけ頻繁に対処しているかを理解すること</li>
+<li>開発者がシステムのクラスをモジュール化する際に考慮することを理解すること</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>RQ3.2 (開発者の対応)<ul>
-<li>開発者の対応を3段階で調査<ol>
-<li>議論におけるレビュアーへの開発者の返答を確認</li>
-<li>レビュー前のソースコードファイルとレビュー後の変更を調査</li>
-<li>開発者が返答もコード修正もしない場合、対応するコード変更のステータスを確認</li>
-</ol>
-</li>
-<li>コードの臭いが解決されたと判断する3つのケース<ol>
-<li>開発者が議論の中でリファクタリングを行うことを明示的に認めた</li>
-<li>ソースコードファイルに変更が加えられた</li>
-<li>対応するコード変更が破棄された</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>RQ3.3 (レビュアーの推奨と開発者の対応の関係)<ul>
-<li>関係性を3つのカテゴリに分類<ol>
-<li>開発者がレビュアーの推奨に同意</li>
-<li>開発者がレビュアーの推奨に不同意</li>
-<li>開発者がレビュアーのコメントに無応答</li>
-</ol>
-</li>
-<li>これらは最終的に2つのアクションに集約<ol>
-<li>臭いを修正 (リファクタリングを実施)</li>
-<li>変更を無視 (臭いに関してソースコードに変更なし)</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="_12">結果<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_8">研究デザイン<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
-<li>RQ1: コードレビュアーが最も頻繁に特定するコードの臭いはどれか？<ul>
-<li>コードレビューではコードの臭いが一般的に特定されていないことが分かった</li>
-<li>特定されたコードの臭いのうち、重複コードが圧倒的に多かった</li>
-<li>不適切な命名やデッドコードも頻繁に特定された</li>
+<li>RQ3<ul>
+<li>オープンソース開発者向けの高品質なモジュール化の特性は何か？</li>
 </ul>
 </li>
-<li>RQ2: コードレビュー中に特定されるコードの臭いの一般的な原因は何か？<ul>
-<li>コーディング規約違反<ul>
-<li>コーディング規約 (命名規則など) の特定の違反が問題の原因となった</li>
+<li>29人のオープンソースシステムのコントリビューターにアンケート調査を行った</li>
 </ul>
-</li>
-<li>既存のコードに対する不慣れさ<ul>
-<li>開発者が既存のコードの機能や構造に不慣れなために、コードの臭いを生じさせた</li>
-</ul>
-</li>
-<li>開発者の意図しないミス<ul>
-<li>開発者が問題解決忘れたり、誤って問題を引き起こしたりする</li>
-</ul>
-</li>
-<li>不適切な設計<ul>
-<li>コードの臭いはコードの不適切な設計に関連していることが判明した</li>
-</ul>
-</li>
-<li>コード分析ツールによる検出<ul>
-<li>レビュアーは、コード分析ツールによってコードの臭いが検出されたことを指摘する</li>
-</ul>
-</li>
-<li>レビューの大部分 (70%) では、特定されたコードの臭いについて何の説明も提供されていなかった</li>
-<li>ほとんどの場合は、レビュアーは単に問題を指摘しただけで、決定の理由をそれ以上説明していなかった</li>
-<li>23%のレビューでは、コーディング規約違反がコードの臭いの主な原因であると指摘されている</li>
-</ul>
-</li>
-<li>RQ3: レビュアーと開発者は、特定されたコードの臭いをどのように処理するか？<ul>
-<li>RQ3.1: 特定されたコードの臭いに対処するために、レビュアーはどのような対策を提案するか？<ul>
-<li>レビューの大部分 (73%) で、レビュアーは特定されたコードの臭いを解決するための修正を推奨した</li>
-<li>これらの修正のうち35%では、開発者がコードの臭いを適切にリファクタリングできるようにサンプルコードスニペットが提供された</li>
-<li>レビューの23%では、レビュアーはコードの臭いの存在を指摘しただけで、リファクタリングの提案は行っていない</li>
-</ul>
-</li>
-<li>RQ3.2: 特定された問題に対処するために開発者はどのような措置を講じるか？<ul>
-<li>レビューで特定されたコードの臭いのうち、大部分 (86%) はレビュー後に開発者によってリファクタリングされた</li>
-</ul>
-</li>
-<li>RQ3.3: レビュアーが提案した行動と開発者が実行した行動の間にはどのような関係があるか？<ul>
-<li>得られたレビューのうち65%で、開発者はレビュアーの提案に同意し、レビュアーが提案したのと全く同じ行動を実行した</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="_13">引用情報<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_9">結果の分析<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ul>
-<li>著者: Xiaofeng Han, Amjed Tahir, Peng Liang, Steve Counsell, Yajing Luo</li>
-<li>タイトル: Understanding Code Smell Detection via Code Review: A Study of the OpenStack Community</li>
-<li>雑誌 / 会議名: 2021 IEEE/ACM 29th International Conference on Program Comprehension (ICPC)</li>
-<li>ページ: pp. 323-334</li>
-<li>出版日: May 2021</li>
-<li>DOI: <a href="https://doi.org/10.1109/ICPC52881.2021.00038">https://doi.org/10.1109/ICPC52881.2021.00038</a></li>
+<li>回答者の75%がモジュール化の品質は重要である、または非常に重要であると考えている</li>
+<li>回答者の86%がシステムの再モジュール化を目的としたリファクタリングを実施したことがある</li>
+<li>しかし、リファクタリングによる再モジュール化の作業中にツールによる支援を受けた開発者は52%である</li>
+</ul>
+<h2 id="_10">妥当性への脅威<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li>構成概念妥当性への脅威<ul>
+<li>パッケージの凝集度・結合度の不正確さ</li>
+<li>ソフトウェアの特性のうち、凝集度・結合度に焦点を当てていること</li>
+<li>重み付けされていないMDGを使用したこと</li>
+<li>遺伝的アルゴリズムによる近似解の算出</li>
+</ul>
+</li>
+<li>内的妥当性への脅威<ul>
+<li>開発者が1つの属性のみに基づいてシステムを再モジュール化するとは限らないこと</li>
+</ul>
+</li>
+<li>結論妥当性への脅威<ul>
+<li>研究2のアンケート調査の回答率が11%であったこと</li>
+</ul>
+</li>
+<li>外的妥当性への脅威<ul>
+<li>研究1ではMavenリポジトリでホストされている最も一般的な1,000システムの中から、対象システムをランダムに選択した<ul>
+<li>そのため、研究1の結果は、特定のアーキテクチャを利用するシステムや、他の言語で書かれたシステムには一般化できない可能性がある</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_11">結論<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>開発者の視点から意味のある再モジュール化方法を提案するには、凝集度と結合度だけではおそらく不十分である<ul>
+<li>分析されたシステムのうち、大多数のものは、その凝集度と結合度が理想的な値から離れていた</li>
+<li>調査した開発者の83%は凝集度と結合度以外の特性がシステムのモジュール化を進めると回答した</li>
+</ul>
+</li>
+<li>モジュール化を提案する際には、リファクタリングの労力を明示的に考慮する必要がある</li>
+</ul>
+<h2 id="_12">引用情報<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<ul>
+<li>著者: Ivan Candela, Gabriele Bavota, Barbara Russo, Rocco Oliveto</li>
+<li>タイトル: Using Cohesion and Coupling for Software Remodularization: Is It Enough?</li>
+<li>雑誌 / 会議名: ACM Transactions on Software Engineering and Methodology (TOSEM)</li>
+<li>巻号: vol. 25</li>
+<li>ページ: </li>
+<li>出版日: June 2016</li>
+<li>DOI: <a href="https://doi.org/10.1145/2928268">https://doi.org/10.1145/2928268</a></li>
 </ul>
 
 
@@ -1623,7 +1509,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月2日 16:34:59">2025年5月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年5月28日 09:10:20">2025年5月28日</span>
   </span>
 
     
