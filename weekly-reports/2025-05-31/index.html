@@ -1173,7 +1173,65 @@
 </li>
 </ul>
 </li>
+<li>Chidamber &amp; Kemerer（CK）メトリクス<ul>
+<li>オブジェクト指向ソフトウェアの品質評価において広く使用されている測定法</li>
+<li>オブジェクト指向プログラミングが主流となる中で、従来の手続き型プログラミング用メトリクスでは捉えきれないソフトウェアの特性を測定する必要性から生まれた</li>
+<li>Weyukerが提案した、ソフトウェア複雑性メトリクスの品質を評価するための特性（Weyukerの特性）に基づいている</li>
+<li>CKメトリクスが定量化するもの<ul>
+<li>カプセル化: LCOM</li>
+<li>継承: DIT, NOC</li>
+<li>結合: CBO</li>
+<li>複雑さ: RFC, WMC</li>
+</ul>
+</li>
+<li>6つの主要なメトリクス<ul>
+<li>WMC（Weighted Methods per Class）<ul>
+<li>クラス内の全メソッドの複雑さの合計</li>
+<li>WMCが大きいほどコードの理解や修正が難しい</li>
+<li><span class="arithmatex">\(WMC(C) = \sum_{i=1}^{n} c_i\)</span></li>
+<li><span class="arithmatex">\(c_i\)</span>は<span class="arithmatex">\(i\)</span>番目のメソッドの複雑さ、<span class="arithmatex">\(n\)</span>はクラスC内のメソッドの数</li>
+</ul>
+</li>
+<li>DIT（Depth of inheritance Tree）<ul>
+<li>あるクラスから最上位のクラスまでの最大継承パス長</li>
+<li>DITが大きいほどクラスの挙動予測が難しい</li>
+<li><span class="arithmatex">\(DIT(C) = \max(length(p))\)</span></li>
+<li>pはクラスCから最上位のクラスへのパス</li>
+</ul>
+</li>
+<li>NOC（Number of Children）<ul>
+<li>あるクラスの子クラスの数</li>
+<li>NOCが大きいほど変更の影響範囲が大きい</li>
+</ul>
+</li>
+<li>CBO（Coupling Between Objects）<ul>
+<li>あるクラスが結合している他のクラスの数</li>
+<li>CBOが大きいほどコードの修正が難しい</li>
+</ul>
+</li>
+<li>RFC（Response For a Class）<ul>
+<li>オブジェクトがメッセージを受信したときに実行される可能性があるメソッドの数</li>
+<li>RFCが大きいほどコードの理解や修正が難しい</li>
+<li><span class="arithmatex">\(RFC(C) = |M(C)| + |\bigcup_{m \in M(C)} R(m)|\)</span></li>
+<li><span class="arithmatex">\(M(C)\)</span>はクラスCが持つ全メソッドの集合</li>
+<li><span class="arithmatex">\(R(m)\)</span>はメソッドmが呼び出す外部メソッドの集合</li>
+</ul>
+</li>
+<li>LCOM（Lack of Cohesion of Methods）<ul>
+<li>メソッド間で共有されるインスタンス変数の少なさ</li>
+<li><span class="arithmatex">\(LCOM(C) = \max(|P| - |Q|, 0)\)</span></li>
+<li>Pは共通のインスタンス変数を持たないメソッドのペア</li>
+<li>Qは共通のインスタンス変数を持つメソッドのペア</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Weyukerの特性<ul>
 <li></li>
+</ul>
+</li>
 </ul>
 <h2 id="_2">得られた成果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h2 id="_3">直面した課題<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -1198,7 +1256,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月6日 10:10:09">2025年6月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月6日 15:32:03">2025年6月6日</span>
   </span>
 
     
