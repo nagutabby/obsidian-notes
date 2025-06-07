@@ -1016,15 +1016,6 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      直面した課題
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
       来週の計画
     </span>
   </a>
@@ -1093,15 +1084,6 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      直面した課題
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       来週の計画
     </span>
@@ -1230,13 +1212,72 @@
 </ul>
 </li>
 <li>Weyukerの特性<ul>
-<li></li>
+<li><a href="https://ieeexplore.ieee.org/abstract/document/6178">https://ieeexplore.ieee.org/abstract/document/6178</a></li>
+<li>ソフトウェアの複雑さのメトリクスが満たすべき数学的性質を定義したもの</li>
+<li>P1: <span class="arithmatex">\((\exists P)(\exists Q) (|P| \neq |Q|)\)</span><ul>
+<li>全てのプログラムが同じ複雑さを持つ訳ではない</li>
+<li>すなわち、メトリクスが定数関数ではない</li>
+</ul>
+</li>
+<li>P2: <span class="arithmatex">\(c\)</span>を正の数とするとき、尺度<span class="arithmatex">\(c\)</span> を持つプログラムは有限個存在し得る<ul>
+<li>同じメトリクス値<span class="arithmatex">\(c\)</span>を持つプログラムは有限個しか存在しない</li>
+<li>任意の長さのプログラムが同じ複雑さを持つという非現実的な状況を排除</li>
+</ul>
+</li>
+<li>P3: <span class="arithmatex">\(|P| = |Q|\)</span>になるような異なるプログラム<span class="arithmatex">\(P\)</span>と<span class="arithmatex">\(Q\)</span>が存在する<ul>
+<li>異なるプログラムでも同じメトリクス値を持つ場合がある</li>
+<li>P1と合わせて、メトリクスが適切な粒度を持つことを示す</li>
+</ul>
+</li>
+<li>P4: <span class="arithmatex">\((\exists P)(\exists Q) (P \equiv Q \text{ and } |P| \neq |Q|)\)</span><ul>
+<li>機能的に等価な（同じ入出力関係を持つ）プログラムでも、実装が異なれば異なる複雑さを持つ</li>
+<li>設計の詳細が複雑さに影響することを示す</li>
+</ul>
+</li>
+<li>P5: <span class="arithmatex">\((\forall P)(\forall Q)(|P| \leq |P; Q| \text{ and } |Q| \leq |P; Q|)\)</span><ul>
+<li>プログラム<span class="arithmatex">\(P\)</span>にプログラム<span class="arithmatex">\(Q\)</span>を統合した場合、結果の複雑さは元の各プログラムの複雑さ以上になる</li>
+<li>コードの追加は複雑さを増加させるという直感的な性質を表す</li>
+</ul>
+</li>
+<li>P6a: <span class="arithmatex">\((\exists P)(\exists Q)(\exists R) (|P| = |Q| \text{ and } |P; R| \neq |Q; R|)\)</span>
+  P6b: <span class="arithmatex">\((\exists P)(\exists Q)(\exists R) (|P| = |Q| \text{ and } |R; P| \neq |R; Q|)\)</span><ul>
+<li>同じ複雑さを持つ2つのプログラム<span class="arithmatex">\(P\)</span>, <span class="arithmatex">\(Q\)</span>でも、第3のプログラム<span class="arithmatex">\(R\)</span>と結合するとそれぞれの複雑さは異なる値になる可能性がある</li>
+<li>結合の順序や文脈が複雑さに影響することを表す</li>
+</ul>
+</li>
+<li>P7: <span class="arithmatex">\(Q\)</span>を<span class="arithmatex">\(P\)</span>のプログラムの文を入れ換えたプログラムとするとき、<span class="arithmatex">\(|P| \neq |Q|\)</span>になるようなプログラム<span class="arithmatex">\(P\)</span>, <span class="arithmatex">\(Q\)</span>が存在する<ul>
+<li>制御フローの変化が複雑さに影響することを示す</li>
+</ul>
+</li>
+<li>P8: <span class="arithmatex">\(P\)</span>を<span class="arithmatex">\(Q\)</span>において変数名称を変えたプログラムとするとき、<span class="arithmatex">\(|P| = |Q|\)</span><ul>
+<li>変数名を一様に変更してもメトリクス値は変わらない</li>
+<li>構文的な変更が本質的な複雑さに影響しないことを保証</li>
+</ul>
+</li>
+<li>P9: <span class="arithmatex">\((\exists P)(\exists Q) (|P| + |Q| &lt; |P; Q|)\)</span><ul>
+<li>2つのプログラムを結合した際の複雑さは、個々の複雑さの単純な和を超える場合がある</li>
+<li>プログラム間の相互作用や結合部分での追加的な複雑さを考慮した特性</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="_2">得られた成果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h2 id="_3">直面した課題<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h2 id="_4">来週の計画<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Apache Wayの理解<ul>
+<li>Apache Software Foundationの7つの原則を整理</li>
+</ul>
+</li>
+<li>CKメトリクスの理解<ul>
+<li>6つの主要なメトリクス（WMC、DIT、NOC、CBO、RFC、LCOM）を整理</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">来週の計画<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>メソッド・クラス単位でソフトウェアメトリクスを計算するライブラリを調査・選定</li>
+<li>Qualitas Corpusに収録されているソフトウェアシステムのメトリクスを測定</li>
+</ul>
 
 
 
@@ -1257,7 +1298,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月6日 15:46:00">2025年6月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月7日 09:17:57">2025年6月7日</span>
   </span>
 
     
