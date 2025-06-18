@@ -42,7 +42,48 @@ title: An automatically created novel bug dataset and its validation in bug pred
 - ELFF: メソッドレベルのデータセット
 - Had-oops!: 連続する8つのHadoopのバージョンを分析し、時系列が欠陥予測のパフォーマンスに与える影響を調査
 ## データソース
-- 
+### GitHub
+- 最も人気のあるソースコードホスティングサービスの1つ
+- バグ追跡システム、イシュー追跡システムなどの共同作業支援サービスも提供
+- レポートにバグラベルを追加するとバグレポートとして分類でき、コミットメッセージからバグレポートのIDを参照することでバグとイシューを関連付けられる
+- GitHubには、他のシステムのリポジトリを管理したり、それらに関する情報を調べたりするために使用できるAPIがある
+### 選ばれたプロジェクト
+- Javaで書かれている
+- 規模が大きい
+- バグとしてラベル付けされたイシューの数が十分である
+- コミットメッセージから特定のバグ混入コミットを参照している
+- 現在も積極的にメンテナンスされている
+- スターとウォッチの数の合計を人気度と定義し、人気度を参考にした
+- 選択されたプロジェクト
+	- Android Universal Image Loader
+		- [https://github.com/nostra13/Android-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader)
+	- ANTLR v4
+		- [https://github.com/antlr/antlr4](https://github.com/antlr/antlr4)
+	- Elasticsearch
+		- [https://github.com/elastic/elasticsearch](https://github.com/elastic/elasticsearch)
+	- MapDB
+		- [https://github.com/jankotek/MapDB](https://github.com/jankotek/MapDB)
+	- mcMMO
+		- [https://github.com/mcMMO-Dev/mcMMO](https://github.com/mcMMO-Dev/mcMMO)
+	- Mission Control Technologies
+		- [https://github.com/nasa/mct](https://github.com/nasa/mct)
+	- Neo4j
+		- [https://github.com/neo4j/neo4j](https://github.com/neo4j/neo4j)
+	- Netty
+		- [https://github.com/netty/netty](https://github.com/netty/netty)
+	- OrientDB
+		- [https://github.com/orientechnologies/orientdb](https://github.com/orientechnologies/orientdb)
+	- Oryx 2
+		- [https://github.com/OryxProject/oryx](https://github.com/OryxProject/oryx)
+	- Titan
+		- [https://github.com/thinkaurelius/titan](https://github.com/thinkaurelius/titan)
+	- Eclipse plugin for Ceylon
+		- [https://github.com/eclipse/ceylon-ide-eclipse](https://github.com/eclipse/ceylon-ide-eclipse)
+	- Hazelcast
+		- [https://github.com/hazelcast/hazelcast](https://github.com/hazelcast/hazelcast)
+	- Broadleaf Commerce
+		- [https://github.com/BroadleafCommerce/BroadleafCommerce](https://github.com/BroadleafCommerce/BroadleafCommerce)
+## メトリクス
 
 ## 引用情報
 - 著者: Rudolf Ferenc, Péter Gyimesi, Gábor Gyimesi, Zoltán Tóth, Tibor Gyimóthy
