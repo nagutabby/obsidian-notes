@@ -747,10 +747,85 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="評価">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rq1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RQ1: 構築されたデータセットはバグ予測のために使用できるか？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rq2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RQ2: クラスレベルに投影されたメソッドレベすの指標は、クラスレベルの指標よりも優れた予測因子であるか？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rq3-bughuntergithub-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      RQ3: BugHunterは、伝統的なアプローチで構築されたGitHub Bugデータセットよりも強力で表現力豊かであるか？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      妥当性への脅威
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="妥当性への脅威">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      構成概念妥当性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      内的妥当性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -1570,10 +1645,85 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="評価">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rq1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RQ1: 構築されたデータセットはバグ予測のために使用できるか？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rq2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RQ2: クラスレベルに投影されたメソッドレベすの指標は、クラスレベルの指標よりも優れた予測因子であるか？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rq3-bughuntergithub-bug" class="md-nav__link">
+    <span class="md-ellipsis">
+      RQ3: BugHunterは、伝統的なアプローチで構築されたGitHub Bugデータセットよりも強力で表現力豊かであるか？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      妥当性への脅威
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="妥当性への脅威">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      構成概念妥当性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      内的妥当性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      結論
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
     <span class="md-ellipsis">
       引用情報
     </span>
@@ -1843,9 +1993,84 @@
 </ul>
 <h2 id="_19">評価<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <ul>
-<li></li>
+<li>新しいバグデータセットの有用性を評価するために、機械学習アルゴリズムを用いてバグ予測モデルを作成</li>
+<li>訓練中に10分割交差検証を用いてモデルの精度を測定</li>
+<li>モデルの比較には適合率、再現率、F1スコアを使用</li>
+<li>以下のアルゴリズムを使用してデータセットでのパフォーマンスを確認<ul>
+<li>ナイーブベイズ</li>
+<li>多項ナイーブベイズ</li>
+<li>ロジスティック回帰</li>
+<li>単純ロジスティック回帰</li>
+<li>SGD（Stochastic Gradient Descent, 確率的勾配降下法）</li>
+<li>投票パーセプトロン</li>
+<li>ディシジョンテーブル</li>
+<li>OneR</li>
+<li>C4.5</li>
+<li>ランダムフォレスト</li>
+<li>ランダムツリー</li>
 </ul>
-<h2 id="_20">引用情報<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+</li>
+<li>ソースコードには3つのレベル（ファイル、クラス、メソッド）があり、選択されたプロジェクトは15個あり、機械学習アルゴリズムは11個ある</li>
+</ul>
+<h3 id="rq1">RQ1: 構築されたデータセットはバグ予測のために使用できるか？<a class="headerlink" href="#rq1" title="Permanent link">&para;</a></h3>
+<h4 id="_20">メソッドレベル<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li>F1スコアが最も高かったのはランダムフォレスト<ul>
+<li>平均F1スコアはおよそ0.63</li>
+</ul>
+</li>
+</ul>
+<h4 id="_21">クラスレベル<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li>F1スコアが最も高かったのは単純ロジスティック回帰<ul>
+<li>平均F1スコアはおよそ0.57</li>
+</ul>
+</li>
+</ul>
+<h4 id="_22">ファイルレベル<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li>F1スコアが最も高かったのはランダムツリー<ul>
+<li>平均F1スコアは0.55</li>
+</ul>
+</li>
+</ul>
+<h3 id="rq2">RQ2: クラスレベルに投影されたメソッドレベすの指標は、クラスレベルの指標よりも優れた予測因子であるか？<a class="headerlink" href="#rq2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>メソッドレベル学習の結果をクラスレベルに投影する実験を行った</li>
+<li>メソッドレベル学習の交差検証では、メソッドを含むクラスを用いて、バグありとバグなしに分類されたクラスの数から混同行列を計算した</li>
+<li>バグのあるメソッドを少なくとも1つ含むクラスは、バグありとみなした</li>
+<li>この方法はクラスレベルのメトリクスによる予測よりも高いF1スコアを達成</li>
+<li>F1スコアは最も高かったのはランダムフォレスト<ul>
+<li>平均F1スコアはおよそ0.74</li>
+</ul>
+</li>
+</ul>
+<h3 id="rq3-bughuntergithub-bug">RQ3: BugHunterは、伝統的なアプローチで構築されたGitHub Bugデータセットよりも強力で表現力豊かであるか？<a class="headerlink" href="#rq3-bughuntergithub-bug" title="Permanent link">&para;</a></h3>
+<ul>
+<li>GitHub Bugデータセットはリリースバージョンごとに静的解析を行い、バグの数を数える</li>
+<li>BugHunterはバグ混入コミットとバグ修正コミットに対して静的解析を行う</li>
+<li>この関係から、GitHub Bugデータセットは、BugHunterよりも静的解析によって得られたコードメトリクスの変化が大きいことが分かる</li>
+<li>それが原因で、GitHub Bugデータセットの方がBugHunterよりも、データセット自体に含まれるノイズが少なくなり、GitHub Bugデータセットの方がF1スコアが高くなったと考えられる</li>
+<li>しかし、BugHunterはより長い期間にわたってデータを収集しており、バグの混入による影響をより細かく捉えているため、実際のバグ予測では、BugHunterの方がバイアスが少なく、より汎用性の高いモデルであると考えられる</li>
+</ul>
+<h2 id="_23">妥当性への脅威<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<h3 id="_24">構成概念妥当性<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>データセットを自動で構築する際に使用されるマッチングアルゴリズムを、JUnitで検証した</li>
+</ul>
+<h3 id="_25">内的妥当性<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ソースコード要素の特性を単一のツールで測定した</li>
+</ul>
+<h4 id="_26">外的妥当性<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<ul>
+<li>構築されたデータセットは15個のプロジェクトで構成されている</li>
+</ul>
+<h2 id="_27">結論<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<ul>
+<li>データセットの一般化可能性を高めるために、GitHub以外のデータソース（SourceForge, Bitbucket）からもデータを収集する予定</li>
+</ul>
+<h2 id="_28">引用情報<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
 <ul>
 <li>著者: Rudolf Ferenc, Péter Gyimesi, Gábor Gyimesi, Zoltán Tóth, Tibor Gyimóthy</li>
 <li>タイトル: An automatically created novel bug dataset and its validation in bug prediction</li>
@@ -1875,7 +2100,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月18日 17:24:30">2025年6月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年6月19日 13:57:04">2025年6月19日</span>
   </span>
 
     
