@@ -1573,10 +1573,146 @@
 </ul>
 <h4 id="_9">概要<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <ul>
-<li>コード行数の変化量が-0.037以下 -&gt; メソッドに対する操作が「追加」 -&gt; LongNameに含まれる特定の単語の重要度が0.339以下ではないときにジニ不純度がおよそ0.22となり、陽性クラスを高い確率で分類している</li>
+<li>コード行数の変化量が-0.037以下 -&gt; メソッド操作が「追加」 -&gt; LongNameに含まれる特定の単語の重要度が0.339以下ではないときにジニ不純度がおよそ0.22となり、陽性クラスを高い確率で分類している</li>
+<li>コード行数の変化量が-0.037以下 -&gt; メソッド操作が「追加」ではないときにジニ不純度が0.138となり、陰性クラスを高い確率で分類している</li>
 <li>コード行数の変化量が-0.037以下ではない -&gt; HCPL（Halstead Calculated Program Length）が0.386以下のときにジニ不純度が0.08となり、陰性クラスを高い確率で分類している</li>
 </ul>
 <h3 id="elasticsearch">elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">&para;</a></h3>
+<ul>
+<li>学習データ数: 1604件（アンダーサンプリング後）</li>
+<li>テストデータ数: 600件</li>
+<li>マクネマー検定の結果<ul>
+<li>p値: およそ0.000001</li>
+<li>有意差あり</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指標（概算）</th>
+<th style="text-align: left;">特徴量追加前</th>
+<th style="text-align: left;">特徴量追加後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">F1スコア</td>
+<td style="text-align: left;">0.62</td>
+<td style="text-align: left;">0.72</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precision</td>
+<td style="text-align: left;">0.51</td>
+<td style="text-align: left;">0.61</td>
+</tr>
+<tr>
+<td style="text-align: left;">Recall</td>
+<td style="text-align: left;">0.79</td>
+<td style="text-align: left;">0.87</td>
+</tr>
+<tr>
+<td style="text-align: left;">Accuracy</td>
+<td style="text-align: left;">0.67</td>
+<td style="text-align: left;">0.77</td>
+</tr>
+<tr>
+<td style="text-align: left;">ROC-AUC</td>
+<td style="text-align: left;">0.79</td>
+<td style="text-align: left;">0.88</td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/elasticsearch/cv_performance_chart.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/elasticsearch/feature_importance_chart.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- トークン数やコード行数の変化量の重要度が高い</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- メソッド操作が「追加」であるかどうかもクラス分類の判断に影響を与えている</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクス、Maintainability Index関連のメトリクスもある程度の重要度がある</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/elasticsearch/feature_histograms.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- トークン数、コード行数、循環的複雑度のいずれも変化量はほとんど0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/elasticsearch/partial_dependence_plots.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- トークン数、コード行数の変化量が0付近であるほど陽性クラスの予測確率が高まる</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- MISM、MISEIは凹型であり、0付近で陽性クラスの予測確率が最も低くなる</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/elasticsearch/decision_tree_feature_importance.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/elasticsearch/decision_tree_visualization.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- MI（Maintainability Index）が0.56以下 -&gt; メソッド操作が「追加」ではないときにジニ不純度が0.115となり、陰性クラスを高い確率で分類している</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- MI（Maintainability Index）が0.56以下ではない -&gt; NII（Number of Incoming Invocations）が0.371以下 -&gt; トークン数の変化量が-0.092以下のときにジニ不純度が0.132となり、陰性クラスを高い確率で分類している</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="_10">得られた成果<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h2 id="_11">直面した課題<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <h2 id="_12">来週の計画<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
@@ -1600,7 +1736,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月1日 17:21:04">2025年8月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月1日 23:07:39">2025年8月1日</span>
   </span>
 
     
