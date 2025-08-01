@@ -1486,7 +1486,7 @@
 </ul>
 <h4 id="_3">概要<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>全体として分布の偏りが大きい</li>
+<li>全体として分布の偏りが大きく、陰性クラスの特徴を明確に捉えている</li>
 <li>特定の領域に異なるクラスのデータポイントが密集することで、クラス間の分離が難しくなり、分類境界が曖昧になっている（モデルが細かな違いを学習できていない）
 <img alt="" src="../images/antlr4/partial_dependence_plots.png" /></li>
 </ul>
@@ -1711,6 +1711,162 @@
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
+<tr>
+<td style="text-align: left;">### BroadleafCommerce</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- 学習データ数: 826件（アンダーサンプリング後）</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- テストデータ数: 600件</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- マクネマー検定の結果</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- p値: およそ0.45</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- 有意差なし</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指標（概算）</th>
+<th style="text-align: left;">特徴量追加前</th>
+<th style="text-align: left;">特徴量追加後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">F1スコア</td>
+<td style="text-align: left;">0.46</td>
+<td style="text-align: left;">0.45</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precision</td>
+<td style="text-align: left;">0.32</td>
+<td style="text-align: left;">0.32</td>
+</tr>
+<tr>
+<td style="text-align: left;">Recall</td>
+<td style="text-align: left;">0.81</td>
+<td style="text-align: left;">0.78</td>
+</tr>
+<tr>
+<td style="text-align: left;">Accuracy</td>
+<td style="text-align: left;">0.67</td>
+<td style="text-align: left;">0.68</td>
+</tr>
+<tr>
+<td style="text-align: left;">ROC-AUC</td>
+<td style="text-align: left;">0.82</td>
+<td style="text-align: left;">0.83</td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/BroadleafCommerce/cv_performance_chart.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/BroadleafCommerce/feature_importance_chart.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクス、Maintainability Index関連のメトリクスの重要度が高い</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- 変化量メトリクスは特徴量の重要度上位20件に含まれていない</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/BroadleafCommerce/feature_histograms.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- MI、MISEI、MISM、MIMSに明確な二峰性があり、陽性クラスや陰性クラスの傾向を掴みにくい</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクスの値が全体的に大きく、陽性クラスと陰性クラスの境界を設定しにくい</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/BroadleafCommerce/partial_dependence_plots.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクスが一定の値以上になると陽性クラスの予測確率が高止まりする</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクスは重要度が高いが、数値的な重要度はあまり高くないことを示唆している</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/BroadleafCommerce/decision_tree_feature_importance.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/BroadleafCommerce/decision_tree_visualization.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- 他のソフトウェアプロジェクトの決定木と比べて、陽性と予測されるノード数が多い</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- Precisionが低いことから、偽陽性の原因となった条件式が多いことが分かる</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
 </tbody>
 </table>
 <h2 id="_10">得られた成果<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
@@ -1736,7 +1892,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月1日 23:07:39">2025年8月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月2日 07:32:36">2025年8月2日</span>
   </span>
 
     
