@@ -1867,6 +1867,162 @@
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
+<tr>
+<td style="text-align: left;">### hazelcast</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- 学習データ数: 1640件（アンダーサンプリング後）</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- テストデータ数: 600件</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- マクネマー検定の結果</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- p値: およそ0.004</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- 有意差あり</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指標（概算）</th>
+<th style="text-align: left;">特徴量追加前</th>
+<th style="text-align: left;">特徴量追加後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">F1スコア</td>
+<td style="text-align: left;">0.67</td>
+<td style="text-align: left;">0.71</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precision</td>
+<td style="text-align: left;">0.58</td>
+<td style="text-align: left;">0.63</td>
+</tr>
+<tr>
+<td style="text-align: left;">Recall</td>
+<td style="text-align: left;">0.81</td>
+<td style="text-align: left;">0.82</td>
+</tr>
+<tr>
+<td style="text-align: left;">Accuracy</td>
+<td style="text-align: left;">0.73</td>
+<td style="text-align: left;">0.77</td>
+</tr>
+<tr>
+<td style="text-align: left;">ROC-AUC</td>
+<td style="text-align: left;">0.86</td>
+<td style="text-align: left;">0.88</td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/hazelcast/cv_performance_chart.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/hazelcast/feature_importance_chart.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- トークン数やコード行数の変化量の重要度が高い</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクスやMaintainability Index関連のメトリクスも重要度が高い</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/hazelcast/feature_histograms.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクス、トークン数やコード行数の変化量の分布は大きな偏りがある</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/hazelcast/partial_dependence_plots.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- トークン数やコード行数の変化量は、0付近で最も陽性クラスの予測確率が高い</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- ハルステッドメトリクスは特定の値以上になると陽性クラスの予測確率が高止まりする</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- TNOS（Total Number of Statements）、TLOC（Total Lines of Code）は陽性クラスの予測確率と比例している</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/hazelcast/decision_tree_feature_importance.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><img alt="" src="../images/hazelcast/decision_tree_visualization.png" /></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">#### 概要</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- NOI（Number of Outgoing Invocations）が-0.815以下 -&gt; HEFFが-0.203以下のときにジニ不純度が0.145となり、陰性クラスを高い確率で分類している</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">- NOI（Number of Outgoing Invocations）が-0.815以下ではない -&gt; メソッド操作が「追加」ではない -&gt; MIMS（Maintainability Index （Microsoft version））が-0.629以下のときにジニ不純度が0.065となり、陰性クラスを高い確率で分類している</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
 </tbody>
 </table>
 <h2 id="_10">得られた成果<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
@@ -1892,7 +2048,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月2日 07:32:36">2025年8月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月2日 15:01:30">2025年8月2日</span>
   </span>
 
     
