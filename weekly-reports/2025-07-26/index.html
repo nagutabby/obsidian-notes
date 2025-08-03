@@ -1310,19 +1310,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="得られた成果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      特徴量エンジニアリングの効果
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      陰性クラス（バグを含まないメソッド）の特徴
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      陽性クラス（バグを含むメソッド）の特徴
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       直面した課題
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="直面した課題">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      バグによる保守性低下の流れ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_26" class="md-nav__link">
     <span class="md-ellipsis">
       来週の計画
     </span>
@@ -1457,19 +1505,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="得られた成果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      特徴量エンジニアリングの効果
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      陰性クラス（バグを含まないメソッド）の特徴
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      陽性クラス（バグを含むメソッド）の特徴
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       直面した課題
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="直面した課題">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      バグによる保守性低下の流れ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
+  <a href="#_26" class="md-nav__link">
     <span class="md-ellipsis">
       来週の計画
     </span>
@@ -1943,8 +2039,70 @@
 <li>トークン数の変化量が-0.066以下ではない -&gt; コード行数の変化量が0.139以下ではないときにジニ不純度が0となり、陰性クラスを高い確率で分類している</li>
 </ul>
 <h2 id="_20">得られた成果<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
-<h2 id="_21">直面した課題<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
-<h2 id="_22">来週の計画<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<h3 id="_21">特徴量エンジニアリングの効果<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<ul>
+<li>elasticsearch、ceylon-ide-eclipse、hazelcastではF1スコアの有意な改善が見られた</li>
+<li>antlr4、oryxではクラスの分類に有意な差はなかったが、F1スコアがある程度向上した</li>
+<li>BroadleafCommerceでは有意差はなく、F1スコアが少し低下した</li>
+<li>このうち、antlr4、oryxについてはアンダーサンプリングの結果、学習データが100件程度しか残らなかったため、サンプルサイズが不足していると考えられる</li>
+<li>BroadleafCommerceについては、ハルステッドメトリクスの値が全体的に大きいため、陽性クラスと陰性クラスの境界を設定しにくいことが分かった<ul>
+<li>これが原因で偽陽性の割合が大きくなったと考えられる</li>
+</ul>
+</li>
+<li>決定木の条件式を見ると、陰性クラスの分類ではジニ不純度が低いことから、陰性と予測されたクラスを高い確信度で分類できていることが分かる<ul>
+<li>すなわち、コード行数やトークン数の変化量といった時系列データは陰性クラスの予測精度向上には比較的貢献するが、陽性クラスの予測精度向上にはあまり貢献しないことが示唆された</li>
+</ul>
+</li>
+<li>F1スコアが向上した理由は、陰性クラスの予測精度向上によって、消去法的なクラス分類の精度が向上したためであると考えられる</li>
+</ul>
+<h3 id="_22">陰性クラス（バグを含まないメソッド）の特徴<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<ul>
+<li>リファクタリングのような手法でコードが整理された場合、コード行数やトークン数が減る<ul>
+<li>さらに、そのメソッドが他のメソッドを呼び出す回数（NOI）やそのメソッドを理解するのに必要な精神的努力量（Halstead Effort、HEFF）も減る傾向にある</li>
+</ul>
+</li>
+<li>バグを含まないメソッドの場合は保守性を表すメトリクスの値が小さいことが主な特徴の1つであり、その背景は比較的単純</li>
+</ul>
+<h3 id="_23">陽性クラス（バグを含むメソッド）の特徴<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Partial Dependence Plotを見ると、いずれの特徴量においても、Partial Dependenceが0.5を超える領域がほとんどない<ul>
+<li>陽性クラスの予測確率が低いことが分かる</li>
+<li>実際に、決定木分析の結果、陽性クラスであると予測するノードのジニ不純度は全体的に高い</li>
+</ul>
+</li>
+<li>陽性クラスである理由（メソッドにバグが混入した理由）が複数あり、それらを区別できていないため、陽性クラスの特徴を十分に捉えられていないのかもしれない</li>
+</ul>
+<h2 id="_24">直面した課題<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<ul>
+<li>陽性クラスを詳細に分類するための方法を考える必要がある</li>
+<li>この研究では保守性を低下させる要因を、バグと保守性メトリクスから分析しようとしている</li>
+<li>保守性メトリクスを特徴量エンジニアリングによって増やしたところ、F1スコアは向上したが、それらのメトリクス値とバグとの関連が未だ不明確</li>
+<li>今度はバグの分析に焦点を当てることで、保守性低下要因の分析に役立つ情報が得られるかもしれない</li>
+</ul>
+<h3 id="_25">バグによる保守性低下の流れ<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<h4 id="1">レイヤー1: 背景<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>バグが発生する根本的な状況</li>
+<li>組織やプロジェクトの構造的、持続的な条件であり、開発チームが直面している課題</li>
+<li>バグレポートには記載されない</li>
+<li>例: 人員不足、厳しいリリーススケジュール、システムの制約、チームメンバーの経験不足</li>
+</ul>
+<h4 id="2">レイヤー2: バグの原因<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>背景によって引き起こされるバグ混入の具体的な理由</li>
+<li>実際に発生する判断ミス</li>
+<li>バグレポートに記載される</li>
+<li>例: 入力の検証不足、並行処理の同期ミス、メモリ管理エラー、API仕様の誤解</li>
+</ul>
+<h4 id="3">レイヤー3: メトリクスの変化<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>バグの原因によって実際のコードに現れる、定量的に測定可能な変化</li>
+<li>例: トークン数の変化、ハルステッドメトリクスの値、メソッド操作の種類</li>
+</ul>
+<h2 id="_26">来週の計画<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<ul>
+<li>バグレポートを分析することでバグの原因を調べ、保守性を表すメトリクスの変化との関係性を明らかにする</li>
+</ul>
 
 
 
@@ -1965,7 +2123,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月2日 17:31:27">2025年8月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月3日 12:39:22">2025年8月3日</span>
   </span>
 
     
