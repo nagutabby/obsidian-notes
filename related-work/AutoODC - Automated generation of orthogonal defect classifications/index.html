@@ -568,6 +568,24 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      動機付けの例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       引用情報
     </span>
   </a>
@@ -1368,6 +1386,24 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      動機付けの例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       引用情報
     </span>
   </a>
@@ -1396,7 +1432,7 @@
 
 <h2 id="_1">アブストラクト<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>ソフトウェア欠陥の分類と分析において最も影響力のあるフレームワークであるOrthogonal defect classification（ODC）は、システム開発と保守に貴重なフィードバックを提供</li>
+<li>ソフトウェア欠陥の分類と分析において最も影響力のあるフレームワークであるOrthogonal Defect Classification（ODC）は、システム開発と保守に貴重なフィードバックを提供</li>
 <li>既存のODC分類は人的リソースを必要とし、ODCとシステムドメインの両方に関する専門家の知識が必要</li>
 <li>この論文では、ODC分類を教師ありテキスト分類問題として捉え、自動化する手法であるAutoODCを紹介</li>
 <li>標準的な機械学習フレームワークをこのタスクに単に適用するのではなく、新しい関連性アノテーションフレームワークを提案することで、専門家のODC経験とドメイン知識を学習プロセスに統合し、より優れたODC分類システムの構築を目指す</li>
@@ -1404,7 +1440,44 @@
 <li>産業欠陥レポートではナイーブベイズで82.9%、サポートベクターマシンで80.7%の精度を達成</li>
 <li>オープンソース欠陥リストではナイーブベイズで77.5%、サポートベクターマシンで75.2%の精度を達成</li>
 </ul>
-<h2 id="_2">引用情報<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">はじめに<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>欠陥データの体系的な分類と分析は、原因分析と統計的品質管理の溝を埋め、システム開発や保守に貴重なフィードバックを提供するとともに、システムとソフトウェアの品質を保証し、改善するのに役立つ</li>
+<li>体系的な欠陥分類に基づく分析結果により、システム欠陥の主な影響の種類を理解し、焦点を絞った問題解決と品質改善のために特定の問題領域を正確に特定できる</li>
+<li>ODCはIBMで開発された、ソフトウェア欠陥の分類と分析のためのフレームワーク</li>
+<li>ODCは問題領域を特定し、ソフトウェア製品の品質を改善するために、様々な種類の組織で使用されている</li>
+<li>既存の欠陥分類手法とそのプロセスは人的資源を集中的に必要とし、ドメイン専門家は過去のプロジェクトとODC分類の両方に関する高度な知識を求められる</li>
+<li>既存手法では、アナリストが各欠陥の説明をODC分類として分類する必要がある</li>
+<li>AutoODCは、特定のソフトウェアドメインにおける欠陥の概要と説明を含む既存の欠陥リポジトリから、ODC欠陥分類を自動的に生成するために開発された</li>
+<li>ほとんどの場合、欠陥データはシステムの開発・運用・保守中にユーザーや開発者によって報告され、欠陥リポジトリに保存される</li>
+<li>これらの欠陥リポジトリは、多くの場合、バグレポート、バグトラッカー、イシューリストと呼ばれる</li>
+<li>ソフトウェア・システムの欠陥分類における課題を克服するために、欠陥レポートからODCを自動生成する手法であるAutoODCを開発した</li>
+<li>ODCの分類問題を教師ありテキスト分類問題として捉え、欠陥レポート内の欠陥記録を機械学習技術を用いて自動分類する分類器を学習することを目標とする</li>
+<li>レポート内のすべての単語から学習すると学習プロセスにノイズが入り込み、分類システムの性能が低下<ul>
+<li>そこで、人間がレポート内の単語やフレーズを特定のカテゴリーに分類し、それを注釈として利用</li>
+<li>さらに、ODC分類に関連しないテキストを削除するためのテキスト分析も追加</li>
+<li>これにより、分類器の相対エラーが14〜29%削減された</li>
+</ul>
+</li>
+<li>AutoODCを2つの異なる欠陥データセットに適用した<ul>
+<li>1つはP社の産業欠陥レポートに含まれる403件の欠陥記録</li>
+<li>もう1つはオープンソースシステムであるFileZillaの公開されている欠陥追跡システム（イシューリスト）から報告された1,250件の欠陥記録</li>
+</ul>
+</li>
+<li>両方のデータセットを用いた実験では、「impact」属性について、AutoODCと手動ODC分類のパフォーマンスを比較した</li>
+<li>各欠陥タイプにおけるパフォーマンスを測定するために、再現率と適合率という2つの一般的な指標を使用</li>
+<li>ナイーブベイズとサポートベクターマシンを使用して、2つのデータセット（403件の欠陥レコードを含むものと1,250 件の欠陥レコードを含むもの）でAutoODCを評価</li>
+<li>データセットはサイズが異なるだけでなく、クラス分布の点でも異なり、大きいデータセットの方が小さいデータセットよりもクラス分布が均衡している<ul>
+<li>AutoODCは、手動による欠陥分類を評価基準として使用した場合、小規模データセットで80.7〜82.9%、大規模データセットで75.2%〜77.5%の正解率の分類結果を生成した</li>
+<li>これらの結果は、データセットの基礎となるクラス分布が偏っているか比較的均衡が取れているかに関係なく、AutoODCが堅牢なパフォーマンスを提供することを示している</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">動機付けの例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="_4">引用情報<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>著者: LiGuo Huang, Vincent Ng, Isaac Persing, Mingrui Chen, Zeheng Li, Ruili Geng, Jeff Tian</li>
 <li>タイトル:  AutoODC: Automated generation of orthogonal defect classifications</li>
@@ -1434,7 +1507,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月18日 17:16:50">2025年8月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月19日 07:50:05">2025年8月19日</span>
   </span>
 
     
