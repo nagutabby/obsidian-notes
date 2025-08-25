@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://research-notes.nagutabby.uk/weekly-reports/2025-08-02/">
+        <link rel="canonical" href="https://research-notes.nagutabby.uk/weekly-reports/2025-08-16/">
       
       
-        <link rel="prev" href="../2025-07-26/">
+        <link rel="prev" href="../2025-08-09/">
       
-      
-        <link rel="next" href="../2025-08-09/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +22,7 @@
     
     
       
-        <title>2025年8月2日 - 研究メモ</title>
+        <title>2025年8月16日 - 研究メモ</title>
       
     
     
@@ -63,11 +61,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="2025年8月2日 - 研究メモ" >
+        <meta  property="og:title"  content="2025年8月16日 - 研究メモ" >
       
         <meta  property="og:description"  content="これまでに読んだ論文や活動報告のための週報を掲載しています。" >
       
-        <meta  property="og:image"  content="https://research-notes.nagutabby.uk/assets/images/social/weekly-reports/2025-08-02.png" >
+        <meta  property="og:image"  content="https://research-notes.nagutabby.uk/assets/images/social/weekly-reports/2025-08-16.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -75,15 +73,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://research-notes.nagutabby.uk/weekly-reports/2025-08-02/" >
+        <meta  property="og:url"  content="https://research-notes.nagutabby.uk/weekly-reports/2025-08-16/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="2025年8月2日 - 研究メモ" >
+        <meta  name="twitter:title"  content="2025年8月16日 - 研究メモ" >
       
         <meta  name="twitter:description"  content="これまでに読んだ論文や活動報告のための週報を掲載しています。" >
       
-        <meta  name="twitter:image"  content="https://research-notes.nagutabby.uk/assets/images/social/weekly-reports/2025-08-02.png" >
+        <meta  name="twitter:image"  content="https://research-notes.nagutabby.uk/assets/images/social/weekly-reports/2025-08-16.png" >
       
     
     
@@ -138,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025年8月2日
+              2025年8月16日
             
           </span>
         </div>
@@ -1248,6 +1246,52 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-08-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025年8月2日
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-08-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025年8月9日
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1263,7 +1307,7 @@
   
   
   <span class="md-ellipsis">
-    2025年8月2日
+    2025年8月16日
     
   </span>
   
@@ -1276,7 +1320,7 @@
   
   
   <span class="md-ellipsis">
-    2025年8月2日
+    2025年8月16日
     
   </span>
   
@@ -1336,52 +1380,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2025-08-09/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2025年8月9日
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2025-08-16/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2025年8月16日
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1474,64 +1472,97 @@
 
 
 
-  <h1>2025年8月2日</h1>
+  <h1>2025年8月16日</h1>
 
 <h2 id="_1">今週の活動<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>バグレポートの分析方法の検討<ul>
-<li>GitHub APIとPyGitHubを使い、特定のコミットに関連付けられたプルリクエストのデータを取得するプログラムを作成した</li>
-<li><a href="https://github.com/nagutabby/bug-hunter/blob/980a390b7dbfb847e0d2911e9bad7bf753e09164/src/get_pull_requests.py">https://github.com/nagutabby/bug-hunter/blob/980a390b7dbfb847e0d2911e9bad7bf753e09164/src/get_pull_requests.py</a></li>
+<li>Orthogonal Defect Classification（ODC）の属性を整理<ul>
+<li>ODC属性はOpener SectionとCloser Sectionに分類される</li>
+<li>Opener Section: 欠陥が発見された状況を記録する項目<ul>
+<li>Activity<ul>
+<li>欠陥が発見された際の開発プロセス上の具体的な活動</li>
 </ul>
 </li>
-<li>バグを体系的に分類する方法（欠陥分析手法）<ul>
-<li>ODC（Orthogonal Defect Classification）<ul>
-<li>1992年に発表された、ソフトウェアの欠陥の分類手法</li>
-<li>Defect Typeという属性を用いて、実際に行われた修正の性質を分類<ul>
-<li>Function: 新しい機能の追加、既存の機能の大幅な変更</li>
-<li>Interface: モジュール間の接続部分（API、プロトコル、データ形式）</li>
-<li>Checking: 入力値の検証、条件判定、エラーハンドリング</li>
-<li>Assignment: 変数への値の代入、変数の初期化、データ構造</li>
-<li>Timing/Serialization: 並行処理、同期処理、処理順序</li>
-<li>Build/Package/Merge: コンパイル、リンク、設定ファイル、依存パッケージ</li>
-<li>Documentation: マニュアル、設計書、コメント</li>
-<li>Algorithm: アルゴリズムの効率性や正確性</li>
+<li>Trigger<ul>
+<li>欠陥が表面化するきっかけとなった環境や条件</li>
+</ul>
+</li>
+<li>Impact<ul>
+<li>欠陥が顧客に与えるであろう影響やリスク</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>IEEE 1044（IEEE Standard Classification for Software Anomalies）<ul>
-<li>1993年に発表された、ソフトウェアの異常の分類手法</li>
-<li>Typeという属性を用いて、実際に行われた修正の性質を分類<ul>
-<li>Data: 変数の初期化、データ型、変数名</li>
-<li>Interface: モジュール間インターフェース</li>
-<li>Logic: 条件分岐、ループ、アルゴリズム</li>
-<li>Description: ソフトウェアの使用方法、インストール方法、操作方法などのマニュアル</li>
-<li>Syntax: プログラミング言語の規約</li>
-<li>Standard: 標準</li>
-<li>Other: いずれのTypeにも該当しないもの</li>
+<li>Closer Section: 欠陥の根本原因と修正内容を記録する項目<ul>
+<li>Target: 修正された高レベルなエンティティ<ul>
+<li>Design</li>
+<li>Code</li>
 </ul>
 </li>
-<li>ただし、2020年にInactivateされているため、標準としてはあまり人気がないと推測される</li>
+<li>Defect Type: 具体的な修正内容の性質<ul>
+<li>Assignment/Initialization</li>
+<li>Checking</li>
+<li>Algorithm/Method</li>
+<li>Function/Class/Object</li>
+<li>Timing/Serialization</li>
+<li>Interface/O-O Messages</li>
+<li>Relationship</li>
 </ul>
 </li>
+<li>Qualifier: Defect Typeをさらに詳細に説明する属性<ul>
+<li>Missing</li>
+<li>Incorrect</li>
+<li>Extraneous</li>
+</ul>
+</li>
+<li>Age: 修正対象の変更履歴<ul>
+<li>Base</li>
+<li>New</li>
+<li>Rewritten</li>
+<li>ReFixed</li>
+</ul>
+</li>
+<li>Source: 欠陥が発生した段階<ul>
+<li>Developed In-House</li>
+<li>Reused From Library</li>
+<li>Outsourced</li>
+<li>Ported</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ODCのOpener Sectionの属性は主にイシューのテキストから、Closer Sectionの属性は主にプルリクエストのテキストから分析できる</li>
+</ul>
+</li>
+<li>既存研究で作成された、テキスト分析を用いたODCのデータセットの問題点<ul>
+<li>イシューのテキストからODC属性を決定している</li>
+<li>Opener Sectionの属性の教師データは信頼性が高いが、Closer Sectionの属性の教師データは信頼性が低くなってしまう</li>
+<li>バグの有無をコミット単位かつメソッド単位で予測するような場合、プルリクエストのテキストのみが使用できるのに対し、ODCのデータセットを学習した機械学習モデルはプルリクエストのテキストに対応していないため、予測精度が下がる可能性がある</li>
 </ul>
 </li>
 </ul>
 <h2 id="_2">得られた成果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>バグ混入データやバグ修正データにODCの属性を付与すれば様々な観点からバグを分析できる</li>
+<li>既存のODCデータセットを活用してBugHunterデータセットに新たな特徴量を追加するのは難しい<ul>
+<li>実現できなくはないが、イシューのテキストを学習したモデルをプルリクエストのテキストを使用した分類に適用できるかどうかについて、一般化可能性が検証されていないため精度が下がる可能性があり、結果の考察も難しくなる</li>
+</ul>
+</li>
 </ul>
 <h2 id="_3">直面した課題<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>ODCの属性の値を自動的に決定するためのデータセットが必要<ul>
-<li>基本的に1人で研究を行っており、アノテーション一致度を測るための手法（例: カッパ係数）を使って学習用データを作成できないため</li>
+<li>BugHunterデータセットを分析すると、必然的にバグ混入コミットやバグ修正コミットを分析することになる<ul>
+<li>コミットに関連付いているプルリクエストを収集することはできても、そのプルリクエストに関連付いている（と思われる）イシューを収集することはできない</li>
+<li>ODC属性のうち、Opener Sectionにある属性を算出するのを諦め、Closer Sectionにある属性に特化した分析に留めるべき</li>
 </ul>
 </li>
-<li>ODCの属性を自動的に決定する手法についての研究は多いため、論文を調べれば公開されているデータセットが見つかると思われる</li>
 </ul>
 <h2 id="_4">来週の計画<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li>これまでの成果を踏まえて研究の見通しを立てる</li>
+<li>イシューのテキストからODCデータセットを構築する研究を調べる<ul>
+<li>その研究では、おそらくデータセットの構築前にODC属性の選定基準を定めており、データセットの構築後にODC属性ごとの信頼性について考察しているはず</li>
+<li>それらの情報をバグの特徴付けに役立てたい</li>
+</ul>
+</li>
 </ul>
 
 
@@ -1553,7 +1584,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月6日 08:59:18">2025年8月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月25日 16:34:01">2025年8月25日</span>
   </span>
 
     
