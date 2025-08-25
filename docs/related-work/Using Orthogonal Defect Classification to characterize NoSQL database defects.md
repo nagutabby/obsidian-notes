@@ -30,6 +30,17 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 		- テストはcapabilityよりもreliabilityの欠陥と関連付けられることが2倍以上多い
 		- impact属性がreliabilityである場合、checkingの欠陥がより頻繁に発生する
 		- checkingの欠陥はmissing qualifierと関連付けられる可能性が高い
+## 背景と関連研究
+### 背景
+- ソフトウェア欠陥分類手法は、ソフトウェアエンジニアリングの問題の根本原因を特定し、対策を講じて再発を防ぐことを目的とした欠陥因果分析プロセスで用いられる
+- 人気のあるソフトウェア欠陥分類手法としては、ヒューレット・パッカードのDefect Origins, Types and Modes（DOTM）、IEEE-1044（IEEE Standard Classification for Software Anomalies 2010）、Orthogonal Defect Classificationがある
+### 関連研究
+- ODCを使用する研究は、基本的に2つの研究グループに分けられる
+	- グループ1では、著者はODCを使用して特定のコンテキストにおけるバグを特徴付ける
+	- グループ2では、著者はODCデータをプロセス改善に使用
+- Thungらは、機械学習システムのバグの実証研究を行い、これらのシステムでバグがどのくらいの頻度で出現するか、どのような種類のバグが表面化するかについて理解することを目指した
+	- 様々な種類のバグを修正するにはどのくらい時間がかかるか、および欠陥によって影響を受けるファイルの数は何個かを把握した
+- 本研究では、AgeとSource以外の6つのODC属性を分析に使用している
 
 ## 引用情報
 - 著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino
