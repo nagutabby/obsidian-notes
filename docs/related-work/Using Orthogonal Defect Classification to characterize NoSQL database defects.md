@@ -126,6 +126,10 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 - 値をランダムに生成し、さらに演算子とクエリ修飾子を組み合わせてクエリを自動生成
 - 5600個のテストを作成
 - この自動テストにより、既知のバグ4個を自動で検出し、未知のバグ1個を発見
+## 考察
+- 単一属性の分析では、異なるシステムから抽出された欠陥が少数の属性値に集中する傾向が確認された
+	- 特にCapabilityとReliabilityが圧倒的に多かった
+- 属性ペアの分析では、Reliabilityの欠陥におけるテスト活動は、Capabilityの欠陥におけるテスト活動と比べての2倍以上頻繁に発生することが判明
 ## 引用情報
 - 著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino
 - タイトル: Using Orthogonal Defect Classification to characterize NoSQL database defects
