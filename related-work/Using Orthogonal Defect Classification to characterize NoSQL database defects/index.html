@@ -748,6 +748,15 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
+      研究デザイン
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
       引用情報
     </span>
   </a>
@@ -1521,6 +1530,15 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
+      研究デザイン
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
       引用情報
     </span>
   </a>
@@ -1605,7 +1623,50 @@
 </li>
 <li>本研究では、AgeとSource以外の6つのODC属性を分析に使用している</li>
 </ul>
-<h2 id="_6">引用情報<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_6">研究デザイン<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>目標<ul>
+<li>NoSQLに影響を与える傾向のある欠陥の種類が、NoSQLプロジェクト間で一貫して同じであるかどうかを知る</li>
+<li>ODC属性間の相互関係を検出</li>
+<li>各データベースの様々なコンポーネント内の欠陥の種類の変化を知る</li>
+</ul>
+</li>
+<li>目標達成のために5つの手順を実施<ul>
+<li>NoSQLデータベースを選択</li>
+<li>実際の欠陥の説明を使用して、分類プロセスを学習するように研究者をトレーニング</li>
+<li>データベースの公開イシュートラッキングプラットフォームからの欠陥の説明で構成されたデータセットを作成</li>
+<li>ODC分類に従って各ソフトウェア欠陥を手動で分類</li>
+<li>分類された欠陥を手動で検証</li>
+</ul>
+</li>
+<li>NoSQLの選定<ul>
+<li>広く普及しているオープンソースのNoSQLを対象とした</li>
+<li>2017年時点の人気ランキング<ul>
+<li>1位: MongoDB</li>
+<li>2位: Redis</li>
+<li>3位: Cassandra</li>
+<li>4位: HBase</li>
+<li>5位: Neo4j</li>
+</ul>
+</li>
+<li>このうち、MongoDB、Cassandra、HBaseはJiraを使用しており、残り2つはGitHubを使用していた</li>
+<li>GitHubにはODC分類に必要な情報が十分になかったため、本研究の分析対象から除外した</li>
+</ul>
+</li>
+<li>ODC属性の手動分類のためのトレーニング<ul>
+<li>ODC分類を理解するには経験が必要</li>
+<li>最初に300件の不具合の説明を使用して分類プロセスをトレーニング</li>
+</ul>
+</li>
+<li>欠陥データの選択と抽出<ul>
+<li>各NoSQLのJiraに存在する全ての欠陥を分類の候補とした</li>
+<li>クローズまたは解決済みとマークされた欠陥のみを分析対象とした</li>
+<li>2017年5月1日までに登録された、クローズおよび解決済みのすべてのバグを特定した</li>
+<li>手動でのODC分類作業の負担を減らすために、特定されたバグの約4分の1にあたる4,096件のバグを実際に分類した</li>
+</ul>
+</li>
+</ul>
+<h2 id="_7">引用情報<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino</li>
 <li>タイトル: Using Orthogonal Defect Classification to characterize NoSQL database defects</li>
@@ -1635,7 +1696,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月26日 05:59:36">2025年8月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月26日 09:52:20">2025年8月26日</span>
   </span>
 
     
