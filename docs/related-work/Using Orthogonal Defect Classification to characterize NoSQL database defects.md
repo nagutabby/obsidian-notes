@@ -130,6 +130,13 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 - 単一属性の分析では、異なるシステムから抽出された欠陥が少数の属性値に集中する傾向が確認された
 	- 特にCapabilityとReliabilityが圧倒的に多かった
 - 属性ペアの分析では、Reliabilityの欠陥におけるテスト活動は、Capabilityの欠陥におけるテスト活動と比べての2倍以上頻繁に発生することが判明
+## 妥当性への脅威
+- バグレポートのサブセットを用いてODC分類を行ったため、本研究の結果はバグ全体を代表しない可能性がある
+- ODC分類における主観性を軽減するために、以下の対策を行った
+	- 実際のバグレポートを用いた分類トレーニングを実施した
+	- セルフレビューにより、分類の妥当性を検証した
+	- 2名の外部研究者が分類の妥当性の検証に協力した
+- 本研究では3つのNoSQLを調査したため、本研究の結果を全てのNoSQLに一般化することはできない
 ## 引用情報
 - 著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino
 - タイトル: Using Orthogonal Defect Classification to characterize NoSQL database defects
