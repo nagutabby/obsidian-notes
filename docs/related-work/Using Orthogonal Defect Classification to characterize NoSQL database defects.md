@@ -137,6 +137,12 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 	- セルフレビューにより、分類の妥当性を検証した
 	- 2名の外部研究者が分類の妥当性の検証に協力した
 - 本研究では3つのNoSQLを調査したため、本研究の結果を全てのNoSQLに一般化することはできない
+## 結論
+- Defect Typeの分布は事前に想定できない
+- Reliabilityの欠陥におけるテスト活動は、Capabilityの欠陥におけるテスト活動と比べて2倍以上頻繁に行われる
+- Checkingの欠陥は、信頼性への影響が大きい場合により多く発生
+- システムコンポーネント間でDefect Typeに明確な差異があり、これはコンポーネントの性質と関連している
+- Function/Class/Objectの欠陥は一貫して修正時間が長くなる傾向がある
 ## 引用情報
 - 著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino
 - タイトル: Using Orthogonal Defect Classification to characterize NoSQL database defects
