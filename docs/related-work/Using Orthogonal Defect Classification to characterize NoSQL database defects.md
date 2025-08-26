@@ -88,6 +88,19 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 	- 欠陥の半分以上がIncorrectカテゴリーに属し、影響を受けたソースコードを直接変更することで修正された
 	- 2番目に多かったMissingカテゴリーは、本来存在すべきコードの追加による修正を表している
 ### 属性ペア間の値の分布
+- ImpactとTriggerのペア
+	- 検査関連トリガーはCapabilityと強い関連性を示した
+	- テスト関連トリガーはReliabilityと同時に発生することが多い
+- ImpactとDefect Typeのペア
+	- Reliablity: Checkingの欠陥が多い
+	- Capability: Function/Class/Objectの欠陥が多い
+- TriggerとDefect Typeのペア
+	- テスト関連トリガーでは、Checkingの欠陥が2番目に多く発生し、これらの問題がテスト活動によって適切に捕捉されることを示している
+- TriggerとQualifierのペア
+	- 全てのTriggerカテゴリーにおいてIncorrectが最も多く、これはほとんどの場合、バグがコードの修正によって解決されることを意味する
+- Defect TypeとQualifierのペア
+	- Checkingの欠陥のQualifierは「Missing」である確率が高く、プログラムのフロー制御に関する命令が不足していることを表している
+
 ### 内部ビューと修正時間
 ### 実際のユースケース
 ## 引用情報
