@@ -116,6 +116,16 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 		- 設計変更が必要となり、重要な機能に影響するため
 	- 全体的な傾向として、修正時間はバグの特徴だけでなく、プロジェクトの開発体制にも依存する
 ### 実際のユースケース
+- ODC分析を実際の開発改善に応用する実験を実施
+- 対象の選定
+	- MongoDB: バグレポートが豊富で分析しやすい
+	- Checkingの欠陥: 検出が容易で修正が比較的単純
+	- クエリコンポーネント: Checkingの欠陥の発生率が高い
+- 実験範囲
+	- 17件のバグから根本原因がコンポーネント外部にある8件を除外し、9件を対象とした
+- 値をランダムに生成し、さらに演算子とクエリ修飾子を組み合わせてクエリを自動生成
+- 5600個のテストを作成
+- この自動テストにより、既知のバグ4個を自動で検出し、未知のバグ1個を発見
 ## 引用情報
 - 著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino
 - タイトル: Using Orthogonal Defect Classification to characterize NoSQL database defects
