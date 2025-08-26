@@ -70,7 +70,26 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 	- クローズまたは解決済みとマークされた欠陥のみを分析対象とした
 	- 2017年5月1日までに登録された、クローズおよび解決済みのすべてのバグを特定した
 	- 手動でのODC分類作業の負担を減らすために、特定されたバグの約4分の1にあたる4,096件のバグを実際に分類した
-
+## 結果
+### ODC属性間の値の分布
+- Activity属性
+	- Code Inspectionが最も一般的で、約半数のケースで出現し、欠陥発見において重要な役割を果たしている
+	- テスト関連のActivityは3種類あるが、いずれも欠陥の数がほぼ同じであった
+- Trigger属性
+	- Logic/Flowが最も多かった
+- Impact属性
+	- CapabilityとReliabilityが3つのデータベース全てで約4分の3を占めた
+- Target属性
+	- 報告された欠陥のほとんどがソースコードの問題に関連していた
+- Defect Type属性
+	- 3つのデータベースが非常に類似した分布を示し、Algorithm/Methodが最も多かった
+	- 2番目に多かったFunction/Class/Objectはシステム設計における大規模な変更を表している
+- Qualifier属性
+	- 欠陥の半分以上がIncorrectカテゴリーに属し、影響を受けたソースコードを直接変更することで修正された
+	- 2番目に多かったMissingカテゴリーは、本来存在すべきコードの追加による修正を表している
+### 属性ペア間の値の分布
+### 内部ビューと修正時間
+### 実際のユースケース
 ## 引用情報
 - 著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino
 - タイトル: Using Orthogonal Defect Classification to characterize NoSQL database defects
