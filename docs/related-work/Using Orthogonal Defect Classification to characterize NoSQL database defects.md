@@ -100,8 +100,21 @@ title: Using Orthogonal Defect Classification to characterize NoSQL database def
 	- 全てのTriggerカテゴリーにおいてIncorrectが最も多く、これはほとんどの場合、バグがコードの修正によって解決されることを意味する
 - Defect TypeとQualifierのペア
 	- Checkingの欠陥のQualifierは「Missing」である確率が高く、プログラムのフロー制御に関する命令が不足していることを表している
-
 ### 内部ビューと修正時間
+- MongoDB
+	- レプリケーションコンポーネントでは、Timing/Serializationの欠陥の割合が大きく、コンポーネントがタイミングの問題に敏感であることを示している
+	- クエリコンポーネントでは、Interface/O-O Messagesの欠陥が比較的少ない
+- Cassandra
+	- ツールコンポーネントでは、Function/Class/Objectの欠陥が比較的少なく、Interface/O-O Messagesの欠陥が多い
+	- CQLコンポーネントでは、Function/Class/Objectの欠陥が全体のほぼ2倍発生しており、これは頻繁な設計変更を反映している
+- HBase
+	- クライアントコンポーネントでは、CheckingとInterface/O-O Messagesの欠陥が比較的少ない
+	- マスターコンポーネントでは、Checkingの欠陥が少なく、Function/Class/Objectの欠陥が多い
+- 修正時間
+	- 最も修正時間が長い欠陥
+		- Function/Class/Objectの欠陥
+		- 設計変更が必要となり、重要な機能に影響するため
+	- 全体的な傾向として、修正時間はバグの特徴だけでなく、プロジェクトの開発体制にも依存する
 ### 実際のユースケース
 ## 引用情報
 - 著者: João Agnelo, Nuno Laranjeiro, Jorge Bernardino
