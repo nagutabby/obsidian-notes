@@ -18,7 +18,17 @@ title: A Systematic Survey of Just-in-Time Software Defect Prediction
 	- 研究者がJIT-SDPワークフローの様々な段階における典型的な懸念事項と現在の手法について包括的な理解を深め、この分野に参入する研究者が迅速に理解を深められるようにすること
 	- 研究者がこの分野における今後の研究のギャップと機会を特定できるようにすること
 	- 実務家がQAニーズに合わせてJIT-SDPモデルを洗濯、調整できるようにすること
-
+## レビュー方法
+### JIT-SDP調査のための研究論文の特定
+- 2000年から2021年11月までにジャーナルや会議の議事録に掲載された英語の査読済み研究論文が対象
+- ソフトウェアの変更のレベルやサブレベルでの予測を行うJIT-SDPの予測モデルを研究した論文のみを含める
+- デジタルライブラリのキーワード検索
+	- 研究者はJIT-SDPを様々な用語で呼んでいる
+	- Kameiらは「ジャストインタイム」ソフトウェアQAと呼んだ
+	- Jiangらは「変更レベル」の欠陥予測と呼んだ
+	- その他のJIT-SDPのキーワードとしては、defect、fault、bug、error、failure、exceptionがある
+	- これらのキーワードを用いて定式化された検索クエリを作成
+	- このクエリを使用して記事のタイトル、要約、メタデータに出現するキーワードをデジタルライブラリで検索
 ## 引用情報
 - 著者: Yunhua Zhao, Kostadin Damevski, Hui Chen
 - タイトル: A Systematic Survey of Just-in-Time Software Defect Prediction
