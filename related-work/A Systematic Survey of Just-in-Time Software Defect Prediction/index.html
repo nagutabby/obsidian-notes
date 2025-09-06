@@ -532,6 +532,39 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
+      ジャストインタイムソフトウェア欠陥予測
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ジャストインタイムソフトウェア欠陥予測">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jit-sdp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      JIT-SDPの定義と概要
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      データソース
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
       引用情報
     </span>
   </a>
@@ -1572,6 +1605,39 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
+      ジャストインタイムソフトウェア欠陥予測
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ジャストインタイムソフトウェア欠陥予測">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jit-sdp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      JIT-SDPの定義と概要
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      データソース
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
       引用情報
     </span>
   </a>
@@ -1638,7 +1704,61 @@
 </ul>
 </li>
 </ul>
-<h2 id="_4">引用情報<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">ジャストインタイムソフトウェア欠陥予測<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ソフトウェア障害は観察できるソフトウェアのご動作であるが、欠陥が必ずしも障害につながる訳ではない</li>
+<li>SDPはソフトウェアのソースコード内にあるバグの存在を予測することを目的としている</li>
+</ul>
+<h3 id="jit-sdp_1">JIT-SDPの定義と概要<a class="headerlink" href="#jit-sdp_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>これまでの研究の大部分は、SDPがプロジェクトのリリーススケジュールに厳密に従うこと、つまり、過去のリリースからソフトウェアのスナップショットと欠陥を活用して、様々な粒度のソフトウェアモジュール（パッケージ、ファイル、クラス、メソッド）の欠陥密度や欠陥の重大度などの欠陥関連の変数を予測することを前提としていた<ul>
+<li>この種類のSDPを「Release SDP」と呼ぶ</li>
+</ul>
+</li>
+<li>Release SDPの最近の代替手段は、ソフトウェアの変更履歴を活用して、リポジトリにコミットされるとすぐに（ジャストインタイム）、欠陥を誘発する可能性のあるソフトウェアの変更を予測すること<ul>
+<li>この種類のSDPを「JIT-SDP」と呼ぶ</li>
+</ul>
+</li>
+<li>開発者は通常、全てのソフトウェアの変更をソースコード管理（SCM）システムやバージョン管理システム（VCS）へのコミットとして記録</li>
+<li>JIT-SDPの利点<ul>
+<li>ソフトウェアの変更セットが小さく、それぞれに説明的なログメッセージがある</li>
+<li>各変更には単一のコミッターが割り当てられるため、変更に関するQA活動を実施するための専門知識を持つ人材を見つけやすくなる</li>
+<li>開発者は、SCMにコミットする際に、バグを誘発する可能性がある自分の潜在的なソフトウェア変更を迅速に調査できる<ul>
+<li>このときに、開発者は最近の変更について新鮮な記憶を持っている可能性が高いため、認知負荷が軽減される</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JIT-SDPのワークフロー<ul>
+<li>モデルを構築するために様々なデータソースを活用<ul>
+<li>例: ソフトウェアコードの変更、イシューレポート、コミットメッセージ</li>
+</ul>
+</li>
+<li>データを生の特徴量に変換</li>
+<li>生の特徴量をモデル構築にすぐに使用できる特徴量に変換（前処理）</li>
+<li>モデルを構築して評価</li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">データソース<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">ソフトウェアの変更履歴と変更セット<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ソフトウェアの変更（チェンジセット）とは、GitなどのSCMにおけるソフトウェアの2つのリビジョン間の差分のこと</li>
+</ul>
+<h4 id="_7">コミットメッセージ<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>ほとんどのSCMでは、開発者がコミットログメッセージを入力することで、コミットされた変更の性質を簡潔に記述することが求められる</li>
+</ul>
+<h4 id="itsissue-tracking-system">ITS（Issue Tracking System）データ<a class="headerlink" href="#itsissue-tracking-system" title="Permanent link">&para;</a></h4>
+<ul>
+<li>プロジェクトのITSデータは、変更セットとバグを報告するイシューの関係を構築するのに役立つ</li>
+<li>JIT-SDPにおけるバグ予測に直接利用されることは稀</li>
+</ul>
+<h4 id="_8">静的プログラム分析の警告メッセージ<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>lintなどの静的プログラム分析ツールによって生成される警告メッセージも、稀ではあるがJIT-SDPモデルを構築するための情報のデータソースとして使用されることがある</li>
+</ul>
+<h2 id="_9">引用情報<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>著者: Yunhua Zhao, Kostadin Damevski, Hui Chen</li>
 <li>タイトル: A Systematic Survey of Just-in-Time Software Defect Prediction</li>
@@ -1667,7 +1787,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月5日 05:16:39">2025年9月5日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年9月6日 13:21:35">2025年9月6日</span>
   </span>
 
     
