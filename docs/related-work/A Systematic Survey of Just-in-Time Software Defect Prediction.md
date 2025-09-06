@@ -114,6 +114,13 @@ title: A Systematic Survey of Just-in-Time Software Defect Prediction
 	- 1) 欠陥を修正する変更を特定
 	- 2) ステップ1の欠陥を導入した以前の変更を特定
 - Śliwerskiらは、欠陥修正のための変更に基づいて、欠陥を誘発する変更を自動的に特定するアルゴリズム（SZZアルゴリズム）を提案
+### データ変換
+- JIT-SDPモデルを構築する際は、ほとんどの場合、事前にデータ変換が必要
+#### 列ベースの処理
+- 特徴量の歪みに対処するために標準化、対数変換、Zスコア、max-min法を適用
+- 共線性と多重共線性に対処するために相関分析、独立性分先、冗長性分析を実施
+#### 行ベースの処理とクラスの不均衡
+- クラスの不均衡に対処するためにアンダーサンプリング、オーバーサンプリング、少数派クラスへの重み付けを行う
 ## 引用情報
 - 著者: Yunhua Zhao, Kostadin Damevski, Hui Chen
 - タイトル: A Systematic Survey of Just-in-Time Software Defect Prediction
