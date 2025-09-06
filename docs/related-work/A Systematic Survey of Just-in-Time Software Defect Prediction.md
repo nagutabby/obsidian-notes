@@ -142,6 +142,17 @@ title: A Systematic Survey of Just-in-Time Software Defect Prediction
 - 開発者の能力や癖に基づいたJIT-SDPモデルは、そうでないモデルよりも多くの欠陥を予測できる
 #### 複雑なモデルと単純なモデルに関する議論
 - 複雑なモデルは正確さにおいて優れているが、単純なモデルは解釈可能性において優れている
+### 評価
+#### 欠陥予測の評価基準
+- 一般的な評価基準
+	- 正解率、適合率、再現率、F値、AUC-ROC
+#### 労力を考慮した予測の評価基準
+- 正規化された費用対効果曲線の下の面積
+	- $P_{opt}(m) = 1 - (Area(m_{optimal}) - Area(m))/ ({Area(m_{optimal}) - Area(m_{worst})})$
+#### オンライン学習や時間制限のある学習の評価基準
+- CabralらとTabassumらは2つの再現率の時間変動幾何平均を提案した
+#### 検証戦略と評価設定
+- 頻繁に採用される検証方法はk分割交差検証
 ## 引用情報
 - 著者: Yunhua Zhao, Kostadin Damevski, Hui Chen
 - タイトル: A Systematic Survey of Just-in-Time Software Defect Prediction
