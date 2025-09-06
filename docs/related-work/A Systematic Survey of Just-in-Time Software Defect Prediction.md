@@ -109,6 +109,11 @@ title: A Systematic Survey of Just-in-Time Software Defect Prediction
 - Trautschらは、PMDとOpenStaticAnalyzarという2つのツールを用いて静的プログラム解析の警告メッセージを収集
 #### 特徴表現
 - アルゴリズムによって自動的に学習される特徴の種類を特徴表現と呼ぶ
+### 欠陥を誘発するラベルの割り当て
+- ソフトウェアの変更を、欠陥を誘発する変更かクリーンな変更かに分類するためには、ソフトウェアプロジェクトの変更履歴を調べる際に2段階のアプローチを取る
+	- 1) 欠陥を修正する変更を特定
+	- 2) ステップ1の欠陥を導入した以前の変更を特定
+- Śliwerskiらは、欠陥修正のための変更に基づいて、欠陥を誘発する変更を自動的に特定するアルゴリズム（SZZアルゴリズム）を提案
 ## 引用情報
 - 著者: Yunhua Zhao, Kostadin Damevski, Hui Chen
 - タイトル: A Systematic Survey of Just-in-Time Software Defect Prediction
