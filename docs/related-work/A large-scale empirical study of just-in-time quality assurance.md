@@ -158,7 +158,9 @@ title: A large-scale empirical study of just-in-time quality assurance
 - また、より予防的なレビューにより、欠陥の影響を抑えることができる
 ### 欠陥を誘発しないものとして分類される、欠陥を誘発する変更（偽陰性）の特徴は何か？
 - 少数のファイルに影響する変更と欠陥に関連しない変更が、モデルでは偽陰性になる可能性が最も高いことが分かった
-
+## 結論
+- 6つのオープンソースプロジェクトと5つの商用プロジェクトを対象に、欠陥発生リスクの高いソフトウェア変更をリアルタイムで特定する「ジャストインタイム品質保証」アプローチを評価
+- ジャストインタイム品質保証により、開発者は最もリスクの高い変更に最小限の労力で集中でき、高品質なソフトウェアを低コストで構築できる
 ## 引用情報
 - 著者: Yasutaka Kamei, Emad Shihab, Bram Adams, Ahmed E. Hassan, Audris Mockus, Anand Sinha
 - タイトル: A large-scale empirical study of just-in-time quality assurance
