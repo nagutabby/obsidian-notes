@@ -1834,6 +1834,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-10-25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025年10月25日
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2075,28 +2098,28 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/antlr4/cv_performance_chart.png" />
-<img alt="" src="../images/antlr4/feature_importance_chart.png" /></p>
+<p><img alt="" src="docs/weekly-reports/images/antlr4/old/cv_performance_chart.png" />
+<img alt="" src="docs/weekly-reports/images/antlr4/old/feature_importance_chart.png" /></p>
 <h4 id="_2">特徴量重要度<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ParentやLongNameに含まれる特定の単語の重要度が高い</li>
 <li>メソッドのトークン数の変化が精度向上に寄与している</li>
 <li>HDIF、HNDB、HTRPなどのハルステッドメトリクスも重要
-<img alt="" src="../images/antlr4/feature_histograms.png" /></li>
+<img alt="" src="docs/weekly-reports/images/antlr4/old/feature_histograms.png" /></li>
 </ul>
 <h4 id="_3">特徴量の分布<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>全体として分布の偏りが大きく、陰性クラスの特徴を明確に捉えている</li>
 <li>特定の領域に異なるクラスのデータポイントが密集することで、クラス間の分離が難しくなり、分類境界が曖昧になっている（モデルが細かな違いを学習できていない）
-<img alt="" src="../images/antlr4/partial_dependence_plots.png" /></li>
+<img alt="" src="docs/weekly-reports/images/antlr4/old/partial_dependence_plots.png" /></li>
 </ul>
 <h4 id="partial-dependence-plot">Partial Dependence Plot<a class="headerlink" href="#partial-dependence-plot" title="Permanent link">&para;</a></h4>
 <ul>
 <li>トークン数の変化、HDIF、HNDB、NOS、HTRP、TNOS、HEFFは特定の範囲において陽性クラスの予測確率が高止まりしている</li>
 <li>NUMPAR、JUnit Rulesは凸型の変化が見られ、特定の値の前後では陽性クラスの予測確率が低下</li>
 <li>全体として、特定の値以上か以下になると陽性クラスの予測確率が大きく増加
-<img alt="" src="../images/antlr4/decision_tree_feature_importance.png" />
-<img alt="" src="../images/antlr4/decision_tree_visualization.png" /></li>
+<img alt="" src="docs/weekly-reports/images/antlr4/old/decision_tree_feature_importance.png" />
+<img alt="" src="docs/weekly-reports/images/antlr4/old/decision_tree_visualization.png" /></li>
 </ul>
 <h4 id="_4">決定木<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2149,27 +2172,27 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/ceylon-ide-eclipse/cv_performance_chart.png" />
-<img alt="" src="../images/ceylon-ide-eclipse/feature_importance_chart.png" /></p>
+<p><img alt="" src="docs/weekly-reports/images/ceylon-ide-eclipse/old/cv_performance_chart.png" />
+<img alt="" src="docs/weekly-reports/images/ceylon-ide-eclipse/old/feature_importance_chart.png" /></p>
 <h4 id="_5">特徴量重要度<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>コード行数の長さの変化は最も重要度が高い</li>
 <li>Maintainability Index関連のメトリクス（MI, MISEI, MIMS, MISM）も重要度が高い</li>
 <li>ハルステッドメトリクス（HNDB, HTRP, HCPL, HEFFなど）が引き続き上位に位置している
-<img alt="" src="../images/ceylon-ide-eclipse/feature_histograms.png" /></li>
+<img alt="" src="docs/weekly-reports/images/ceylon-ide-eclipse/old/feature_histograms.png" /></li>
 </ul>
 <h4 id="_6">特徴量の分布<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Maintainability Index関連のメトリクスは分散が大きい</li>
 <li>ハルステッドメトリクス、コード行数やトークン数の変化量は分散が比較的小さいため、それぞれの特徴量のみでクラスを分類するのは難しい
-<img alt="" src="../images/ceylon-ide-eclipse/partial_dependence_plots.png" /></li>
+<img alt="" src="docs/weekly-reports/images/ceylon-ide-eclipse/old/partial_dependence_plots.png" /></li>
 </ul>
 <h4 id="partial-dependence-plot_1">Partial Dependence Plot<a class="headerlink" href="#partial-dependence-plot_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Maintainability Index関連のメトリクス、一部のハルステッドメトリクス（HCPL、HVOL、HDIF、HPL、HPV）は凹型のグラフになっており、特定の値付近で陽性クラスの予測確率が低くなり、その前後で陽性クラスの予測確率が高くなっている</li>
 <li>コード行数の変化、トークン数の変化、HNDB、HTRP、HEFFのいずれかの値を変化させても、陽性クラスの予測確率にはあまり変化が見られない
-<img alt="" src="../images/ceylon-ide-eclipse/decision_tree_feature_importance.png" />
-<img alt="" src="../images/ceylon-ide-eclipse/decision_tree_visualization.png" /></li>
+<img alt="" src="docs/weekly-reports/images/ceylon-ide-eclipse/old/decision_tree_feature_importance.png" />
+<img alt="" src="docs/weekly-reports/images/ceylon-ide-eclipse/old/decision_tree_visualization.png" /></li>
 </ul>
 <h4 id="_7">決定木<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2223,26 +2246,26 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/elasticsearch/cv_performance_chart.png" />
-<img alt="" src="../images/elasticsearch/feature_importance_chart.png" /></p>
+<p><img alt="" src="docs/weekly-reports/images/elasticsearch/old/cv_performance_chart.png" />
+<img alt="" src="docs/weekly-reports/images/elasticsearch/old/feature_importance_chart.png" /></p>
 <h4 id="_8">特徴量重要度<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>トークン数やコード行数の変化量の重要度が高い</li>
 <li>メソッド操作が「追加」であるかどうかもクラス分類の判断に影響を与えている</li>
 <li>ハルステッドメトリクス、Maintainability Index関連のメトリクスもある程度の重要度がある
-<img alt="" src="../images/elasticsearch/feature_histograms.png" /></li>
+<img alt="" src="docs/weekly-reports/images/elasticsearch/old/feature_histograms.png" /></li>
 </ul>
 <h4 id="_9">特徴量の分布<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>トークン数、コード行数、循環的複雑度のいずれも変化量はほとんど0
-<img alt="" src="../images/elasticsearch/partial_dependence_plots.png" /></li>
+<img alt="" src="docs/weekly-reports/images/elasticsearch/old/partial_dependence_plots.png" /></li>
 </ul>
 <h4 id="partial-dependence-plot_2">Partial Dependence Plot<a class="headerlink" href="#partial-dependence-plot_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>トークン数、コード行数の変化量が0付近であるほど陽性クラスの予測確率が高まる</li>
 <li>MISM、MISEIは凹型であり、0付近で陽性クラスの予測確率が最も低くなる
-<img alt="" src="../images/elasticsearch/decision_tree_feature_importance.png" />
-<img alt="" src="../images/elasticsearch/decision_tree_visualization.png" /></li>
+<img alt="" src="docs/weekly-reports/images/elasticsearch/old/decision_tree_feature_importance.png" />
+<img alt="" src="docs/weekly-reports/images/elasticsearch/old/decision_tree_visualization.png" /></li>
 </ul>
 <h4 id="_10">決定木<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2295,26 +2318,26 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/BroadleafCommerce/cv_performance_chart.png" />
-<img alt="" src="../images/BroadleafCommerce/feature_importance_chart.png" /></p>
+<p><img alt="" src="docs/weekly-reports/images/BroadleafCommerce/old/cv_performance_chart.png" />
+<img alt="" src="docs/weekly-reports/images/BroadleafCommerce/old/feature_importance_chart.png" /></p>
 <h4 id="_11">特徴量重要度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ハルステッドメトリクス、Maintainability Index関連のメトリクスの重要度が高い</li>
 <li>変化量メトリクスは特徴量の重要度上位20件に含まれていない
-<img alt="" src="../images/BroadleafCommerce/feature_histograms.png" /></li>
+<img alt="" src="docs/weekly-reports/images/BroadleafCommerce/old/feature_histograms.png" /></li>
 </ul>
 <h4 id="_12">特徴量の分布<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>MI、MISEI、MISM、MIMSに明確な二峰性があり、陽性クラスや陰性クラスの傾向を掴みにくい</li>
 <li>ハルステッドメトリクスの値が全体的に大きく、陽性クラスと陰性クラスの境界を設定しにくい
-<img alt="" src="../images/BroadleafCommerce/partial_dependence_plots.png" /></li>
+<img alt="" src="docs/weekly-reports/images/BroadleafCommerce/old/partial_dependence_plots.png" /></li>
 </ul>
 <h4 id="partial-dependence-plot_3">Partial Dependence Plot<a class="headerlink" href="#partial-dependence-plot_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ハルステッドメトリクスが一定の値以上になると陽性クラスの予測確率が高止まりする<ul>
 <li>ハルステッドメトリクスは重要度が高いが、数値的な重要度はあまり高くないことを示唆している
-<img alt="" src="../images/BroadleafCommerce/decision_tree_feature_importance.png" />
-<img alt="" src="../images/BroadleafCommerce/decision_tree_visualization.png" /></li>
+<img alt="" src="docs/weekly-reports/images/BroadleafCommerce/old/decision_tree_feature_importance.png" />
+<img alt="" src="docs/weekly-reports/images/BroadleafCommerce/old/decision_tree_visualization.png" /></li>
 </ul>
 </li>
 </ul>
@@ -2369,26 +2392,26 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/hazelcast/cv_performance_chart.png" />
-<img alt="" src="../images/hazelcast/feature_importance_chart.png" /></p>
+<p><img alt="" src="docs/weekly-reports/images/hazelcast/old/cv_performance_chart.png" />
+<img alt="" src="docs/weekly-reports/images/hazelcast/old/feature_importance_chart.png" /></p>
 <h4 id="_14">特徴量重要度<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>トークン数やコード行数の変化量の重要度が高い</li>
 <li>ハルステッドメトリクスやMaintainability Index関連のメトリクスも重要度が高い
-<img alt="" src="../images/hazelcast/feature_histograms.png" /></li>
+<img alt="" src="docs/weekly-reports/images/hazelcast/old/feature_histograms.png" /></li>
 </ul>
 <h4 id="_15">特徴量の分布<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ハルステッドメトリクス、トークン数やコード行数の変化量の分布は大きな偏りがある
-<img alt="" src="../images/hazelcast/partial_dependence_plots.png" /></li>
+<img alt="" src="docs/weekly-reports/images/hazelcast/old/partial_dependence_plots.png" /></li>
 </ul>
 <h4 id="partial-dependence-plot_4">Partial Dependence Plot<a class="headerlink" href="#partial-dependence-plot_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>トークン数やコード行数の変化量は、0付近で最も陽性クラスの予測確率が高い</li>
 <li>ハルステッドメトリクスは特定の値以上になると陽性クラスの予測確率が高止まりする</li>
 <li>TNOS（Total Number of Statements）、TLOC（Total Lines of Code）は陽性クラスの予測確率と比例している
-<img alt="" src="../images/hazelcast/decision_tree_feature_importance.png" />
-<img alt="" src="../images/hazelcast/decision_tree_visualization.png" /></li>
+<img alt="" src="docs/weekly-reports/images/hazelcast/old/decision_tree_feature_importance.png" />
+<img alt="" src="docs/weekly-reports/images/hazelcast/old/decision_tree_visualization.png" /></li>
 </ul>
 <h4 id="_16">決定木<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2443,27 +2466,27 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="" src="../images/oryx/cv_performance_chart.png" />
-<img alt="" src="../images/oryx/feature_importance_chart.png" /></p>
+<p><img alt="" src="docs/weekly-reports/images/oryx/old/cv_performance_chart.png" />
+<img alt="" src="docs/weekly-reports/images/oryx/old/feature_importance_chart.png" /></p>
 <h4 id="_17">特徴量重要度<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>トークン数やコード行数の変化量の重要度が高い</li>
 <li>ハルステッドメトリクスやMaintainability Index関連のメトリクスの重要度も高い</li>
 <li>LOC（Lines of Code）、LLOC（Logical Lines of Code）、TLOC（Total Lines of Code）の重要度が高い
-<img alt="" src="../images/oryx/feature_histograms.png" /></li>
+<img alt="" src="docs/weekly-reports/images/oryx/old/feature_histograms.png" /></li>
 </ul>
 <h4 id="_18">特徴量の分布<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>コメント関連のメトリクスやMaintainability Index関連のメトリクスは分散が大きい</li>
 <li>トークン数やコード行数の変化量、ハルステッドメトリクスは分散が小さい
-<img alt="" src="../images/oryx/partial_dependence_plots.png" /></li>
+<img alt="" src="docs/weekly-reports/images/oryx/old/partial_dependence_plots.png" /></li>
 </ul>
 <h4 id="partial-dependence-plot_5">Partial Dependence Plot<a class="headerlink" href="#partial-dependence-plot_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>コメント関連のメトリクスが一定以上のときに陽性クラスの予測確率が高止まりしている</li>
 <li>トークン数やコード行数の変化量については、0付近で陽性クラスの予測確率が最も高くなっている
-<img alt="" src="../images/oryx/decision_tree_feature_importance.png" />
-<img alt="" src="../images/oryx/decision_tree_visualization.png" /></li>
+<img alt="" src="docs/weekly-reports/images/oryx/old/decision_tree_feature_importance.png" />
+<img alt="" src="docs/weekly-reports/images/oryx/old/decision_tree_visualization.png" /></li>
 </ul>
 <h4 id="_19">決定木<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2535,7 +2558,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月6日 08:59:18">2025年8月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年10月30日 06:53:20">2025年10月30日</span>
   </span>
 
     
