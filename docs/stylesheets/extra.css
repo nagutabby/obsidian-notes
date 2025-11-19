@@ -27,3 +27,9 @@ body {
 .md-typeset code {
   color: rgba(255, 255, 255, 0.9);
 }
+
+.md-typeset img {
+  max-width: 65%;
+  display: flex;
+  justify-self: center;
+}
