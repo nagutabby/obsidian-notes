@@ -1875,6 +1875,15 @@
 <li>前回までにレビュー労力測定手法を考えたが、レビュー対象となる全てのコミットの労力が等しいと仮定していた</li>
 <li>しかし、実際は労力（コスト）に対するバグ混入確率（リターン）が最大となるようなコミットを優先的にレビューするはずであり、先ほどの実装は不適切</li>
 <li>そこで、コストとリターンの両方を考慮したレビュー労力測定手法を検討<ul>
+<li>コミットのレビューをナップサック問題に変換<ul>
+<li>アイテム: レビュー待ちの各コミット<span class="arithmatex">\(i\)</span></li>
+<li>アイテムの数<span class="arithmatex">\(N\)</span>: レビュー待ちの全てのコミット数</li>
+<li>アイテムの重さ<span class="arithmatex">\(W_i\)</span>: コミット<span class="arithmatex">\(i\)</span>のレビューに必要な労力</li>
+<li>アイテムの価値<span class="arithmatex">\(V_i\)</span>: コミット<span class="arithmatex">\(i\)</span>のレビューによるバグ発見期待値（メソッドの陽性確率）</li>
+<li>ナップサックの容量<span class="arithmatex">\(C_{total}\)</span>: レビューに使える総労力</li>
+<li>解くべき問題: レビュー労力の合計が <span class="arithmatex">\(C_{total}\)</span> を超えないように、レビューするコミットの組み合わせを選び、そのバグ発見期待値の合計 <span class="arithmatex">\(V_{total}\)</span> を最大化</li>
+</ul>
+</li>
 <li>労力の計算に用いる指標<ul>
 <li>変更コード行数（コードチャーン）<ul>
 <li>追加コード行数 + 削除コード行数</li>
@@ -1901,15 +1910,6 @@ $$ \begin{align} p_A &amp;= \frac{30}{60} = 0.5 \ p_B &amp;= \frac{20}{60} = 0.3
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li>コミットのレビューをナップサック問題に変換<ul>
-<li>アイテム: レビュー待ちの各コミット<span class="arithmatex">\(i\)</span></li>
-<li>アイテムの数<span class="arithmatex">\(N\)</span>: レビュー待ちの全てのコミット数</li>
-<li>アイテムの重さ<span class="arithmatex">\(W_i\)</span>: コミット<span class="arithmatex">\(i\)</span>のレビューに必要な労力</li>
-<li>アイテムの価値<span class="arithmatex">\(V_i\)</span>: コミット<span class="arithmatex">\(i\)</span>のレビューによるバグ発見期待値（メソッドの陽性確率）</li>
-<li>ナップサックの容量<span class="arithmatex">\(C_{total}\)</span>: レビューに使える総労力</li>
-<li>解くべき問題: レビュー労力の合計が <span class="arithmatex">\(C_{total}\)</span> を超えないように、レビューするコミットの組み合わせを選び、そのバグ発見期待値の合計 <span class="arithmatex">\(V_{total}\)</span> を最大化</li>
 </ul>
 </li>
 </ul>
@@ -1963,7 +1963,7 @@ $$ \begin{align} p_A &amp;= \frac{30}{60} = 0.5 \ p_B &amp;= \frac{20}{60} = 0.3
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月20日 03:28:40">2025年11月20日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年11月20日 03:35:23">2025年11月20日</span>
   </span>
 
     
